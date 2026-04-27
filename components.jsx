@@ -18,16 +18,16 @@ function Nav() {
           <LogoMark />
           <span>Learning Leagues</span>
         </a>
-        <nav className="nav-links" aria-label="Primaire">
-          <a className="nav-link" href="#">Fondations</a>
-          <a className="nav-link" href="#" aria-current="page">Rôles</a>
+        <nav className="nav-links" aria-label="Primary">
+          <a className="nav-link" href="#">Foundations</a>
+          <a className="nav-link" href="#" aria-current="page">Roles</a>
           <a className="nav-link" href="#">Champions</a>
           <a className="nav-link" href="#">Macro</a>
-          <a className="nav-link" href="#">Parcours</a>
+          <a className="nav-link" href="#">Pathways</a>
         </nav>
         <div className="nav-right">
           <LangSwitcher />
-          <button className="nav-cta">Quiz rôle →</button>
+          <button className="nav-cta">Role quiz →</button>
         </div>
       </div>
     </div>
@@ -38,9 +38,9 @@ function Breadcrumb() {
   return (
     <div className="shell">
       <div className="breadcrumb">
-        <a href="#">Accueil</a>
+        <a href="#">Home</a>
         <span className="sep">›</span>
-        <a href="#">Rôles</a>
+        <a href="#">Roles</a>
         <span className="sep">›</span>
         <span className="current">Support</span>
       </div>
@@ -67,24 +67,24 @@ function Hero() {
         <div className="hero-grid">
           <div>
             <div className="eyebrow hero-eyebrow">
-              RÔLE <span className="dot"></span> SUPPORT
+              ROLE <span className="dot"></span> SUPPORT
             </div>
             <h1 className="serif">Support<em>.</em></h1>
 
             <blockquote className="hero-pullquote">
-              « Tu es les yeux de l'équipe et la barrière entre ton ADC et la mort. »
+              "You are the team's eyes and the barrier between your ADC and death."
             </blockquote>
 
             <p className="hero-intro">
-              Le Support est le rôle transverse de l'équipe. Tu ne farms pas, tu ne cherches
-              pas les kills pour toi — tu donnes la vision, tu enclenches ou annules les
-              engagements, et tu gardes ton ADC en vie. C'est le rôle idéal pour un joueur
-              qui aime lire la map et orchestrer les décisions plus que mécaniser des combos.
+              Support is the team's connective role. You don't farm, you don't hunt
+              kills for yourself — you provide vision, you start or cancel engages,
+              and you keep your ADC alive. It's the ideal role for a player who
+              prefers reading the map and orchestrating decisions over executing combos.
             </p>
 
             <div className="hero-meta">
-              <span><strong>Difficulté</strong><span className="stars">★</span><span style={{opacity:.3}}>★★</span></span>
-              <span><strong>Lecture</strong> ~15 min</span>
+              <span><strong>Difficulty</strong><span className="stars">★</span><span style={{opacity:.3}}>★★</span></span>
+              <span><strong>Read time</strong> ~15 min</span>
               <span><strong>Patch</strong> 26.X</span>
             </div>
           </div>
@@ -124,27 +124,27 @@ function Footer() {
           <div>
             <div className="footer-brand">
               Learning Leagues
-              <span className="baseline">Apprendre League of Legends, proprement.</span>
+              <span className="baseline">Learning League of Legends, properly.</span>
             </div>
           </div>
           <div className="footer-cols">
             <div className="footer-col">
               <h5>Navigation</h5>
-              <a href="#">Fondations</a>
-              <a href="#">Rôles</a>
+              <a href="#">Foundations</a>
+              <a href="#">Roles</a>
               <a href="#">Champions</a>
               <a href="#">Macro</a>
-              <a href="#">Parcours</a>
+              <a href="#">Pathways</a>
             </div>
             <div className="footer-col">
-              <h5>Ressources</h5>
-              <a href="#">Glossaire</a>
-              <a href="#">Timings objectifs</a>
-              <a href="#">Quiz rôle</a>
-              <a href="#">Changelog patch</a>
+              <h5>Resources</h5>
+              <a href="#">Glossary</a>
+              <a href="#">Objective timings</a>
+              <a href="#">Role quiz</a>
+              <a href="#">Patch changelog</a>
             </div>
             <div className="footer-col">
-              <h5>Ailleurs</h5>
+              <h5>Elsewhere</h5>
               <a href="#">YouTube</a>
               <a href="#">Discord</a>
               <a href="#">X / Twitter</a>
@@ -164,7 +164,7 @@ function Footer() {
 
 function LangSwitcher() {
   const [open, setOpen] = React.useState(false);
-  const [lang, setLang] = React.useState("FR");
+  const [lang, setLang] = React.useState("EN");
   const wrapRef = React.useRef(null);
   React.useEffect(() => {
     if (!open) return;
@@ -177,7 +177,7 @@ function LangSwitcher() {
     <div className="lang-wrap" ref={wrapRef}>
       <button
         className="lang-btn"
-        aria-label="Changer de langue"
+        aria-label="Change language"
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
       >

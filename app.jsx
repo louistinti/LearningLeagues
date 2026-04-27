@@ -30,7 +30,7 @@ function App() {
       <Footer />
 
       <TweaksPanel title="Tweaks">
-        <TweakSection label="Direction visuelle" />
+        <TweakSection label="Visual direction" />
         <TweakRadio
           label="Palette"
           value={t.palette}
@@ -45,18 +45,18 @@ function App() {
           label="Accent"
           value={t.accent}
           options={[
-            { value: "or",    label: "Or"    },
-            { value: "ambre", label: "Ambre" },
-            { value: "bleu",  label: "Bleu"  },
+            { value: "or",    label: "Gold"  },
+            { value: "ambre", label: "Amber" },
+            { value: "bleu",  label: "Blue"  },
           ]}
           onChange={(v) => setTweak("accent", v)}
         />
-        <TweakSection label="Mise en page" />
+        <TweakSection label="Layout" />
         <TweakRadio
-          label="Densité"
+          label="Density"
           value={t.density}
           options={[
-            { value: "aere",    label: "Aéré"    },
+            { value: "aere",    label: "Airy"    },
             { value: "compact", label: "Compact" },
           ]}
           onChange={(v) => setTweak("density", v)}

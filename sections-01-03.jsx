@@ -7,27 +7,27 @@ function SectionPhases() {
       title: "Early game",
       timer: "0 → 14 min",
       items: [
-        "Prio niveau 2 : tu passes 2 avec les 6 premiers minions + les 3 mélés de la 2e wave. Tape (sans tuer) les creeps des 2 premières waves pour accélérer le tempo.",
-        "Premier ward : dépend de ton push. Priorise tes bottes ou ton 1er item selon ton archétype. Le control ward (pink) se garde pour défendre une zone précise contre un gank ou préparer un objectif.",
-        "Laisse les CS à l'ADC (tape sans tuer). Protège-le en trade.",
+        "Level 2 prio: you hit level 2 with the first 6 minions + the 3 melees from the 2nd wave. Damage (without killing) the creeps of the first 2 waves to speed up the tempo.",
+        "First ward at 1:25 (not before): river bush opposite the jungler's starting side, to spot the first scuttle. Pre-1:25 you bush-camp to scout invades — saving your trinket charge for an impactful spot. Save the control ward (pink) to defend a zone against a gank or to set up an objective.",
+        "Leave CS to the ADC (damage without killing). Protect them in trades.",
       ],
     },
     {
       title: "Mid game",
       timer: "14 → 25 min",
       items: [
-        "Roam ou reste : lis la minimap, juge si mid/jungle a besoin de toi.",
-        "Vision autour des objectifs (Grubs → Herald → Drake), contest la vision adverse.",
-        "Enclenche ou désamorce les teamfights selon ton archétype (engage / enchanter / poke).",
+        "Roam or stay: read the minimap, judge whether mid/jungle needs you.",
+        "Vision around objectives (Grubs → Herald → Drake), contest enemy vision.",
+        "Start or shut down teamfights based on your archetype (engage / enchanter / poke).",
       ],
     },
     {
       title: "Late game",
       timer: "25 min +",
       items: [
-        "Vision profonde autour du Baron, control wards partout.",
-        "Peel ton carry (ADC ou mid) : tes CC servent à garder tes dégâts en vie.",
-        "Flanque ou engage avec l'équipe, jamais seul — tu as 0 dégât.",
+        "Deep vision around Baron, control wards everywhere.",
+        "Peel your carry (ADC or mid): your CC keeps your damage alive.",
+        "Flank or engage with the team, never alone — you have 0 damage.",
       ],
     },
   ];
@@ -35,8 +35,8 @@ function SectionPhases() {
     <section className="section shell" id="s01">
       <SectionHead
         num="01"
-        title="Ce que tu fais, phase par phase"
-        lede="Un Support efficace change de priorités avec le temps. Voici les 3 choses qui comptent à chaque phase."
+        title="What you do, phase by phase"
+        lede="An effective Support shifts priorities over time. Here are the 3 things that matter in each phase."
       />
       <div className="phase-grid">
         {phases.map((p, i) => (
@@ -59,24 +59,24 @@ function SectionPhases() {
 function SectionMap() {
   const [active, setActive] = React.useState(null);
   const pins = [
-    { n: 1, x: 22, y: 73, short: "Bush tribush", long: "1er ward contre gank" },
-    { n: 2, x: 32, y: 82, short: "Bush lane",    long: "Vision de trade" },
-    { n: 3, x: 46, y: 62, short: "River bot",    long: "Timing Scuttle 2:55" },
-    { n: 4, x: 72, y: 36, short: "Tri-brush jungle adverse", long: "Vision profonde" },
-    { n: 5, x: 62, y: 44, short: "Baron pit",    long: "Dès 19:30 pour 20:00" },
-    { n: 6, x: 38, y: 54, short: "Drake pit",    long: "À chaque spawn" },
+    { n: 1, x: 22, y: 73, short: "Tri-bush", long: "Anti-gank when pushed under tower" },
+    { n: 2, x: 32, y: 82, short: "Lane bush",    long: "Behind your line — denies gank vision" },
+    { n: 3, x: 46, y: 62, short: "Bot river",    long: "1:25 first ward · 2:55 scuttle" },
+    { n: 4, x: 72, y: 36, short: "Enemy jungle tri-brush", long: "Deep vision when ahead — never solo" },
+    { n: 5, x: 62, y: 44, short: "Baron pit",    long: "From 19:30 for 20:00" },
+    { n: 6, x: 38, y: 54, short: "Drake pit",    long: "At every spawn" },
   ];
   return (
     <section className="section shell" id="s02">
       <SectionHead
         num="02"
-        title="La Faille depuis ton point de vue"
-        lede="Tes zones, angles de vision et menaces typiques — une lecture de map spécifique au Support."
+        title="The Rift from your point of view"
+        lede="Your zones, vision angles and typical threats — a Support-specific map read."
       />
       <div className="map-wrap">
         <div className="map-frame">
           <div className="map-corners"><span></span><span></span><span></span><span></span></div>
-          <svg viewBox="0 0 100 100" aria-label="Carte stylisée de la Faille">
+          <svg viewBox="0 0 100 100" aria-label="Stylized map of the Rift">
             {/* grid */}
             <defs>
               <pattern id="mg" width="5" height="5" patternUnits="userSpaceOnUse">
@@ -139,7 +139,7 @@ function SectionMap() {
               data-active={active === p.n ? "1" : "0"}
               onMouseEnter={() => setActive(p.n)}
               onMouseLeave={() => setActive(null)}
-              aria-label={`Point ${p.n} : ${p.short}`}
+              aria-label={`Point ${p.n}: ${p.short}`}
             >
               {p.n}
             </button>
@@ -147,7 +147,7 @@ function SectionMap() {
         </div>
 
         <aside className="map-legend">
-          <h4>Légende — 6 points clés</h4>
+          <h4>Legend — 6 key points</h4>
           {pins.map((p) => (
             <div
               key={p.n}
@@ -171,22 +171,22 @@ function SectionSkills() {
   const skills = [
     {
       title: "Vision placement",
-      desc: "Placer un ward à chaque CD de trinket, identifier les 10 spots clés, garder un control ward actif sur les objectifs. Info 2026 : un ward posé sur un Faelight (anneau de champignons brillants) devient un superward — +25% de range et une zone de vision bonus de 45 s.",
+      desc: "Learn the 10 key spots, and remember the Faelights — a ward placed on a ring of glowing mushrooms becomes a super-ward (+25% range, 45s bonus vision zone). Swap your trinket to Oracle Lens the moment your support quest completes — that's when real vision denial starts.",
       link: "/macro/vision",
     },
     {
-      title: "Lecture de lane",
-      desc: "Savoir quand push pour prio-2, quand freeze pour étouffer l'ADC adverse, quand trade selon les CD.",
+      title: "Lane reading",
+      desc: "Know when to push for level-2 prio, when to freeze to starve the enemy ADC, when to trade based on cooldowns.",
       link: "/macro/wave-management",
     },
     {
       title: "Roam timing",
-      desc: "Lire la minimap pour partir au bon moment — push de wave sous tour + ADC sécurisé + mid en danger = go.",
-      link: "/macro/rotations-et-tempo",
+      desc: "Only roam if you'll get a reward (kill, plate, vision setup). Trigger conditions: wave pushing under tower + ADC safe + a target downstream (mid weak, jungler bot side, drake spawning). With CC-heavy champs (Leona, Blitz), roams convert more reliably than with enchanters.",
+      link: "/macro/rotations-and-tempo",
     },
     {
-      title: "Positioning en teamfight",
-      desc: "Engage = rentrer en premier, enchanter = rester derrière l'ADC, peel = se placer entre ton carry et la menace.",
+      title: "Teamfight positioning",
+      desc: "Engage = go in first, enchanter = stay behind the ADC, peel = place yourself between your carry and the threat.",
       link: "/macro/teamfight",
     },
   ];
@@ -194,8 +194,8 @@ function SectionSkills() {
     <section className="section shell" id="s03">
       <SectionHead
         num="03"
-        title="Les compétences qui font la différence"
-        lede="Quatre compétences à travailler en priorité pour devenir un Support fiable dès le bas Elo."
+        title="The skills that make the difference"
+        lede="Four skills to prioritize to become a reliable Support starting in low Elo."
       />
       <div className="skills-grid">
         {skills.map((s, i) => (

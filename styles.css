@@ -276,6 +276,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   font-size: 22px; font-style: italic; line-height: 1.35;
   color: var(--fg);
   margin-bottom: calc(var(--s) * 4);
+  margin-left: 10px;
   max-width: 56ch;
 }
 .hero-intro {
@@ -866,9 +867,9 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   padding: 3px 8px;
   border: 1px solid currentColor;
 }
-.pill--facile { color: #9bb777; }
-.pill--jouable { color: var(--accent); }
-.pill--difficile { color: #c97a6e; }
+.pill--easy { color: #9bb777; }
+.pill--playable { color: var(--accent); }
+.pill--hard { color: #c97a6e; }
 .matchup-table td { color: var(--fg-dim); }
 .matchup-table td.m-win b { color: var(--fg); font-weight: 500; }
 @media (max-width: 768px) {

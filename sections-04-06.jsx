@@ -68,8 +68,8 @@ function SectionTriangle() {
     <section className="section shell" id="s04">
       <SectionHead
         num="04"
-        title="Le triangle des archétypes"
-        lede="La règle fondamentale à connaître par cœur. Ton archétype gagne contre un type, perd contre un autre."
+        title="The archetype triangle"
+        lede="The fundamental rule to know by heart. Your archetype wins against one type, loses to another."
       />
       <div className="triangle-wrap">
         <div className="triangle-stage" ref={stageRef}>
@@ -78,7 +78,7 @@ function SectionTriangle() {
             <circle cx="50" cy="58" r="16" fill="none" stroke="var(--border)" strokeWidth="0.3" />
             <circle cx="50" cy="58" r="10" fill="none" stroke="var(--border-soft)" strokeWidth="0.3" />
             <text x="50" y="56" textAnchor="middle" fontFamily="EB Garamond, serif" fontStyle="italic" fontSize="5" fill="var(--fg-mute)">triangle</text>
-            <text x="50" y="63" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="3" letterSpacing="1" fill="var(--accent)">ARCHÉTYPES</text>
+            <text x="50" y="63" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="3" letterSpacing="1" fill="var(--accent)">ARCHETYPES</text>
 
             {arrows && (() => {
               // Arrow asset: native 12 × 123 viewBox. Triangle tip at (5.77, 0),
@@ -136,10 +136,10 @@ function SectionTriangle() {
         </div>
 
         <aside className="triangle-legend">
-          <h4>Comment lire le triangle</h4>
-          <p>Le <strong>poke</strong> grignote les HP avant qu'un all-in ait l'occasion de s'engager — donc <strong>Poke &gt; All-in</strong>.</p>
-          <p>L'<strong>all-in</strong> lock l'ADC avant que l'enchanter ait le temps de réagir — donc <strong>All-in &gt; Enchanter</strong>.</p>
-          <p>L'<strong>enchanter</strong> heal et shield assez pour annuler la pression du poke — donc <strong>Enchanter &gt; Poke</strong>.</p>
+          <h4>How to read the triangle</h4>
+          <p><strong>Poke</strong> chips away HP before an all-in gets a chance to engage — so <strong>Poke &gt; All-in</strong>.</p>
+          <p><strong>All-in</strong> locks the ADC before the enchanter has time to react — so <strong>All-in &gt; Enchanter</strong>.</p>
+          <p><strong>Enchanter</strong> heals and shields enough to nullify poke pressure — so <strong>Enchanter &gt; Poke</strong>.</p>
         </aside>
       </div>
     </section>
@@ -152,26 +152,47 @@ function SectionPrio2() {
     <section className="section shell" id="s05">
       <SectionHead
         num="05"
-        title="Concept clé : la prio niveau 2"
-        lede="La fenêtre d'all-in la plus critique en botlane. Celui qui atteint le niveau 2 en premier prend l'avantage."
+        title="Key concept: level 2 prio"
+        lede="The most critical all-in window in botlane. Whoever hits level 2 first takes the advantage."
       />
       <div className="callout-grid">
         <article className="callout">
-          <span className="callout-tag"><i className="gl gl--key"></i> Concept clé</span>
-          <h3 className="callout-title serif">Comment atteindre le niveau 2 en premier ?</h3>
+          <span className="callout-tag"><i className="gl gl--key"></i> Key concept</span>
+          <h3 className="callout-title serif">How do you hit level 2 first?</h3>
           <p className="callout-body">
-            Le <b>lvl 2</b> se joue sur la 1ère wave (6 minions) + les 3 minions mélés de la 2e wave.
-            Tape tous ces minions <b>sans les tuer</b> — ton ADC last-hit pendant que tu accumules l'XP.
-            Vous passez 2 ensemble avant l'ADC adverse, fenêtre d'all-in ouverte.
+            <b>Level 2</b> is decided on the 1st wave (6 minions) + the 3 melee minions of the 2nd wave.
+            Damage all those minions <b>without killing them</b> — your ADC last-hits while you stack XP.
+            You both hit level 2 before the enemy ADC — all-in window open.
           </p>
         </article>
         <article className="callout">
-          <span className="callout-tag"><i className="gl gl--pro"></i> Astuce pro</span>
-          <h3 className="callout-title serif">Juge le force-2 sur les dégâts, pas sur la peur</h3>
+          <span className="callout-tag"><i className="gl gl--pro"></i> Pro tip</span>
+          <h3 className="callout-title serif">Judge the force-2 on damage, not fear</h3>
           <p className="callout-body">
-            Le force 2 passe si <b>tes deux champions font plus de dégâts niveau 2</b> que les deux adverses.
-            Un Braum est plus fort lvl 2 que la plupart des supports — même en face d'un Blitz.
-            Compare les kits avant d'éviter par réflexe.
+            Forcing level 2 works if <b>your two champions deal more level-2 damage</b> than the enemy duo.
+            Braum is stronger at level 2 than most supports — even into Blitz.
+            Compare the kits before reflexively backing off.
+          </p>
+        </article>
+        <article className="callout">
+          <span className="callout-tag"><i className="gl gl--pro"></i> Pro tip</span>
+          <h3 className="callout-title serif">Engage windows = enemy cooldowns</h3>
+          <p className="callout-body">
+            Aggression isn't random. It opens when the enemy spends a key cooldown.
+            Enemy ADC just used <b>Ezreal E / Lucian E</b>? You have a 5–10s window of weak retaliation — trade now.
+            Hook champs (<b>Blitz, Thresh</b>) land hooks far more reliably right after the enemy dash is down.
+            No Flash up on the enemy ADC? Repeat-engage to zone them off CS.
+          </p>
+        </article>
+        <article className="callout">
+          <span className="callout-tag"><i className="gl gl--pro"></i> Pro tip</span>
+          <h3 className="callout-title serif">Position alone is a threat</h3>
+          <p className="callout-body">
+            Where you stand at level 1 already sets the lane tone.
+            Tank/engage (<b>Leona, Naut</b>) = in front of your ADC — you telegraph the threat and force the enemy to respect a 2v2 before level 2 even hits.
+            Damage/poke (<b>Lux, Senna</b>) = in line with ADC, in trading range.
+            Enchanter (<b>Soraka, Janna</b>) = slightly behind, where you can heal/shield without eating poke.
+            Wrong stance = your archetype plays against itself.
           </p>
         </article>
       </div>
@@ -183,55 +204,55 @@ function SectionPrio2() {
 function SectionErrors() {
   const errors = [
     {
-      title: "Tu roams au mauvais moment",
-      s: "Tu pars roam alors que ta lane est perdue, ou au moment où le jungle adverse est sur ton ADC.",
-      c: "Tu quittes la lane sans lire la situation.",
-      f: "Roam uniquement si (a) ta lane est even ou gagnée ET tu sais que le jungler adverse n'est pas bot, ou (b) ton jungle joue un objectif (drake, grubs) et tu peux aider à contester. L'ADC joue Barrière ou Purification la quasi-totalité du temps — les seuls vrais TP sont les APC (Veigar, Karthus), donc ne compte pas sur un TP pour le protéger.",
+      title: "You roam at the wrong moment",
+      s: "You leave to roam while your lane is already lost, or when the enemy jungler is on your ADC.",
+      c: "You leave the lane without reading the situation.",
+      f: "Roam only if (a) your lane is even or won AND you know the enemy jungler isn't bot, or (b) your jungler is playing an objective (drake, grubs) and you can help contest. The ADC takes Barrier or Cleanse almost all the time — the only real TP users are APCs (Veigar, Karthus), so don't count on a TP to save them.",
     },
     {
-      title: "Tu achètes des pinks trop tôt et trop souvent",
-      s: "Tu as 3 control wards dans le sac en permanence en early, tes bottes et ton 1er item arrivent en retard.",
-      c: "Le prix des control wards ne tombe à 40g qu'une fois la quête support terminée (800/800). Avant ça, le coût plein t'empêche de stacker tes items clés.",
-      f: "En early, achète un control ward uniquement pour les objectifs (drake, grubs, Herald) ou pour défendre contre un gank ciblé. Priorise bottes + 1er item. Quête terminée → rythme pink régulier à 40g. Rappel : 3 wards trinket max posés à la fois.",
+      title: "You buy pinks too early and too often",
+      s: "You constantly carry 2 control wards in early, your boots and 1st item come out late.",
+      c: "Control ward price only drops to 40g once the support quest is complete (800/800). Before that, the full cost stops you from stacking key items.",
+      f: "In early game, only buy a control ward for objectives (drake, grubs, Herald) or to defend against a targeted gank. Prioritize boots + 1st item. Quest complete → steady pink rhythm at 40g. Reminder: max 3 trinket wards placed at a time.",
     },
     {
-      title: "Tu refuses de toucher aux creeps",
-      s: "Tu ne tapes jamais, l'ADC galère à push les 2 premières waves.",
-      c: "On t'a dit « ne CS pas ». Règle mal interprétée.",
-      f: "Tu dois taper (sans tuer) les creeps des 2 premières waves pour accélérer le push et déclencher la prio-2. Une fois le lvl 2 passé, lève la main uniquement si l'ADC est mort ou en reset.",
+      title: "You refuse to touch the minions",
+      s: "You never auto, the ADC struggles to push the first 2 waves.",
+      c: "Someone told you 'don't CS'. Rule misunderstood.",
+      f: "You should damage (without killing) the creeps of the first 2 waves to speed up the push and trigger level-2 prio. Once level 2 is hit, only step in if the ADC is dead or recalling.",
     },
     {
-      title: "Tu engages sans vision",
-      s: "Leona flash-R sur l'ADC adverse, jungler sort du bush, kill inversé.",
-      c: "Engage avant de ward → pas de check du jungler.",
-      f: "Ward tribush ou river AVANT d'engager. Toujours.",
+      title: "You engage without vision",
+      s: "Leona flash-Rs the enemy ADC, the jungler walks out of the bush, kill flipped.",
+      c: "Engage before warding → no jungler check.",
+      f: "Ward tribush or river BEFORE engaging. Always. And never deep-ward alone if the enemy has a kill threat — wait for your team to come with you.",
     },
     {
-      title: "Tu négliges complètement la vision",
-      s: "Vision score de fin de game : 12. Ton équipe se fait ganker en aveugle.",
-      c: "Tu poses tes wards au hasard ou tu oublies le trinket.",
-      f: "Place un ward à chaque CD de trinket (≈ 90 s). Pink uniquement pour objectifs en early, puis régulièrement après ta quête support. Vise 30+ de vision score en fin de partie.",
+      title: "You completely neglect vision",
+      s: "End-of-game vision score: 12. Your team gets ganked blind.",
+      c: "You place wards at random or forget the trinket.",
+      f: "Place a ward on every trinket CD (≈ 90s) — never sit on 2 charges. Pinks only for objectives in early, then a steady rhythm after your support quest (price drops to 40g). Target vision score = 3× the minutes played (e.g. 23 min → 69).",
     },
     {
-      title: "Tu peel pas ton carry en teamfight",
-      s: "Ton ADC se fait one-shot par l'assassin adverse au milieu du fight.",
-      c: "Tu cherches la kill au lieu de protéger.",
-      f: "Ta priorité = la santé de l'ADC. Stun, slow ou knockup sur son agresseur.",
+      title: "You sit on your support item stacks",
+      s: "You stay at 2-3 charges for minutes — your gold income lags behind a support who cycles them constantly.",
+      c: "You only think 'consume stacks = engage', so when you can't engage you sit.",
+      f: "Cycle your stacks every time you hit 2-3. If you can engage and trade, do it. If you can't (enchanter, no window, no peel), last-hit or tag a minion to convert the stack into gold. The point is constant flow — sitting idle wastes 30-50 gold per laning phase.",
     },
   ];
   return (
     <section className="section shell" id="s06">
       <SectionHead
         num="06"
-        title="Les 6 erreurs qui te coûtent tes games"
-        lede="Pour chacune : le symptôme que tu observes, la cause racine, la correction concrète."
+        title="The 6 mistakes that cost you games"
+        lede="For each: the symptom you see, the root cause, the concrete fix."
       />
       <div className="errors-grid">
         {errors.map((e, i) => (
           <article key={i} className="error-card">
             <h3 className="error-title serif">{e.title}</h3>
             <div className="error-block">
-              <span className="error-lbl">Symptôme</span>
+              <span className="error-lbl">Symptom</span>
               <p className="error-text">{e.s}</p>
             </div>
             <div className="error-block">
@@ -239,7 +260,7 @@ function SectionErrors() {
               <p className="error-text">{e.c}</p>
             </div>
             <div className="error-block">
-              <span className="error-lbl">Correction</span>
+              <span className="error-lbl">Fix</span>
               <p className="error-text">{e.f}</p>
             </div>
           </article>
