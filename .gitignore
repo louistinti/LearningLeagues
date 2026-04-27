@@ -1,0 +1,95 @@
+# ---------- Sécurité : secrets & variables d'environnement ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+secrets.*
+credentials.*
+config.local.*
+
+# ---------- Dépendances ----------
+node_modules/
+bower_components/
+jspm_packages/
+vendor/
+
+# ---------- Builds & artefacts ----------
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+.turbo/
+coverage/
+*.tsbuildinfo
+
+# ---------- Logs ----------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ---------- OS : Windows ----------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ---------- OS : macOS ----------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# ---------- OS : Linux ----------
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+# ---------- Éditeurs / IDE ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.settings/
+
+# ---------- Claude Code (local uniquement) ----------
+.claude/settings.local.json
+.claude/worktrees/
+.claude/projects/
+.claude/shell-snapshots/
+.claude/todos/
+.claude/statsig/
+
+# ---------- Divers ----------
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
