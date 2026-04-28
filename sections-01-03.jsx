@@ -16,7 +16,7 @@ function SectionPhases() {
       title: "Mid game",
       timer: "14 → 25 min",
       items: [
-        "Roam or stay: read the minimap, judge whether mid/jungle needs you.",
+        "Roaming is rarely wrong: ahead, extend the lead; even, create one; behind, find tempo on stronger lanes instead of sinking into bot.",
         "Set up vision before the objective spawns. Reaction time = distance from the pit to your deepest ward — pair pit wards with control wards in high-traffic bushes.",
         "Start or shut down teamfights based on your archetype (engage / enchanter / poke).",
       ],
@@ -25,9 +25,9 @@ function SectionPhases() {
       title: "Late game",
       timer: "25 min +",
       items: [
-        "Deep vision around Baron, control wards everywhere.",
-        "Peel your carry (ADC or mid): your CC keeps your damage alive.",
-        "Flank or engage with the team, never alone — you have 0 damage.",
+        "Deep vision around Baron pit; pink wards on choke points (entrances, jungle routes near objectives) to catch rotations.",
+        "Peel your carry — your CC, shields, or heals keep them alive.",
+        "Engage or peel with the team, never isolated.",
       ],
     },
   ];
