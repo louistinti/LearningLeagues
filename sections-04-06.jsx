@@ -205,7 +205,7 @@ function SectionErrors() {
   const errors = [
     {
       title: "You roam at the wrong moment",
-      s: "You leave to roam while your lane is already lost, or when the enemy jungler is on your ADC.",
+      s: "You roam without checking the enemy jungler position, or you abandon your ADC when they're vulnerable to a dive.",
       c: "You leave the lane without reading the situation.",
       f: "Roam only if (a) your lane is even or won AND you know the enemy jungler isn't bot, or (b) your jungler is playing an objective (drake, grubs) and you can help contest. The ADC takes Barrier or Cleanse almost all the time — the only real TP users are APCs (Veigar, Karthus), so don't count on a TP to save them.",
     },
