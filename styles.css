@@ -741,6 +741,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .errors-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: calc(var(--s) * 3);
   align-items: stretch;
 }
@@ -754,13 +755,13 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   background: var(--surface);
   border: 1px solid var(--border);
   padding: calc(var(--s) * 3);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr 1fr;
   gap: calc(var(--s) * 2);
   position: relative;
   height: 100%;
+  min-height: 550px;
 }
-.error-card > .error-block { display: flex; flex-direction: column; gap: 6px; }
 .error-card::before {
   content: counter(errno, decimal-leading-zero);
   counter-increment: errno;
@@ -772,12 +773,21 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .errors-grid { counter-reset: errno; }
 .error-title {
+  grid-row: 1;
   font-size: 18px; line-height: 1.25;
   color: var(--fg);
   padding-bottom: calc(var(--s) * 2);
   border-bottom: 1px solid var(--rule);
 }
-.error-block { }
+.error-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.error-block:nth-child(2) { grid-row: 2; }
+.error-block:nth-child(3) { grid-row: 3; }
+.error-block:nth-child(4) { grid-row: 4; }
 .error-lbl {
   font-family: 'JetBrains Mono', monospace;
   font-size: 9.5px;
