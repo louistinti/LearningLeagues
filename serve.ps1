@@ -30,7 +30,7 @@ try {
         $res = $ctx.Response
         try {
             $rel = [System.Uri]::UnescapeDataString($req.Url.AbsolutePath.TrimStart('/'))
-            if ([string]::IsNullOrEmpty($rel)) { $rel = "Support.html" }
+            if ([string]::IsNullOrEmpty($rel)) { $rel = "index.html" }
             $path = Join-Path $root $rel
             if (Test-Path $path -PathType Leaf) {
                 $ext = [IO.Path]::GetExtension($path).ToLower()
