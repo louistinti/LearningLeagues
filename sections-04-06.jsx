@@ -137,9 +137,9 @@ function SectionTriangle() {
 
         <aside className="triangle-legend">
           <h4>How to read the triangle</h4>
-          <p><strong>Poke</strong> chips away HP before an all-in gets a chance to engage — so <strong>Poke &gt; All-in</strong>.</p>
-          <p><strong>All-in</strong> locks the ADC before the enchanter has time to react — so <strong>All-in &gt; Enchanter</strong>.</p>
-          <p><strong>Enchanter</strong> heals and shields enough to nullify poke pressure — so <strong>Enchanter &gt; Poke</strong>.</p>
+          <p><strong>Poke</strong> chips away HP before an all-in gets a chance to engage.<br /><strong>Poke &gt; All-in</strong>.</p>
+          <p><strong>All-in</strong> locks the ADC before the enchanter has time to react.<br /><strong>All-in &gt; Enchanter</strong>.</p>
+          <p><strong>Enchanter</strong> heals and shields enough to nullify poke pressure.<br /><strong>Enchanter &gt; Poke</strong>.</p>
         </aside>
       </div>
     </section>
