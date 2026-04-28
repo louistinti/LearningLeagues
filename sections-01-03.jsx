@@ -17,7 +17,7 @@ function SectionPhases() {
       timer: "14 → 25 min",
       items: [
         "Roam or stay: read the minimap, judge whether mid/jungle needs you.",
-        "Vision around objectives (Grubs → Herald → Drake), contest enemy vision.",
+        "Set up vision before the objective spawns. Reaction time = distance from the pit to your deepest ward — pair pit wards with control wards in high-traffic bushes.",
         "Start or shut down teamfights based on your archetype (engage / enchanter / poke).",
       ],
     },
