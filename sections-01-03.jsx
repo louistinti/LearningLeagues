@@ -140,7 +140,7 @@ function SectionSkills() {
   const skills = [
     {
       title: "Vision placement",
-      desc: "Learn the 10 key spots, and remember the Faelights — a ward placed on a ring of glowing mushrooms becomes a super-ward (+25% range, 45s bonus vision zone). Swap your trinket to Oracle Lens the moment your support quest completes — that's when real vision denial starts.",
+      desc: "Learn the 8 key ward placements, and remember the Faelights — a ward placed on a ring of glowing mushrooms becomes a super-ward (+25% range, 45s bonus vision zone). Swap your trinket to Oracle Lens the moment your support quest completes — that's when real vision denial starts.",
       link: "/macro/vision",
     },
     {
