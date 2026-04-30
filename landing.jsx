@@ -49,7 +49,7 @@ function LandingHero() {
               <span className="dot-sep">·</span>
               <span><strong>By role</strong> · top, jungle, mid, adc, support</span>
               <span className="dot-sep">·</span>
-              <span><strong>Beginner → Bronze</strong></span>
+              <span><strong>Iron → Platinium</strong></span>
             </div>
           </div>
 
