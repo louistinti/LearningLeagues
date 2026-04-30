@@ -217,12 +217,12 @@ function TocSidebar() {
     { id: "s03", num: "03", label: "Skills" },
     { id: "s04", num: "04", label: "Triangle" },
     { id: "s05", num: "05", label: "Prio lvl 2" },
-    { id: "s06", num: "06", label: "Erreurs" },
+    { id: "s06", num: "06", label: "Mistakes" },
     { id: "s07", num: "07", label: "Champions" },
     { id: "s08", num: "08", label: "Build" },
     { id: "s09", num: "09", label: "Matchups" },
     { id: "s10", num: "10", label: "Checklist" },
-    { id: "s11", num: "11", label: "Pratique" },
+    { id: "s11", num: "11", label: "Practice" },
   ];
   const [active, setActive] = React.useState("s01");
   const lockRef = React.useRef(false);
@@ -287,8 +287,8 @@ function TocSidebar() {
   };
 
   return (
-    <aside className="toc" aria-label="Sommaire">
-      <div className="toc-label mono">Sommaire</div>
+    <aside className="toc" aria-label="Contents">
+      <div className="toc-label mono">Contents</div>
       <ol className="toc-list">
         {items.map((it) => (
           <li key={it.id} className={"toc-item" + (active === it.id ? " is-active" : "")}>
