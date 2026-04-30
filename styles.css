@@ -788,13 +788,17 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   position: relative;
   display: grid;
   grid-template-rows: subgrid;
+  grid-template-columns: auto 1fr; /* counter on the left, title fills the rest */
   grid-row: span 4;
-  row-gap: 0;                      /* spacing inside the card comes from .error-block padding */
+  column-gap: 14px;
+  row-gap: 0;
 }
 .error-card::before {
   content: counter(errno, decimal-leading-zero);
   counter-increment: errno;
   grid-row: 1;
+  grid-column: 1;
+  align-self: baseline;
   font-family: 'EB Garamond', serif; font-style: italic;
   font-size: 40px;
   color: var(--accent);
@@ -803,13 +807,15 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .error-title {
   grid-row: 1;
+  grid-column: 2;
+  align-self: baseline;
   font-size: 18px; line-height: 1.25;
   color: var(--fg);
   padding-bottom: calc(var(--s) * 2);
   border-bottom: 1px solid var(--rule);
-  margin: 0;
 }
 .error-block {
+  grid-column: 1 / -1;             /* span both columns under the header */
   padding: 12px 0;
   display: flex;
   flex-direction: column;
