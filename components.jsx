@@ -210,4 +210,97 @@ function LangSwitcher() {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher });
+function TocSidebar() {
+  const items = [
+    { id: "s01", num: "01", label: "Phases" },
+    { id: "s02", num: "02", label: "Map" },
+    { id: "s03", num: "03", label: "Skills" },
+    { id: "s04", num: "04", label: "Triangle" },
+    { id: "s05", num: "05", label: "Prio lvl 2" },
+    { id: "s06", num: "06", label: "Erreurs" },
+    { id: "s07", num: "07", label: "Champions" },
+    { id: "s08", num: "08", label: "Build" },
+    { id: "s09", num: "09", label: "Matchups" },
+    { id: "s10", num: "10", label: "Checklist" },
+    { id: "s11", num: "11", label: "Pratique" },
+  ];
+  const [active, setActive] = React.useState("s01");
+  const lockRef = React.useRef(false);
+  const NAV_OFFSET = 80;
+  const TRIGGER = NAV_OFFSET + 40;
+
+  React.useEffect(() => {
+    const ids = items.map((i) => i.id);
+    const compute = () => {
+      if (lockRef.current) return;
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        if (top - TRIGGER <= 0.5) current = id;
+        else break;
+      }
+      setActive((prev) => (prev === current ? prev : current));
+    };
+    compute();
+    window.addEventListener("scroll", compute, { passive: true });
+    window.addEventListener("resize", compute);
+    return () => {
+      window.removeEventListener("scroll", compute);
+      window.removeEventListener("resize", compute);
+    };
+  }, []);
+
+  const onClick = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
+    const targetTop = Math.max(
+      0,
+      Math.round(el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET)
+    );
+    setActive(id);
+    lockRef.current = true;
+
+    let stableFrames = 0;
+    let lastY = window.scrollY;
+    let raf = 0;
+    let safety = 0;
+    const release = () => {
+      lockRef.current = false;
+      cancelAnimationFrame(raf);
+      clearTimeout(safety);
+    };
+    const tick = () => {
+      const y = window.scrollY;
+      const atTarget = Math.abs(y - targetTop) < 2;
+      const stopped = y === lastY;
+      lastY = y;
+      stableFrames = stopped ? stableFrames + 1 : 0;
+      if (atTarget && stableFrames >= 4) { release(); return; }
+      raf = requestAnimationFrame(tick);
+    };
+    safety = setTimeout(release, 1500);
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
+    raf = requestAnimationFrame(tick);
+  };
+
+  return (
+    <aside className="toc" aria-label="Sommaire">
+      <div className="toc-label mono">Sommaire</div>
+      <ol className="toc-list">
+        {items.map((it) => (
+          <li key={it.id} className={"toc-item" + (active === it.id ? " is-active" : "")}>
+            <a href={"#" + it.id} className="toc-link" onClick={(e) => onClick(e, it.id)}>
+              <span className="toc-num mono">{it.num}</span>
+              <span className="toc-text">{it.label}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  );
+}
+
+Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar });

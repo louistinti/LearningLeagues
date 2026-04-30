@@ -14,6 +14,7 @@ function App() {
   return (
     <>
       <Nav />
+      <TocSidebar />
       <Breadcrumb />
       <Hero />
       <SectionPhases />
