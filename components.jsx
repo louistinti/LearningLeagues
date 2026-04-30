@@ -14,7 +14,7 @@ function Nav() {
   return (
     <div className="nav">
       <div className="shell nav-inner">
-        <a className="logo" href="#">
+        <a className="logo" href="index.html">
           <LogoMark />
           <span>Learning Leagues</span>
         </a>
