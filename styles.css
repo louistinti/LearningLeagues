@@ -1404,6 +1404,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 
 /* ── Landing — hero ─────────────────────────────────────────────────────── */
 .landing-hero { padding: calc(var(--s) * 14) 0 calc(var(--s) * 14); border-bottom: 1px solid var(--rule); }
+.landing-hero::before { mask-image: linear-gradient(to bottom, black 82%, transparent); }
 .landing-hero-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
