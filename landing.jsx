@@ -15,9 +15,6 @@ function LandingHero() {
       <div className="shell">
         <div className="landing-hero-grid">
           <div>
-            <div className="eyebrow hero-eyebrow">
-              LEARNING LEAGUES <span className="dot"></span> PATCH 26.X
-            </div>
             <h1 className="serif landing-h1">
               Everything you need to learn
               League of <em>Legends.</em>
@@ -145,7 +142,6 @@ function RolesSection() {
       <div className="shell">
         <div className="showcase-grid showcase-grid--centered">
           <div className="showcase-text">
-            <div className="showcase-num mono">02</div>
             <div className="eyebrow eyebrow--accent showcase-eyebrow">THE FIVE POSITIONS</div>
             <h2 className="showcase-title serif">Choose your <em>role.</em></h2>
             <p className="showcase-lede">
