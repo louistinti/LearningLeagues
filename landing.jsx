@@ -19,7 +19,7 @@ function LandingHero() {
               LEARNING LEAGUES <span className="dot"></span> PATCH 26.X
             </div>
             <h1 className="serif landing-h1">
-              Everything you need to learn<br />
+              Everything you need to learn
               League of <em>Legends.</em>
             </h1>
 
@@ -126,7 +126,6 @@ function FundamentalsVisual() {
           </div>
         ))}
       </div>
-      <span className="fund-credit mono">CURRICULUM · 6 MODULES</span>
     </div>
   );
 }
