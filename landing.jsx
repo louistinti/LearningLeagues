@@ -185,7 +185,6 @@ function TrainingVisual() {
   ];
   return (
     <div className="train-vignette">
-      <div className="train-corners"><span></span><span></span></div>
       <div className="train-head">
         <span className="mono">PRACTICE TOOL · DRILL #03</span>
         <span className="train-status mono">● LIVE</span>
@@ -213,7 +212,6 @@ function ResourcesVisual() {
   const tools = ["LOLALYTICS", "U.GG", "OP.GG", "DPM.LOL"];
   return (
     <div className="res-vignette">
-      <div className="res-corners"><span></span><span></span></div>
       <div className="res-head mono">EXTERNAL · 4 TOOLS</div>
       <ul className="res-list">
         {tools.map((t, i) => (

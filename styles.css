@@ -1404,7 +1404,6 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 
 /* ── Landing — hero ─────────────────────────────────────────────────────── */
 .landing-hero { padding: calc(var(--s) * 14) 0 calc(var(--s) * 14); border-bottom: 1px solid var(--rule); }
-.landing-hero::before { mask-image: linear-gradient(to bottom, black 82%, transparent); }
 .landing-hero-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -1645,12 +1644,6 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .train-vignette::before { top: -1px; left: -1px;    border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
 .train-vignette::after  { bottom: -1px; right: -1px; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
-.train-corners span {
-  position: absolute; width: 16px; height: 16px;
-  pointer-events: none;
-}
-.train-corners span:nth-child(1) { top: -1px; right: -1px;    border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
-.train-corners span:nth-child(2) { bottom: -1px; left: -1px;  border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
 .train-head {
   display: flex; justify-content: space-between; align-items: center;
   font-size: 10px; letter-spacing: 0.16em;
@@ -1706,12 +1699,6 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .res-vignette::before { top: -1px; right: -1px;    border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
 .res-vignette::after  { bottom: -1px; left: -1px;  border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
-.res-corners span {
-  position: absolute; width: 16px; height: 16px;
-  pointer-events: none;
-}
-.res-corners span:nth-child(1) { top: -1px; left: -1px;     border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
-.res-corners span:nth-child(2) { bottom: -1px; right: -1px; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
 .res-head {
   font-size: 10px; letter-spacing: 0.18em;
   color: var(--fg-mute);
