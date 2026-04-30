@@ -810,6 +810,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   grid-row: 1;
   grid-column: 2;
   font-size: 18px; line-height: 2;
+  margin-bottom: 8px;
   color: var(--fg);
   border-bottom: 1px solid var(--rule);
 }
@@ -827,11 +828,11 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .error-block:nth-child(4) { grid-row: 4; }
 .error-lbl {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--accent);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .error-text { font-size: 13.5px; color: var(--fg-dim); line-height: 1.55; }
 
