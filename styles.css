@@ -808,10 +808,8 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .error-title {
   grid-row: 1;
   grid-column: 2;
-  align-self: baseline;
-  font-size: 18px; line-height: 1.25;
+  font-size: 18px; line-height: 2;
   color: var(--fg);
-  padding-bottom: calc(var(--s) * 2);
   border-bottom: 1px solid var(--rule);
 }
 .error-block {
