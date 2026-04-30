@@ -823,6 +823,9 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .error-block + .error-block {
   border-top: 1px dashed var(--rule);
 }
+.error-block:last-child {
+  padding-bottom: 0;
+}
 .error-block:nth-child(2) { grid-row: 2; }
 .error-block:nth-child(3) { grid-row: 3; }
 .error-block:nth-child(4) { grid-row: 4; }
