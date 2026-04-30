@@ -395,7 +395,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .phase-list li {
   counter-increment: step;
-  padding: 8px 0 8px 36px;
+  padding: 12px 0 12px 36px;
   position: relative;
   font-size: 14.5px; line-height: 1.55;
   color: var(--fg-dim);
