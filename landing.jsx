@@ -243,7 +243,7 @@ function LandingNav() {
         </a>
         <nav className="nav-links" aria-label="Primary">
           <a className="nav-link" href="#s-fundamentals">Fundamentals</a>
-          <a className="nav-link" href="#s-roles">Roles</a>
+          <RolesDropdown />
           <a className="nav-link" href="#">Champions</a>
           <a className="nav-link" href="#s-training">Training</a>
           <a className="nav-link" href="#s-resources">Resources</a>

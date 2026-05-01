@@ -176,7 +176,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   border-radius: 2px; transition: color .15s, background .15s;
   position: relative;
 }
-.nav-link:hover { color: var(--fg); }
+.nav-link:hover { color: var(--accent); }
 .nav-link[aria-current="page"] {
   color: var(--accent);
 }
@@ -192,6 +192,37 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .nav-cta:hover { background: var(--gold-soft); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
+
+/* Roles dropdown — replaces the static "Roles" nav link */
+.nav-roles { position: relative; display: inline-flex; }
+.nav-roles-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; border: 0; cursor: pointer;
+  font: inherit;
+}
+.nav-roles-caret {
+  width: 0.62em; height: 0.5em;       /* sized below cap-height so it doesn't push line-height */
+  flex-shrink: 0;
+  opacity: 0.95;
+  transform: rotate(180deg);          /* user's SVG points up; rotate so the tip always points down */
+}
+.nav-roles-menu {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  min-width: 160px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  list-style: none; margin: 0; padding: 4px;
+  z-index: 50;
+}
+.nav-roles-item {
+  display: block;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--fg-dim);
+  transition: color .15s, background .15s;
+}
+.nav-roles-item:hover { color: var(--accent); background: var(--surface-2); }
 
 .lang-wrap { position: relative; }
 .lang-btn {
@@ -218,7 +249,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   z-index: 50;
 }
 .lang-item {
-  display: flex; align-items: baseline; gap: 10px;
+  display: flex; align-items: baseline; gap: 8px;
   padding: 7px 10px;
   font-size: 13px;
   color: var(--fg-dim);

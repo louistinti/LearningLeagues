@@ -20,7 +20,7 @@ function Nav() {
         </a>
         <nav className="nav-links" aria-label="Primary">
           <a className="nav-link" href="#">Foundations</a>
-          <a className="nav-link" href="#" aria-current="page">Roles</a>
+          <RolesDropdown active />
           <a className="nav-link" href="#">Champions</a>
           <a className="nav-link" href="#">Macro</a>
           <a className="nav-link" href="#">Pathways</a>
@@ -30,6 +30,58 @@ function Nav() {
           <button className="nav-cta">Role quiz →</button>
         </div>
       </div>
+    </div>
+  );
+}
+
+function RolesDropdown({ active }) {
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onDoc = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const roles = [
+    { name: "Top",     href: "/roles/top" },
+    { name: "Jungle",  href: "/roles/jungle" },
+    { name: "Mid",     href: "/roles/middle" },
+    { name: "ADC",     href: "/roles/bottom" },
+    { name: "Support", href: "Support.html" },
+  ];
+
+  return (
+    <div className="nav-roles" ref={ref}>
+      <button
+        type="button"
+        className={"nav-link nav-roles-btn" + (active ? " is-active" : "")}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-current={active ? "page" : undefined}
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span>Roles</span>
+        <svg className="nav-roles-caret" viewBox="0 0 20 16" fill="currentColor" aria-hidden="true">
+          <path d="M10 0L20 16H0L10 0Z" />
+        </svg>
+      </button>
+      {open && (
+        <ul className="nav-roles-menu" role="menu">
+          {roles.map((r) => (
+            <li key={r.name} role="none">
+              <a className="nav-roles-item" role="menuitem" href={r.href}>{r.name}</a>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
