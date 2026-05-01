@@ -1507,6 +1507,13 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 32px 32px;
 }
+.fund-vignette::before, .fund-vignette::after {
+  content: ""; position: absolute;
+  width: 16px; height: 16px;
+  pointer-events: none;
+}
+.fund-vignette::before { top: -1px; right: -1px;    border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+.fund-vignette::after  { bottom: -1px; left: -1px;  border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
 .fund-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
