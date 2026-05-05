@@ -10,7 +10,11 @@ function LogoMark() {
   );
 }
 
-function Nav() {
+function Nav({ activeKey = "roles" }) {
+  const linkProps = (key) => ({
+    className: "nav-link" + (activeKey === key ? " is-active" : ""),
+    "aria-current": activeKey === key ? "page" : undefined,
+  });
   return (
     <div className="nav">
       <div className="shell nav-inner">
@@ -19,11 +23,11 @@ function Nav() {
           <span>Learning Leagues</span>
         </a>
         <nav className="nav-links" aria-label="Primary">
-          <a className="nav-link" href="#">Foundations</a>
-          <RolesDropdown active />
-          <a className="nav-link" href="#">Champions</a>
-          <a className="nav-link" href="#">Macro</a>
-          <a className="nav-link" href="#">Pathways</a>
+          <a {...linkProps("foundations")} href="Fundamentals.html">Foundations</a>
+          <RolesDropdown active={activeKey === "roles"} />
+          <a {...linkProps("champions")} href="#">Champions</a>
+          <a {...linkProps("macro")} href="#">Macro</a>
+          <a {...linkProps("pathways")} href="#">Pathways</a>
         </nav>
         <div className="nav-right">
           <LangSwitcher />
