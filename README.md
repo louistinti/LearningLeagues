@@ -8,7 +8,8 @@ A static site to teach **League of Legends** properly — from MOBA-savvy beginn
 
 - `index.html` — landing page (hero, fundamentals, 5-roles grid, training, resources)
 - `Support.html` — first complete role guide (phases, map, archetypes, errors, champions, build, matchups, checklist, practice)
-- `landing.jsx`, `app.jsx`, `components.jsx`, `sections-*.jsx` — React components transpiled in-browser via Babel
+- `Fundamentals.html` — base-layer guide (map, items, runes, vision, wave management, neutral objectives)
+- `landing.jsx`, `app.jsx`, `components.jsx`, `fundamentals.jsx`, `sections-*.jsx` — React components transpiled in-browser via Babel
 - `styles.css` — Hextech design system: tokens swap via `[data-palette]`, `[data-density]`, `[data-accent]` on `<html>`
 - `DesignSystem.html` + `design-system.{css,jsx}`, `ds-foundations.jsx`, `ds-components.jsx`, `ds-patterns.jsx` — visual reference page for the design system (foundations, components, patterns). Not linked from the live site; open the URL directly.
 - `assets/sr-map-clean.png` — Summoner's Rift map used by Section 02
