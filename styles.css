@@ -375,7 +375,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse at 20% 30%, black, transparent 70%);
+  mask-image: radial-gradient(ellipse at 80% 30%, black, transparent 70%);
   pointer-events: none;
   opacity: 0.8;
 }
