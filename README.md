@@ -10,6 +10,7 @@ A static site to teach **League of Legends** properly — from MOBA-savvy beginn
 - `Support.html` — first complete role guide (phases, map, archetypes, errors, champions, build, matchups, checklist, practice)
 - `landing.jsx`, `app.jsx`, `components.jsx`, `sections-*.jsx` — React components transpiled in-browser via Babel
 - `styles.css` — Hextech design system: tokens swap via `[data-palette]`, `[data-density]`, `[data-accent]` on `<html>`
+- `DesignSystem.html` + `design-system.{css,jsx}`, `ds-foundations.jsx`, `ds-components.jsx`, `ds-patterns.jsx` — visual reference page for the design system (foundations, components, patterns). Not linked from the live site; open the URL directly.
 - `assets/sr-map-clean.png` — Summoner's Rift map used by Section 02
 
 No build step. The pages load React + ReactDOM + Babel-standalone from a CDN and transpile the JSX at runtime.
@@ -39,3 +40,5 @@ Three palettes (`hextech` default, `codex`, `esport`), three accents (`or`, `amb
 ```
 
 CSS reads the data-attrs to swap tokens. EB Garamond for serif, Inter for sans, JetBrains Mono for the eyebrows.
+
+Full visual reference at `DesignSystem.html` (open the URL directly — it isn't linked from the site nav). Three tabs: **Foundations** (color, type, spacing, borders, icons), **Components** (buttons, inputs, tags, tabs, cards, charts), **Patterns** (lesson cards, tier display, leaderboard, stat strip, empty state).
