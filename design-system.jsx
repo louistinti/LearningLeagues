@@ -38,7 +38,7 @@ function DSNav({ tab, setTab }) {
   return (
     <div className="nav">
       <div className="shell nav-inner">
-        <a className="logo" href="Landing.html">
+        <a className="logo" href="index.html">
           <LogoMark />
           <span>Learning Leagues</span>
           <span className="ds-brand-tag mono">/ DESIGN SYSTEM</span>
@@ -55,7 +55,7 @@ function DSNav({ tab, setTab }) {
           ))}
         </nav>
         <div className="nav-right">
-          <a className="nav-cta" href="Landing.html">← Back to site</a>
+          <a className="nav-cta" href="index.html">← Back to site</a>
         </div>
       </div>
     </div>
