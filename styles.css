@@ -87,9 +87,23 @@ a { color: inherit; text-decoration: none; }
 :root[data-accent="ambre"] { --accent: var(--accent-ambre);}
 :root[data-accent="bleu"]  { --accent: var(--accent-bleu); }
 
-/* Density — base spacing unit */
+/* Spacing scale — strict 8px ladder (Design System §04). 4px is the absolute
+   minimum (hairline only); 12px is the only allowed half-step. */
+:root {
+  --s-05: 4px;
+  --s-1:  8px;
+  --s-15: 12px;
+  --s-2:  16px;
+  --s-3:  24px;
+  --s-4:  32px;
+  --s-5:  40px;
+  --s-6:  48px;
+  --s-8:  64px;
+}
+
+/* Density — base spacing unit (--s drives existing calc(var(--s) * N) callsites) */
 :root[data-density="aere"]    { --s: 8px;    --section-y: 140px; --body-size: 16px; }
-:root[data-density="compact"] { --s: 6px;    --section-y: 88px;  --body-size: 15px; }
+:root[data-density="compact"] { --s: 8px;    --section-y: 88px;  --body-size: 15px; }
 
 /* ── Global type ────────────────────────────────────────────────────────── */
 
