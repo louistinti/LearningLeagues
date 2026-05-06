@@ -3,6 +3,7 @@
 A static site to teach **League of Legends** properly — from MOBA-savvy beginner to confident Bronze, structured by role with no jargon and no chasing the meta.
 
 > Live: <https://louistinti.github.io/LearningLeagues/>
+> Design system: <https://louistinti.github.io/LearningLeagues/DesignSystem.html>
 
 ## What's here
 
@@ -42,4 +43,4 @@ Three palettes (`hextech` default, `codex`, `esport`), three accents (`or`, `amb
 
 CSS reads the data-attrs to swap tokens. EB Garamond for serif, Inter for sans, JetBrains Mono for the eyebrows.
 
-Full visual reference at `DesignSystem.html` (open the URL directly — it isn't linked from the site nav). Three tabs: **Foundations** (color, type, spacing, borders, icons), **Components** (buttons, inputs, tags, tabs, cards, charts), **Patterns** (lesson cards, tier display, leaderboard, stat strip, empty state).
+Full visual reference at [`DesignSystem.html`](https://louistinti.github.io/LearningLeagues/DesignSystem.html) — three tabs: **Foundations** (color, type, spacing, borders, icons), **Components** (buttons, inputs, tags, tabs, cards, charts), **Patterns** (lesson cards, tier display, leaderboard, stat strip, empty state). Not linked from the site nav.
