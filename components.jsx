@@ -62,6 +62,54 @@ function Gloss({ term, def, children }) {
   );
 }
 
+/* ── Callout — key concept / pro tip / trap ───────────────────────────────
+   <Callout type="key|pro|trap" title="…">body</Callout>
+   Replaces the manual <article class="callout"><span class="callout-tag">
+   <i class="gl gl--…"></i> Label</span>… pattern. Single source of truth
+   for tag label + glyph class, so future role guides can't drift. */
+const CALLOUT_TYPES = {
+  key:  { tag: "Key concept", glyph: "gl--key"  },
+  pro:  { tag: "Pro tip",     glyph: "gl--pro"  },
+  trap: { tag: "Trap",        glyph: "gl--trap" },
+};
+
+function Callout({ type = "pro", title, children }) {
+  const c = CALLOUT_TYPES[type] || CALLOUT_TYPES.pro;
+  return (
+    <article className="callout" data-callout={type}>
+      <span className="callout-tag"><i className={"gl " + c.glyph}></i> {c.tag}</span>
+      {title ? <h3 className="callout-title serif">{title}</h3> : null}
+      <div className="callout-body">{children}</div>
+    </article>
+  );
+}
+
+/* ── ErrorCard — Symptom / Cause / Fix template ───────────────────────────
+   <ErrorCard title="" symptom={…} cause={…} fix={…} />
+   The §06 "6 mistakes" pattern lifted into a single component so every
+   future role guide uses the exact same Symptom/Cause/Fix triad without
+   re-implementing the markup. Children of each field can be a string or
+   JSX (e.g. <Gloss term="vision score" /> inside symptom). */
+function ErrorCard({ title, symptom, cause, fix }) {
+  return (
+    <article className="error-card">
+      <h3 className="error-title serif">{title}</h3>
+      <div className="error-block">
+        <span className="error-lbl">Symptom</span>
+        <p className="error-text">{symptom}</p>
+      </div>
+      <div className="error-block">
+        <span className="error-lbl">Cause</span>
+        <p className="error-text">{cause}</p>
+      </div>
+      <div className="error-block">
+        <span className="error-lbl">Fix</span>
+        <p className="error-text">{fix}</p>
+      </div>
+    </article>
+  );
+}
+
 function LogoMark() {
   return (
     <svg className="logo-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -417,4 +465,4 @@ function TocSidebar() {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, LL_TIERS, LL_GLOSSARY });
+Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, Callout, ErrorCard, LL_TIERS, LL_GLOSSARY, CALLOUT_TYPES });

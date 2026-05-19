@@ -156,45 +156,29 @@ function SectionPrio2() {
         lede="Whoever hits level 2 first takes the engage. The highest-stakes window in botlane."
       />
       <div className="callout-grid">
-        <article className="callout">
-          <span className="callout-tag"><i className="gl gl--key"></i> Key concept</span>
-          <h3 className="callout-title serif">How do you hit level 2 first?</h3>
-          <p className="callout-body">
-            <b>Level 2</b> is decided on the 1st wave (6 minions) + the 3 melee minions of the 2nd wave.
-            Damage all those minions <b>without killing them</b>. Your ADC last-hits while you stack XP.
-            You both hit level 2 before the enemy ADC. Engage window open.
-          </p>
-        </article>
-        <article className="callout">
-          <span className="callout-tag"><i className="gl gl--pro"></i> Pro tip</span>
-          <h3 className="callout-title serif">Judge the force-2 on damage, not fear</h3>
-          <p className="callout-body">
-            Forcing level 2 works if <b>your two champions deal more level-2 damage</b> than the enemy duo.
-            Braum is stronger at level 2 than most supports, even into Blitz.
-            Compare the kits before reflexively backing off.
-          </p>
-        </article>
-        <article className="callout">
-          <span className="callout-tag"><i className="gl gl--pro"></i> Pro tip</span>
-          <h3 className="callout-title serif">Engage windows = enemy cooldowns</h3>
-          <p className="callout-body">
-            Aggression isn't random. It opens when the enemy spends a key cooldown.
-            Enemy ADC just used <b><Gloss term="Ezreal E">Ezreal E</Gloss> / <Gloss term="Lucian E">Lucian E</Gloss></b>? You have a 5–10s window of weak retaliation. Trade now.
-            Hook champions (<b>Blitz, Thresh</b>) land hooks much more reliably once the enemy ADC's dash is on cooldown.
-            No Flash up on the enemy ADC? Repeat-engage to zone them off CS.
-          </p>
-        </article>
-        <article className="callout">
-          <span className="callout-tag"><i className="gl gl--pro"></i> Pro tip</span>
-          <h3 className="callout-title serif">Position alone is a threat</h3>
-          <p className="callout-body">
-            Where you stand at level 1 already sets the lane tone.
-            Tank/engage (<b>Leona, Naut</b>) = in front of your ADC. You telegraph the threat and force the enemy to respect a 2v2 before level 2 even hits.
-            Damage/poke (<b>Lux, Senna</b>) = in line with ADC, in trading range.
-            Enchanter (<b>Soraka, Janna</b>) = slightly behind, where you can heal/shield without eating poke.
-            Wrong stance = your archetype plays against itself.
-          </p>
-        </article>
+        <Callout type="key" title="How do you hit level 2 first?">
+          <b>Level 2</b> is decided on the 1st wave (6 minions) + the 3 melee minions of the 2nd wave.
+          Damage all those minions <b>without killing them</b>. Your ADC last-hits while you stack XP.
+          You both hit level 2 before the enemy ADC. Engage window open.
+        </Callout>
+        <Callout type="pro" title="Judge the force-2 on damage, not fear">
+          Forcing level 2 works if <b>your two champions deal more level-2 damage</b> than the enemy duo.
+          Braum is stronger at level 2 than most supports, even into Blitz.
+          Compare the kits before reflexively backing off.
+        </Callout>
+        <Callout type="pro" title="Engage windows = enemy cooldowns">
+          Aggression isn't random. It opens when the enemy spends a key cooldown.
+          Enemy ADC just used <b><Gloss term="Ezreal E">Ezreal E</Gloss> / <Gloss term="Lucian E">Lucian E</Gloss></b>? You have a 5–10s window of weak retaliation. Trade now.
+          Hook champions (<b>Blitz, Thresh</b>) land hooks much more reliably once the enemy ADC's dash is on cooldown.
+          No Flash up on the enemy ADC? Repeat-engage to zone them off CS.
+        </Callout>
+        <Callout type="pro" title="Position alone is a threat">
+          Where you stand at level 1 already sets the lane tone.
+          Tank/engage (<b>Leona, Naut</b>) = in front of your ADC. You telegraph the threat and force the enemy to respect a 2v2 before level 2 even hits.
+          Damage/poke (<b>Lux, Senna</b>) = in line with ADC, in trading range.
+          Enchanter (<b>Soraka, Janna</b>) = slightly behind, where you can heal/shield without eating poke.
+          Wrong stance = your archetype plays against itself.
+        </Callout>
       </div>
     </section>
   );
@@ -249,21 +233,7 @@ function SectionErrors() {
       />
       <div className="errors-grid">
         {errors.map((e, i) => (
-          <article key={i} className="error-card">
-            <h3 className="error-title serif">{e.title}</h3>
-            <div className="error-block">
-              <span className="error-lbl">Symptom</span>
-              <p className="error-text">{e.s}</p>
-            </div>
-            <div className="error-block">
-              <span className="error-lbl">Cause</span>
-              <p className="error-text">{e.c}</p>
-            </div>
-            <div className="error-block">
-              <span className="error-lbl">Fix</span>
-              <p className="error-text">{e.f}</p>
-            </div>
-          </article>
+          <ErrorCard key={i} title={e.title} symptom={e.s} cause={e.c} fix={e.f} />
         ))}
       </div>
     </section>

@@ -30,6 +30,22 @@ function Components() {
       <DSSection num="07" title="Gloss" lede="Inline annotation for LoL terms on first mention. Dotted underline + native tooltip. Sourced from LL_GLOSSARY (components.jsx) — never inline ad-hoc.">
         <GlossShowcase />
       </DSSection>
+
+      <DSSection num="08" title="Callout" lede="Key concept / Pro tip / Trap. Use the <Callout type='key|pro|trap' title=''> component — never re-implement the article.callout markup inline.">
+        <CalloutShowcase />
+      </DSSection>
+
+      <DSSection num="09" title="ErrorCard" lede="Symptom / Cause / Fix triad. The §06 'mistakes' template lifted into <ErrorCard title symptom cause fix />. Every future role guide reuses this verbatim.">
+        <ErrorCardShowcase />
+      </DSSection>
+
+      <DSSection num="10" title="Breadcrumb" lede="Page-context indicator. Home › Roles › <current>. One per role page, above the hero.">
+        <BreadcrumbShowcase />
+      </DSSection>
+
+      <DSSection num="11" title="TOC sidebar" lede="Long-page chapter index. Fixed-position vertical list, active item bolded, click scrolls smoothly to anchor.">
+        <TocShowcase />
+      </DSSection>
     </React.Fragment>
   );
 }
@@ -141,9 +157,9 @@ function TagsShowcase() {
       <span className="callout-tag"><span className="gl gl--key"></span> KEY POINT</span>
       <span className="callout-tag"><span className="gl gl--pro"></span> PRO TIP</span>
       <span className="callout-tag"><span className="gl gl--trap"></span> TRAP</span>
-      <span className="pill pill--facile">FACILE</span>
-      <span className="pill pill--jouable">JOUABLE</span>
-      <span className="pill pill--difficile">DIFFICILE</span>
+      <span className="pill pill--easy">EASY</span>
+      <span className="pill pill--playable">PLAYABLE</span>
+      <span className="pill pill--hard">HARD</span>
       <span className="ds-chip">PATCH 26.X</span>
       <span className="ds-chip ds-chip--accent">EUW</span>
       <span className="ds-chip ds-chip--win">WIN</span>
@@ -314,4 +330,81 @@ function DemoCell({ label, children }) {
   );
 }
 
-Object.assign(window, { Components, ButtonsShowcase, InputsShowcase, TagsShowcase, TabsShowcase, CardsShowcase, ChartsShowcase, BarChart, LineChart, DemoCell });
+function CalloutShowcase() {
+  return (
+    <div className="callout-grid">
+      <Callout type="key" title="The one rule">
+        Body of a <b>Key concept</b>. Use for the single most important takeaway of a section. Maximum one per section.
+      </Callout>
+      <Callout type="pro" title="Time it on cooldowns">
+        Body of a <b>Pro tip</b>. Use for actionable advice that follows from the Key concept. Multiple allowed per section.
+      </Callout>
+      <Callout type="trap" title="Don't roam blind">
+        Body of a <b>Trap</b>. Use for common low-Elo mistakes. Short. Direct. No hedging.
+      </Callout>
+    </div>
+  );
+}
+
+function ErrorCardShowcase() {
+  const sample = [
+    {
+      title: "You roam at the wrong moment",
+      s: "You leave bot lane when your ADC is on low HP and the enemy jungler is missing.",
+      c: "You read 'roam = good' without checking the conditions.",
+      f: "Roam only when (a) your lane is ahead AND the enemy jungler is accounted for, OR (b) your jungler is contesting an objective and you can help.",
+    },
+    {
+      title: "You skip the early control ward",
+      s: "You die to a tribush gank at 4 minutes with full pinks in your pocket.",
+      c: "Hoarding the pink for later instead of buying when you can afford one.",
+      f: "If you have 75g and you're at full HP, drop a control ward on the way back to lane. Always.",
+    },
+  ];
+  return (
+    <div className="errors-grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
+      {sample.map((e, i) => (
+        <ErrorCard key={i} title={e.title} symptom={e.s} cause={e.c} fix={e.f} />
+      ))}
+    </div>
+  );
+}
+
+function BreadcrumbShowcase() {
+  return (
+    <div style={{ background: "var(--surface)", border: "1px solid var(--border)", padding: "calc(var(--s) * 3)" }}>
+      <Breadcrumb />
+    </div>
+  );
+}
+
+function TocShowcase() {
+  // The real TocSidebar is fixed-position; here we render a static visual proxy
+  // so users see the styling without it floating off-screen.
+  const items = [
+    { id: "s01", num: "01", label: "Phases", active: false },
+    { id: "s02", num: "02", label: "Map", active: false },
+    { id: "s03", num: "03", label: "Skills", active: true },
+    { id: "s04", num: "04", label: "Triangle", active: false },
+    { id: "s05", num: "05", label: "Level 2 prio", active: false },
+  ];
+  return (
+    <div style={{ background: "var(--surface)", border: "1px solid var(--border)", padding: "calc(var(--s) * 3)", maxWidth: 280 }}>
+      <aside className="toc" style={{ position: "static", transform: "none", width: "100%" }} aria-label="Contents (DS preview)">
+        <div className="toc-label mono">Contents</div>
+        <ol className="toc-list">
+          {items.map((it) => (
+            <li key={it.id} className={"toc-item" + (it.active ? " is-active" : "")}>
+              <a href={"#" + it.id} className="toc-link" onClick={(e) => e.preventDefault()}>
+                <span className="toc-num mono">{it.num}</span>
+                <span className="toc-text">{it.label}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  );
+}
+
+Object.assign(window, { Components, ButtonsShowcase, InputsShowcase, TagsShowcase, TabsShowcase, CardsShowcase, ChartsShowcase, BarChart, LineChart, DemoCell, CalloutShowcase, ErrorCardShowcase, BreadcrumbShowcase, TocShowcase });
