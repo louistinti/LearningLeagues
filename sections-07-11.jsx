@@ -122,7 +122,7 @@ function SectionBuild() {
       <SectionHead
         num="08"
         title="Runes & build path by archetype"
-        lede="A default setup for each archetype — refine afterwards via Lolalytics."
+        lede="A default setup for each archetype. Refine afterwards via Lolalytics."
       />
 
       <div className="archetype-switch" role="tablist" aria-label="Archetype">
@@ -243,7 +243,7 @@ function SectionChecklist() {
       <SectionHead
         num="10"
         title="Am I ready to play ranked?"
-        lede="Check the points you validate over 3 games in a row. If you hit 8+, you can launch your ranked."
+        lede="Check the points you validate over 3 games in a row. If you hit 8+, you're ready to queue ranked."
       />
       <div className="checklist-wrap">
         <div className="checklist-progress">
@@ -256,7 +256,7 @@ function SectionChecklist() {
           </div>
           <p className={"progress-readout" + (ready ? " ready" : "")}>
             {ready
-              ? "✓ Threshold reached — you can launch your ranked over 3 games in a row."
+              ? "✓ Threshold reached. You're ready to queue ranked over 3 games in a row."
               : `${8 - count} more point${8 - count > 1 ? "s" : ""} before launching ranked`}
           </p>
         </div>

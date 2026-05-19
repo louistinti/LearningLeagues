@@ -127,15 +127,11 @@ function Hero() {
             </div>
             <h1 className="serif">Support<em>.</em></h1>
 
-            <blockquote className="hero-pullquote">
-              "You are the team's eyes and the barrier between your ADC and death."
-            </blockquote>
-
             <p className="hero-intro">
-              Support is the team's connective role. You don't farm, you don't hunt
-              kills for yourself — you provide vision, you start or cancel engages,
-              and you keep your ADC alive. It's the ideal role for a player who
-              prefers reading the map and orchestrating decisions over executing combos.
+              Support is the team's connective role. You don't farm and you don't
+              hunt kills for yourself. You provide vision, you start or cancel
+              engages, and you keep your ADC alive. Pick Support if reading the
+              map beats executing combos for you.
             </p>
 
             <div className="hero-meta">

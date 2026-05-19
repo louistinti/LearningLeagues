@@ -69,7 +69,7 @@ function SectionTriangle() {
       <SectionHead
         num="04"
         title="The archetype triangle"
-        lede="The fundamental rule to know by heart. Your archetype wins against one type, loses to another."
+        lede="Your archetype beats one type and loses to another. Memorize which."
       />
       <div className="triangle-wrap">
         <div className="triangle-stage" ref={stageRef}>
@@ -153,7 +153,7 @@ function SectionPrio2() {
       <SectionHead
         num="05"
         title="Key concept: level 2 prio"
-        lede="The most critical all-in window in botlane. Whoever hits level 2 first takes the advantage."
+        lede="Whoever hits level 2 first takes the all-in. The highest-stakes window in botlane."
       />
       <div className="callout-grid">
         <article className="callout">
@@ -161,8 +161,8 @@ function SectionPrio2() {
           <h3 className="callout-title serif">How do you hit level 2 first?</h3>
           <p className="callout-body">
             <b>Level 2</b> is decided on the 1st wave (6 minions) + the 3 melee minions of the 2nd wave.
-            Damage all those minions <b>without killing them</b> — your ADC last-hits while you stack XP.
-            You both hit level 2 before the enemy ADC — all-in window open.
+            Damage all those minions <b>without killing them</b>. Your ADC last-hits while you stack XP.
+            You both hit level 2 before the enemy ADC. All-in window open.
           </p>
         </article>
         <article className="callout">
@@ -170,7 +170,7 @@ function SectionPrio2() {
           <h3 className="callout-title serif">Judge the force-2 on damage, not fear</h3>
           <p className="callout-body">
             Forcing level 2 works if <b>your two champions deal more level-2 damage</b> than the enemy duo.
-            Braum is stronger at level 2 than most supports — even into Blitz.
+            Braum is stronger at level 2 than most supports, even into Blitz.
             Compare the kits before reflexively backing off.
           </p>
         </article>
@@ -179,7 +179,7 @@ function SectionPrio2() {
           <h3 className="callout-title serif">Engage windows = enemy cooldowns</h3>
           <p className="callout-body">
             Aggression isn't random. It opens when the enemy spends a key cooldown.
-            Enemy ADC just used <b>Ezreal E / Lucian E</b>? You have a 5–10s window of weak retaliation — trade now.
+            Enemy ADC just used <b>Ezreal E / Lucian E</b>? You have a 5–10s window of weak retaliation. Trade now.
             Hook champs (<b>Blitz, Thresh</b>) land hooks far more reliably right after the enemy dash is down.
             No Flash up on the enemy ADC? Repeat-engage to zone them off CS.
           </p>
@@ -189,7 +189,7 @@ function SectionPrio2() {
           <h3 className="callout-title serif">Position alone is a threat</h3>
           <p className="callout-body">
             Where you stand at level 1 already sets the lane tone.
-            Tank/engage (<b>Leona, Naut</b>) = in front of your ADC — you telegraph the threat and force the enemy to respect a 2v2 before level 2 even hits.
+            Tank/engage (<b>Leona, Naut</b>) = in front of your ADC. You telegraph the threat and force the enemy to respect a 2v2 before level 2 even hits.
             Damage/poke (<b>Lux, Senna</b>) = in line with ADC, in trading range.
             Enchanter (<b>Soraka, Janna</b>) = slightly behind, where you can heal/shield without eating poke.
             Wrong stance = your archetype plays against itself.
@@ -207,7 +207,7 @@ function SectionErrors() {
       title: "You roam at the wrong moment",
       s: "You roam without checking the enemy jungler position, or you abandon your ADC when they're vulnerable to a dive.",
       c: "You leave the lane without reading the situation.",
-      f: "Roam only if (a) your lane is even or won AND you know the enemy jungler isn't bot, or (b) your jungler is playing an objective (drake, grubs) and you can help contest. The ADC takes Barrier or Cleanse almost all the time — the only real TP users are APCs (Veigar, Karthus), so don't count on a TP to save them.",
+      f: "Roam only if (a) your lane is even or won AND you know the enemy jungler isn't bot, or (b) your jungler is playing an objective (drake, grubs) and you can help contest. The ADC takes Barrier or Cleanse almost all the time. The only real TP users are APCs (Veigar, Karthus), so don't count on a TP to save them.",
     },
     {
       title: "You buy pinks too early and too often",
@@ -225,19 +225,19 @@ function SectionErrors() {
       title: "You engage without vision",
       s: "Leona flash-Rs the enemy ADC, the jungler walks out of the bush, kill flipped.",
       c: "Engage before warding → no jungler check.",
-      f: "Ward tribush or river BEFORE engaging. Always. And never deep-ward alone if the enemy has a kill threat — wait for your team to come with you.",
+      f: "Ward tribush or river BEFORE engaging. Always. And never deep-ward alone if the enemy has a kill threat. Wait for your team to come with you.",
     },
     {
       title: "You completely neglect vision",
       s: "End-of-game vision score: 12. Your team gets ganked blind.",
       c: "You place wards at random or forget the trinket.",
-      f: "Place a ward on every trinket CD (≈ 90s) — never sit on 2 charges. Pinks only for objectives in early, then a steady rhythm after your support quest (price drops to 40g). Target vision score = 3× the minutes played (e.g. 23 min → 69).",
+      f: "Place a ward every time your trinket comes off cooldown (≈ 90s). Never let two charges stack up. Pinks only for objectives in early, then a steady rhythm after your support quest (price drops to 40g). Target vision score = 3× the minutes played (e.g. 23 min → 69).",
     },
     {
       title: "You sit on your support item stacks",
-      s: "You stay at 2-3 charges for minutes — your gold income lags behind a support who cycles them constantly.",
+      s: "You stay at 2-3 charges for minutes. Your gold income lags behind a support who cycles them constantly.",
       c: "You only think 'consume stacks = engage', so when you can't engage you sit.",
-      f: "Cycle your stacks every time you hit 2-3. If you can engage and trade, do it. If you can't (enchanter, no window, no peel), last-hit or tag a minion to convert the stack into gold. The point is constant flow — sitting idle wastes 30-50 gold per laning phase.",
+      f: "Cycle your stacks every time you hit 2-3. If you can engage and trade, do it. If you can't (enchanter, no window, no peel), last-hit or tag a minion to convert the stack into gold. The point is steady turnover. Holding stacks idle costs you 30-50 gold every laning phase.",
     },
   ];
   return (
@@ -245,7 +245,7 @@ function SectionErrors() {
       <SectionHead
         num="06"
         title="The 6 mistakes that cost you games"
-        lede="For each: the symptom you see, the root cause, the concrete fix."
+        lede="Symptom, cause, fix."
       />
       <div className="errors-grid">
         {errors.map((e, i) => (
