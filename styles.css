@@ -2122,3 +2122,103 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   background: var(--gold-soft);
 }
 
+/* ── Glossary page ──────────────────────────────────────────────────────── */
+
+/* Letter jumper — sticky horizontal index, A B C... */
+.glossary-jumper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--s) * 1);
+  margin-bottom: calc(var(--s) * 6);
+  padding-bottom: calc(var(--s) * 3);
+  border-bottom: 1px dashed var(--rule);
+  position: sticky;
+  top: 64px; /* matches nav height */
+  background: var(--bg);
+  z-index: 5;
+  padding-top: calc(var(--s) * 2);
+}
+.glossary-jumper-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  color: var(--fg-mute);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.glossary-jumper-link:hover,
+.glossary-jumper-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--gold-soft);
+  outline: none;
+}
+
+/* Letter groups — A / B / ... section banners */
+.glossary-group {
+  scroll-margin-top: 112px; /* offset for sticky nav + jumper */
+  margin-bottom: calc(var(--s) * 6);
+}
+.glossary-letter {
+  font-size: 56px;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+  margin: 0 0 calc(var(--s) * 3) 0;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-left: calc(var(--s) * 1.5);
+}
+.glossary-letter::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--accent);
+  opacity: .55;
+}
+
+/* The list itself */
+.glossary-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.glossary-entry {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: calc(var(--s) * 3);
+  padding: calc(var(--s) * 2) 0;
+  border-bottom: 1px dashed var(--rule);
+  align-items: baseline;
+}
+.glossary-entry:last-child { border-bottom: 0; }
+.glossary-term {
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  color: var(--fg);
+  font-weight: 500;
+  margin: 0;
+}
+.glossary-def {
+  font-size: 14.5px;
+  color: var(--fg-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .glossary-entry {
+    grid-template-columns: 1fr;
+    gap: calc(var(--s) * 0.5);
+  }
+  .glossary-letter { font-size: 44px; }
+  .glossary-jumper { top: 56px; }
+}
+

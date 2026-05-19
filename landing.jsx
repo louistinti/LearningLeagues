@@ -247,6 +247,7 @@ function LandingNav() {
           <a className="nav-link" href="#">Champions</a>
           <a className="nav-link" href="#s-training">Training</a>
           <a className="nav-link" href="#s-resources">Resources</a>
+          <a className="nav-link" href="Glossary.html">Glossary</a>
         </nav>
         <div className="nav-right">
           <LangSwitcher />

@@ -89,7 +89,7 @@ function Nav({ activeKey = "roles" }) {
           <RolesDropdown active={activeKey === "roles"} />
           <a {...linkProps("champions")} href="#">Champions</a>
           <a {...linkProps("macro")} href="#">Macro</a>
-          <a {...linkProps("pathways")} href="#">Pathways</a>
+          <a {...linkProps("glossary")} href="Glossary.html">Glossary</a>
         </nav>
         <div className="nav-right">
           <LangSwitcher />
@@ -244,11 +244,11 @@ function Footer() {
           <div className="footer-cols">
             <div className="footer-col">
               <h5>Navigation</h5>
-              <a href="#">Foundations</a>
+              <a href="Fundamentals.html">Foundations</a>
               <a href="#">Roles</a>
               <a href="#">Champions</a>
               <a href="#">Macro</a>
-              <a href="#">Pathways</a>
+              <a href="Glossary.html">Glossary</a>
             </div>
             <div className="footer-col">
               <h5>Resources</h5>
