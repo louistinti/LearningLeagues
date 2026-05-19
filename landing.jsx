@@ -21,7 +21,7 @@ function LandingHero() {
             </h1>
 
             <p className="landing-sub">
-              From MOBA-savvy beginner to confident Bronze — a structured path by
+              From MOBA-savvy beginner to confident Bronze. A structured path by
               role, with no jargon and no chasing the meta.
             </p>
 
@@ -145,8 +145,8 @@ function RolesSection() {
             <div className="eyebrow eyebrow--accent showcase-eyebrow">THE FIVE POSITIONS</div>
             <h2 className="showcase-title serif">Choose your <em>role.</em></h2>
             <p className="showcase-lede">
-              Five positions, five mindsets. Your role decides your job on the map —
-              start with what fits your instincts, branch out later.
+              Five positions, five mindsets. Your role decides your job on the map.
+              Start with what fits your instincts. Branch out later.
             </p>
           </div>
         </div>

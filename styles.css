@@ -551,7 +551,9 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   overflow: hidden;
   /* Without these, aspect-ratio + minmax(0, 1fr) grid track let the frame
      adopt an intrinsic size that overflows the column (~970px instead of
-     ~800px), pushing the legend column off-screen and clipping its text. */
+     ~800px at 1366vw), pushing the legend column off-screen and clipping
+     its text. width:100% pins the frame to its track; min-width:0 lets
+     the grid track shrink below content-min on narrower viewports. */
   width: 100%;
   min-width: 0;
 }

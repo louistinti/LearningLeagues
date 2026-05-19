@@ -8,7 +8,7 @@ function SectionPhases() {
       timer: "0 → 14 min",
       items: [
         "Level 2 prio: you hit level 2 with the first 6 minions + the 3 melees from the 2nd wave. Damage (without killing) the creeps of the first 2 waves to speed up the tempo.",
-        "First ward at 1:25 (not before): river bush opposite the jungler's starting side, to spot the first scuttle. Pre-1:25 you bush-camp to scout invades — saving your trinket charge for an impactful spot. Save the control ward (pink) to defend a zone against a gank or to set up an objective.",
+        "First ward at 1:25 (not before): river bush opposite the jungler's starting side, to spot the first scuttle. Pre-1:25 you bush-camp to scout invades, saving your trinket charge for an impactful spot. Save the control ward (pink) to defend a zone against a gank or to set up an objective.",
         "Leave CS to the ADC (damage without killing). Protect them in trades.",
       ],
     },
@@ -17,7 +17,7 @@ function SectionPhases() {
       timer: "14 → 25 min",
       items: [
         "Roaming is rarely wrong: ahead, extend the lead; even, create one; behind, find tempo on stronger lanes instead of sinking into bot.",
-        "Set up vision before the objective spawns. Reaction time = distance from the pit to your deepest ward — pair pit wards with control wards in high-traffic bushes.",
+        "Set up vision before the objective spawns. Reaction time = distance from the pit to your deepest ward. Pair pit wards with control wards in high-traffic bushes.",
         "Start or shut down teamfights based on your archetype (engage / enchanter / poke).",
       ],
     },
@@ -26,7 +26,7 @@ function SectionPhases() {
       timer: "25 min +",
       items: [
         "Deep vision around Baron pit; pink wards on choke points (entrances, jungle routes near objectives) to catch rotations.",
-        "Peel your carry — your CC, shields, or heals keep them alive.",
+        "Peel your carry: your CC, shields, or heals keep them alive.",
         "Engage or peel with the team, never isolated.",
       ],
     },
@@ -63,14 +63,14 @@ function SectionMap() {
   // Pins 1 and 4 each appear twice (different spots on the map); the legend
   // dedupes by `n` so the right column always shows 6 rows.
   const pins = [
-    { n: 1, x: 70.3, y: 57.9, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights — defensive when stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },
-    { n: 1, x: 64.3, y: 67.5, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights — defensive when stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },
-    { n: 2, x: 78.2, y: 75.1, short: "Lane brush",        long: "Central early-game control bush — decisive when you're the hooker, risky against enemy hooks (Blitz/Thresh/Pyke). Ward it when the matchup allows." },
-    { n: 3, x: 68.3, y: 62.9, short: "Pixel brush",       long: "High-traffic spot near Drake setup — a control ward here holds the area." },
-    { n: 4, x: 67.1, y: 43.2, short: "Deep jungle brush", long: "Deep vision when you're ahead — never solo; spots the enemy jungler before objectives." },
-    { n: 4, x: 52.7, y: 64.4, short: "Deep jungle brush", long: "Deep vision when you're ahead — never solo; spots the enemy jungler before objectives." },
+    { n: 1, x: 70.3, y: 57.9, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights. Defensive when you're stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },
+    { n: 1, x: 64.3, y: 67.5, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights. Defensive when you're stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },
+    { n: 2, x: 78.2, y: 75.1, short: "Lane brush",        long: "Central early-game control bush. Decisive when you're the hooker, risky against enemy hooks (Blitz/Thresh/Pyke). Ward it when the matchup allows." },
+    { n: 3, x: 68.3, y: 62.9, short: "Pixel brush",       long: "High-traffic spot near Drake setup. A control ward here holds the area." },
+    { n: 4, x: 67.1, y: 43.2, short: "Deep jungle brush", long: "Deep vision when you're ahead. Never solo. Spots the enemy jungler before objectives." },
+    { n: 4, x: 52.7, y: 64.4, short: "Deep jungle brush", long: "Deep vision when you're ahead. Never solo. Spots the enemy jungler before objectives." },
     { n: 5, x: 60.9, y: 59.5, short: "Dragon pit",        long: "Ward before every spawn; pair with a deep ward upstream so you see jungler rotations earlier." },
-    { n: 6, x: 38.7, y: 27.5, short: "Nashor's pit",      long: "Late-game key. Pink the pit, deep-ward the entrances — reaction time = distance to your deepest ward." },
+    { n: 6, x: 38.7, y: 27.5, short: "Nashor's pit",      long: "Late-game key. Pink the pit, deep-ward the entrances. Reaction time = distance to your deepest ward." },
   ];
 
   const legendPins = pins.filter(
@@ -82,7 +82,7 @@ function SectionMap() {
       <SectionHead
         num="02"
         title="The Rift from your point of view"
-        lede="Your zones, vision angles and typical threats — a Support-specific map read."
+        lede="Your zones, vision angles and typical threats. A Support-specific map read."
       />
       <div className="map-wrap">
         <div className="map-frame">
@@ -140,7 +140,7 @@ function SectionSkills() {
   const skills = [
     {
       title: "Vision placement",
-      desc: "Learn the 8 key ward placements, and remember the Faelights — a ward placed on a ring of glowing mushrooms becomes a super-ward (+25% range, 45s bonus vision zone). Swap your trinket to Oracle Lens the moment your support quest completes — that's when real vision denial starts.",
+      desc: "Learn the 8 key ward placements. Faelight bonus: a ward placed on a ring of glowing mushrooms becomes a super-ward (+25% range, 45s bonus vision zone). Swap your trinket to Oracle Lens the moment your support quest completes. That's when real vision denial starts.",
       link: "/macro/vision",
     },
     {

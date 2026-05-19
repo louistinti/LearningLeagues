@@ -9,37 +9,37 @@ const SKILLS = [
   {
     id: "map-awareness",
     title: "Map Awareness",
-    lede: "The skill behind every other skill. If you can't read the map, you can't make the right call.",
+    lede: "Read the map or you can't make the right call. Every other skill builds on this one.",
     connects: ["vision", "jungle-tracking", "roaming", "recall-timers"],
   },
   {
     id: "mentality",
     title: "Mentality",
-    lede: "The precondition. Tilt undoes hours of practice — it's a skill, not a personality trait.",
+    lede: "Tilt undoes hours of practice. It's a skill, not a personality trait.",
     connects: ["champion-pool", "win-conditions"],
   },
   {
     id: "farming",
     title: "Farming",
-    lede: "Gold and XP are the game's two currencies. Last-hitting is how you earn them — for every role.",
+    lede: "Gold and XP are the game's two currencies. Every role earns them by last-hitting.",
     connects: ["wave-control", "trading", "cooldowns"],
   },
   {
     id: "tempo",
     title: "Tempo",
-    lede: "Spending time efficiently. Recall windows, plate timing, roams — every second on the map has a price.",
+    lede: "Every second on the map has a price. Spend it on recall windows, plate timing, and roams.",
     connects: ["wave-control", "recall-timers", "priority-usage", "mid-game"],
   },
   {
     id: "vision",
     title: "Vision",
-    lede: "What you can see. The single biggest determinant of who picks the fight versus who walks into it.",
+    lede: "What you can see decides who picks the fight and who walks in blind.",
     connects: ["map-awareness", "jungle-tracking", "roaming"],
   },
   {
     id: "strongside-weakside",
     title: "Strongside / Weakside",
-    lede: "Where the resources flow. Decided pre-game, executed every minute — the lane that wins is the lane fed.",
+    lede: "Resources flow to one side. You decide which one in champ select and feed it every minute after.",
     connects: ["roaming", "sidelaning", "matchups", "champion-knowledge"],
   },
 ];
@@ -86,13 +86,9 @@ function FundamentalsHero() {
             </div>
             <h1 className="serif">Fundamentals<em>.</em></h1>
 
-            <blockquote className="hero-pullquote">
-              "Mechanics get you out of Iron. Fundamentals get you out of Gold."
-            </blockquote>
-
             <p className="hero-intro">
-              Six skills carry your rank. Each one branches into a dozen smaller habits —
-              click a card to open the full tree, see how the pieces feed each other,
+              Six skills carry your rank. Each one branches into a dozen smaller habits.
+              Click a card to open the full tree, see how the pieces feed each other,
               and what 2026 changed about how you should play it.
             </p>
 
@@ -310,12 +306,12 @@ function MasterTree() {
       <SectionHead
         num="02"
         title="The full map"
-        lede="Every fundamental, connected. Click a node to explore — primary skills sit larger; B/C/D-tier skills branch off."
+        lede="All 25 fundamentals, connected. Click a node to explore. Primary skills sit larger; B/C/D-tier skills branch off."
       />
       <div className="master-tree-stub">
         <div className="eyebrow">UPCOMING</div>
         <p>
-          Interactive force-directed graph of all 25 fundamentals — coming after the six primary cards have content.
+          Interactive force-directed graph of all 25 fundamentals. Coming after the six primary cards have content.
         </p>
         <ul className="master-tree-stub-list">
           {Object.entries(TREE_NODES).map(([id, n]) => (
