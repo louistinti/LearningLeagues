@@ -53,33 +53,39 @@ function LessonCardPattern() {
   );
 }
 
-const TIERS = [
-  { name: "Iron",      hex: "#5b5959", division: "II", lp: "32 LP" },
-  { name: "Bronze",    hex: "#a26939", division: "I",  lp: "78 LP" },
-  { name: "Silver",    hex: "#9ba6b3", division: "III", lp: "44 LP" },
-  { name: "Gold",      hex: "#e39a3c", division: "IV", lp: "68 LP" },
-  { name: "Platinum",  hex: "#4ea3a3", division: "II", lp: "12 LP" },
+// Tier demo data — division/LP are display-only sample data, tier identity
+// and color come from LL_TIERS (components.jsx, single source of truth).
+const TIER_DEMO = [
+  { name: "Iron",     division: "II",  lp: "32 LP" },
+  { name: "Bronze",   division: "I",   lp: "78 LP" },
+  { name: "Silver",   division: "III", lp: "44 LP" },
+  { name: "Gold",     division: "IV",  lp: "68 LP" },
+  { name: "Platinum", division: "II",  lp: "12 LP" },
 ];
 
 function TierDisplayPattern() {
+  const byName = Object.fromEntries(LL_TIERS.map(t => [t.name, t]));
   return (
     <div className="ds-tiers-grid">
-      {TIERS.map(t => (
-        <article key={t.name} className="ds-tier-card">
-          <div className="ds-tier-icon" style={{ color: t.hex }}>
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.2">
-              <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" strokeWidth="1.4"/>
-              <polygon points="32,14 50,24 50,40 32,50 14,40 14,24"/>
-              <path d="M32 22 L40 32 L32 42 L24 32 Z" fill="currentColor" opacity=".5"/>
-              <circle cx="32" cy="32" r="2" fill="currentColor"/>
-            </svg>
-          </div>
-          <div className="ds-tier-meta">
-            <span className="mono ds-tier-rank">{t.name} {t.division}</span>
-            <span className="mono ds-tier-lp">{t.lp}</span>
-          </div>
-        </article>
-      ))}
+      {TIER_DEMO.map(d => {
+        const t = byName[d.name];
+        return (
+          <article key={d.name} className="ds-tier-card">
+            <div className="ds-tier-icon" style={{ color: `var(${t.var})` }}>
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.2">
+                <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" strokeWidth="1.4"/>
+                <polygon points="32,14 50,24 50,40 32,50 14,40 14,24"/>
+                <path d="M32 22 L40 32 L32 42 L24 32 Z" fill="currentColor" opacity=".5"/>
+                <circle cx="32" cy="32" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <div className="ds-tier-meta">
+              <span className="mono ds-tier-rank">{d.name} {d.division}</span>
+              <span className="mono ds-tier-lp">{d.lp}</span>
+            </div>
+          </article>
+        );
+      })}
     </div>
   );
 }

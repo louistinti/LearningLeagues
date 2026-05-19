@@ -38,18 +38,9 @@ const COLOR_GROUPS = [
   },
 ];
 
-const TIER_COLORS = [
-  { name: "Iron",      hex: "#5b5959" },
-  { name: "Bronze",    hex: "#a26939" },
-  { name: "Silver",    hex: "#9ba6b3" },
-  { name: "Gold",      hex: "#e39a3c" },
-  { name: "Platinum",  hex: "#4ea3a3" },
-  { name: "Emerald",   hex: "#3f9670" },
-  { name: "Diamond",   hex: "#6fa8dc" },
-  { name: "Master",    hex: "#a868d4" },
-  { name: "GM",        hex: "#c9484a" },
-  { name: "Challenger","hex": "#d4b468" },
-];
+// TIER_COLORS is sourced from LL_TIERS (components.jsx) — single source of truth.
+// Swatches read the live CSS token so palette overrides (if ever added) work
+// without touching this file.
 
 function Foundations() {
   return (
@@ -72,9 +63,9 @@ function Foundations() {
         lede="Ranked tiers carry their own swatches, used sparingly — leaderboard chips, progress bars, profile badges. Never as a primary surface or text color."
       >
         <div className="ds-tier-row">
-          {TIER_COLORS.map(t => (
+          {LL_TIERS.map(t => (
             <div key={t.name} className="ds-tier-chip">
-              <span className="ds-tier-swatch" style={{ background: t.hex }} aria-hidden="true">
+              <span className="ds-tier-swatch" style={{ background: `var(${t.var})` }} aria-hidden="true">
                 <span className="ds-tier-glint"></span>
               </span>
               <span className="ds-tier-name">{t.name}</span>
