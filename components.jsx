@@ -1,5 +1,67 @@
 // components.jsx — shared primitives for the Support role page.
 
+/* ── Shared design-token data (single source of truth) ─────────────────────
+   LL_TIERS is consumed by ds-foundations.jsx (palette swatches) and
+   ds-patterns.jsx (TierDisplayPattern, Leaderboard). The "var" field points
+   to the live CSS token in styles.css; "hex" is documentation only and is
+   the same hex the token resolves to in every palette.
+   ──────────────────────────────────────────────────────────────────────── */
+const LL_TIERS = [
+  { name: "Iron",       var: "--tier-iron",        hex: "#5b5959" },
+  { name: "Bronze",     var: "--tier-bronze",      hex: "#a26939" },
+  { name: "Silver",     var: "--tier-silver",      hex: "#9ba6b3" },
+  { name: "Gold",       var: "--tier-gold",        hex: "#e39a3c" },
+  { name: "Platinum",   var: "--tier-platinum",    hex: "#4ea3a3" },
+  { name: "Emerald",    var: "--tier-emerald",     hex: "#3f9670" },
+  { name: "Diamond",    var: "--tier-diamond",     hex: "#6fa8dc" },
+  { name: "Master",     var: "--tier-master",      hex: "#a868d4" },
+  { name: "GM",         var: "--tier-grandmaster", hex: "#c9484a" },
+  { name: "Challenger", var: "--tier-challenger",  hex: "#d4b468" },
+];
+
+/* ── Glossary ─────────────────────────────────────────────────────────────
+   Single source of truth for short, inline LoL term definitions. Use the
+   <Gloss term="..."/> component on the FIRST mention of a term in a guide
+   to wrap it in a dotted underline + native tooltip. If a term is missing
+   here, add it once — never inline glosses ad-hoc in section files.
+   ──────────────────────────────────────────────────────────────────────── */
+const LL_GLOSSARY = {
+  "CS":            "Creep Score — minions you last-hit for gold.",
+  "trinket":       "The free warding tool every champion starts with.",
+  "control ward":  "Pink ward — denies enemy vision in its area.",
+  "pink ward":     "Older name for a control ward — denies enemy vision.",
+  "scuttle":       "The neutral crab in the river — first one spawns at 2:55.",
+  "invade":        "An early enemy push into your jungle, usually pre-1:30.",
+  "peel":          "Standing between your carry and the threat that wants them dead.",
+  "pit":           "The walled area where an objective (Drake, Baron) spawns.",
+  "freeze":        "Holding the wave near your tower so it never pushes.",
+  "vision score":  "The in-game stat measuring your contribution to map vision.",
+  "TP":            "Teleport — Summoner spell that lets you re-enter a lane from base.",
+  "APC":           "AP Carry — a magic-damage carry (e.g. Veigar, Karthus bot).",
+  "ADC":           "Attack Damage Carry — the ranged auto-attacker of the bot lane.",
+  "keystone":      "The top-row rune that defines your laning identity.",
+  "engage":        "Starting a fight — usually with a hard CC ability.",
+  "all-in":        "Committing every cooldown to kill the enemy now.",
+  "poke":          "Chipping enemy HP from range without committing to a fight.",
+  "enchanter":     "A support archetype focused on shields, heals and buffs.",
+  "summoners":     "Summoner Spells — the two extra abilities (Flash, Heal, Ignite…).",
+  "Ezreal E":      "Ezreal's dash ability — short blink + skillshot.",
+  "Lucian E":      "Lucian's dash ability — short skillshot dash.",
+};
+
+/* <Gloss term="CS">CS</Gloss>
+   <Gloss term="vision score" def="custom override if you must" />
+   First-mention helper. Looks up term in LL_GLOSSARY; def prop wins if given.
+   Renders an <abbr> with a native tooltip — no JS hover state needed. */
+function Gloss({ term, def, children }) {
+  const title = def || LL_GLOSSARY[term] || LL_GLOSSARY[term && term.toLowerCase()];
+  return (
+    <abbr className="gloss" title={title} data-term={term}>
+      {children || term}
+    </abbr>
+  );
+}
+
 function LogoMark() {
   return (
     <svg className="logo-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -359,4 +421,4 @@ function TocSidebar() {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar });
+Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, LL_TIERS, LL_GLOSSARY });

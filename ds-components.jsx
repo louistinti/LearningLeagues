@@ -26,7 +26,37 @@ function Components() {
       <DSSection num="06" title="Charts & progress" lede="Numeric storytelling. Slim bars, dashed gridlines, mono axis labels. No area fills, no shadows.">
         <ChartsShowcase />
       </DSSection>
+
+      <DSSection num="07" title="Gloss" lede="Inline annotation for LoL terms on first mention. Dotted underline + native tooltip. Sourced from LL_GLOSSARY (components.jsx) — never inline ad-hoc.">
+        <GlossShowcase />
+      </DSSection>
     </React.Fragment>
+  );
+}
+
+function GlossShowcase() {
+  return (
+    <div className="ds-comp-grid ds-comp-grid--inputs">
+      <DemoCell label="Inline in a sentence">
+        <p style={{ margin: 0, fontSize: 15, color: "var(--fg-dim)", lineHeight: 1.55 }}>
+          Leave <Gloss term="CS" /> to the ADC. Place your first <Gloss term="trinket" /> at 1:25,
+          then drop a <Gloss term="control ward" /> in the river bush.
+        </p>
+      </DemoCell>
+      <DemoCell label="Override with custom def">
+        <p style={{ margin: 0, fontSize: 15, color: "var(--fg-dim)", lineHeight: 1.55 }}>
+          You start a fight by burning the enemy{" "}
+          <Gloss term="dash" def="any movement ability that breaks displacement (e.g. Ezreal E, Lucian E)">dash</Gloss>.
+        </p>
+      </DemoCell>
+      <DemoCell label="Term coverage (current glossary)">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, fontSize: 13, color: "var(--fg-dim)" }}>
+          {Object.keys(LL_GLOSSARY).map(t => (
+            <Gloss key={t} term={t}>{t}</Gloss>
+          ))}
+        </div>
+      </DemoCell>
+    </div>
   );
 }
 
