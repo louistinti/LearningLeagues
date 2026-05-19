@@ -27,7 +27,7 @@ function SectionChampions() {
       desc: "Heal + silence + global ult. Simple kit, forces you to read the map to ult at the right moment. Beats poke.",
     },
     {
-      name: "Leona", tag: "Engage / All-in", diff: "Balanced",
+      name: "Leona", tag: "Engage", diff: "Balanced",
       desc: "Tank with chained CC (E → Q → AA → R). You hunt the level-2 kill. Beats enchanters.",
     },
     {
@@ -40,7 +40,7 @@ function SectionChampions() {
       <SectionHead
         num="07"
         title="Your 3 champions to start"
-        lede="One champion per archetype, picked for the difficulty curve. Soraka teaches map-reading without combos. Leona teaches level-2 all-ins and CC chains. Janna teaches peel and cautious positioning. Cover the triangle, swap as you learn the role."
+        lede="One champion per archetype, picked for the difficulty curve. Soraka teaches map-reading without combos. Leona teaches level-2 engages and CC chains. Janna teaches peel and cautious positioning. Cover the triangle, swap as you learn the role."
       />
       <div className="champ-grid">
         {champs.map((c) => (
@@ -82,8 +82,8 @@ function SectionBuild() {
         ["Defense",    "Ardent (on-hit team), Redemption (teamfight), Mikael (vs heavy stun)"],
       ],
     },
-    allin: {
-      label: "All-in",
+    engage: {
+      label: "Engage",
       runes: [
         ["Keystone",   "Aftershock · Grasp of the Undying"],
         ["Minor 1",    "Font of Life"],
@@ -172,7 +172,7 @@ function SectionMatchups() {
     // ordered: Easy → Playable → Hard
     ["Soraka vs Xerath", "Easy",     "You heal the Qs that land, call the reset at 50%.", "You stay in E range with no potion."],
     ["Janna vs Leona",   "Playable", "You shield your ADC the instant Leona starts her E + Q chain.", "Your ADC overextends with no tribush vision."],
-    ["Janna vs Lulu",    "Playable", "You zone with W, you outscale on shields.", "Lulu solo-locks your ADC in an all-in."],
+    ["Janna vs Lulu",    "Playable", "You zone with W, you outscale on shields.", "Lulu solo-locks your ADC in an engage."],
     ["Leona vs Blitz",   "Hard",     "You zone the bushes and stay above the ADC.", "You walk through a bush without warding."],
     ["Soraka vs Leona",  "Hard",     "You keep distance, control ward tribush, help mid.", "Leona reaches Q range with ult ready."],
   ];

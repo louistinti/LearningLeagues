@@ -2,24 +2,24 @@
 
 // ── Section 04 : Triangle ──────────────────────────────────────────────────
 function SectionTriangle() {
-  const [hover, setHover] = React.useState(null); // "poke" | "allin" | "enchanter"
+  const [hover, setHover] = React.useState(null); // "poke" | "engage" | "enchanter"
   const stageRef = React.useRef(null);
   const pokeRef = React.useRef(null);
-  const allinRef = React.useRef(null);
+  const engageRef = React.useRef(null);
   const encRef = React.useRef(null);
   const [arrows, setArrows] = React.useState(null);
 
   const nodes = {
-    poke:      { corner: "top", label: "Poke",        champs: "Karma · Lux · Senna · Xerath", x: 50, y: 8,  ref: pokeRef  },
-    allin:     { corner: "br",  label: "All-in",      champs: "Leona · Nautilus · Rell · Pyke", x: 100, y: 80, ref: allinRef },
-    enchanter: { corner: "bl",  label: "Enchanter",   champs: "Soraka · Janna · Nami · Yuumi",  x: 0,  y: 80, ref: encRef   },
+    poke:      { corner: "top", label: "Poke",        champs: "Karma · Lux · Senna · Xerath", x: 50, y: 8,  ref: pokeRef   },
+    engage:    { corner: "br",  label: "Engage",      champs: "Leona · Nautilus · Rell · Pyke", x: 100, y: 80, ref: engageRef },
+    enchanter: { corner: "bl",  label: "Enchanter",   champs: "Soraka · Janna · Nami · Yuumi",  x: 0,  y: 80, ref: encRef    },
   };
 
   React.useLayoutEffect(() => {
     const compute = () => {
       const s = stageRef.current;
       const p = pokeRef.current;
-      const a = allinRef.current;
+      const a = engageRef.current;
       const e = encRef.current;
       if (!s || !p || !a || !e) return;
       const sr = s.getBoundingClientRect();
@@ -35,7 +35,7 @@ function SectionTriangle() {
           cy:    (r.top  + r.bottom) / 2 - sr.top,
         };
       };
-      const poke = box(p), allin = box(a), enc = box(e);
+      const poke = box(p), engage = box(a), enc = box(e);
       const GAP = 16;
       const vx = (v) => (v / sr.width)  * 100;
       const vy = (v) => (v / sr.height) * 100;
@@ -45,15 +45,15 @@ function SectionTriangle() {
           x1: vx(enc.cx),    y1: vy(enc.top - GAP),
           x2: vx(poke.left), y2: vy(poke.bottom + GAP),
         },
-        // Poke → All-in: tail 16px below Poke's bottom-right corner, tip 16px above All-in's top-center
-        pokeToAllin: {
+        // Poke → Engage: tail 16px below Poke's bottom-right corner, tip 16px above Engage's top-center
+        pokeToEngage: {
           x1: vx(poke.right), y1: vy(poke.bottom + GAP),
-          x2: vx(allin.cx),   y2: vy(allin.top - GAP),
+          x2: vx(engage.cx),  y2: vy(engage.top - GAP),
         },
-        // All-in → Enchanter: horizontal, centered on both boxes' y, 16px from each inner edge
-        allinToEnc: {
-          x1: vx(allin.left - GAP), y1: vy(allin.cy),
-          x2: vx(enc.right  + GAP), y2: vy(enc.cy),
+        // Engage → Enchanter: horizontal, centered on both boxes' y, 16px from each inner edge
+        engageToEnc: {
+          x1: vx(engage.left - GAP), y1: vy(engage.cy),
+          x2: vx(enc.right  + GAP),  y2: vy(enc.cy),
         },
       });
     };
@@ -108,8 +108,8 @@ function SectionTriangle() {
               };
               return (
                 <>
-                  {renderArrow("poke", arrows.pokeToAllin)}
-                  {renderArrow("allin", arrows.allinToEnc)}
+                  {renderArrow("poke", arrows.pokeToEngage)}
+                  {renderArrow("engage", arrows.engageToEnc)}
                   {renderArrow("enchanter", arrows.encToPoke)}
                 </>
               );
@@ -137,8 +137,8 @@ function SectionTriangle() {
 
         <aside className="triangle-legend">
           <h4>How to read the triangle</h4>
-          <p><strong>Poke</strong> wears down the all-in champion before they can ever reach you.<br /><strong>Poke &gt; All-in</strong>.</p>
-          <p><strong>All-in</strong> locks the ADC before the enchanter has time to react.<br /><strong>All-in &gt; Enchanter</strong>.</p>
+          <p><strong>Poke</strong> wears down the engage champion before they can ever reach you.<br /><strong>Poke &gt; Engage</strong>.</p>
+          <p><strong>Engage</strong> locks the ADC before the enchanter has time to react.<br /><strong>Engage &gt; Enchanter</strong>.</p>
           <p><strong>Enchanter</strong> heals and shields enough to nullify poke pressure.<br /><strong>Enchanter &gt; Poke</strong>.</p>
         </aside>
       </div>
@@ -153,7 +153,7 @@ function SectionPrio2() {
       <SectionHead
         num="05"
         title="Key concept: level 2 prio"
-        lede="Whoever hits level 2 first takes the all-in. The highest-stakes window in botlane."
+        lede="Whoever hits level 2 first takes the engage. The highest-stakes window in botlane."
       />
       <div className="callout-grid">
         <article className="callout">
@@ -162,7 +162,7 @@ function SectionPrio2() {
           <p className="callout-body">
             <b>Level 2</b> is decided on the 1st wave (6 minions) + the 3 melee minions of the 2nd wave.
             Damage all those minions <b>without killing them</b>. Your ADC last-hits while you stack XP.
-            You both hit level 2 before the enemy ADC. All-in window open.
+            You both hit level 2 before the enemy ADC. Engage window open.
           </p>
         </article>
         <article className="callout">
