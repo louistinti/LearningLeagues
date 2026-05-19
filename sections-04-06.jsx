@@ -137,7 +137,7 @@ function SectionTriangle() {
 
         <aside className="triangle-legend">
           <h4>How to read the triangle</h4>
-          <p><strong>Poke</strong> chips away HP before an all-in gets a chance to engage.<br /><strong>Poke &gt; All-in</strong>.</p>
+          <p><strong>Poke</strong> wears down the all-in champion before they can ever reach you.<br /><strong>Poke &gt; All-in</strong>.</p>
           <p><strong>All-in</strong> locks the ADC before the enchanter has time to react.<br /><strong>All-in &gt; Enchanter</strong>.</p>
           <p><strong>Enchanter</strong> heals and shields enough to nullify poke pressure.<br /><strong>Enchanter &gt; Poke</strong>.</p>
         </aside>
@@ -179,8 +179,8 @@ function SectionPrio2() {
           <h3 className="callout-title serif">Engage windows = enemy cooldowns</h3>
           <p className="callout-body">
             Aggression isn't random. It opens when the enemy spends a key cooldown.
-            Enemy ADC just used <b>Ezreal E / Lucian E</b>? You have a 5–10s window of weak retaliation. Trade now.
-            Hook champs (<b>Blitz, Thresh</b>) land hooks far more reliably right after the enemy dash is down.
+            Enemy ADC just used <b><Gloss term="Ezreal E">Ezreal E</Gloss> / <Gloss term="Lucian E">Lucian E</Gloss></b>? You have a 5–10s window of weak retaliation. Trade now.
+            Hook champions (<b>Blitz, Thresh</b>) land hooks much more reliably once the enemy ADC's dash is on cooldown.
             No Flash up on the enemy ADC? Repeat-engage to zone them off CS.
           </p>
         </article>
@@ -207,7 +207,7 @@ function SectionErrors() {
       title: "You roam at the wrong moment",
       s: "You roam without checking the enemy jungler position, or you abandon your ADC when they're vulnerable to a dive.",
       c: "You leave the lane without reading the situation.",
-      f: "Roam only if (a) your lane is even or won AND you know the enemy jungler isn't bot, or (b) your jungler is playing an objective (drake, grubs) and you can help contest. The ADC takes Barrier or Cleanse almost all the time. The only real TP users are APCs (Veigar, Karthus), so don't count on a TP to save them.",
+      f: <>Roam only if (a) your lane is even or won AND you know the enemy jungler isn't bot, or (b) your jungler is playing an objective (drake, grubs) and you can help contest. The ADC takes Barrier or Cleanse almost all the time. The only real <Gloss term="TP">TP</Gloss> users are <Gloss term="APC">APCs</Gloss> (Veigar, Karthus), so don't count on a TP to save them.</>,
     },
     {
       title: "You buy pinks too early and too often",
@@ -219,7 +219,7 @@ function SectionErrors() {
       title: "You refuse to touch the minions",
       s: "You never auto, the ADC struggles to push the first 2 waves.",
       c: "Someone told you 'don't CS'. Rule misunderstood.",
-      f: "You should damage (without killing) the creeps of the first 2 waves to speed up the push and trigger level-2 prio. Once level 2 is hit, only step in if the ADC is dead or recalling.",
+      f: "Hit each minion in the first two waves without last-hitting. Your ADC takes the gold, you both rush level 2. Once level 2 is hit, only step in if the ADC is dead or recalling.",
     },
     {
       title: "You engage without vision",
@@ -229,7 +229,7 @@ function SectionErrors() {
     },
     {
       title: "You completely neglect vision",
-      s: "End-of-game vision score: 12. Your team gets ganked blind.",
+      s: <>End-of-game <Gloss term="vision score">vision score</Gloss>: 12. Your team gets ganked blind.</>,
       c: "You place wards at random or forget the trinket.",
       f: "Place a ward every time your trinket comes off cooldown (≈ 90s). Never let two charges stack up. Pinks only for objectives in early, then a steady rhythm after your support quest (price drops to 40g). Target vision score = 3× the minutes played (e.g. 23 min → 69).",
     },

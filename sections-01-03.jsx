@@ -7,17 +7,17 @@ function SectionPhases() {
       title: "Early game",
       timer: "0 → 14 min",
       items: [
-        "Level 2 prio: you hit level 2 with the first 6 minions + the 3 melees from the 2nd wave. Damage (without killing) the creeps of the first 2 waves to speed up the tempo.",
-        "First ward at 1:25 (not before): river bush opposite the jungler's starting side, to spot the first scuttle. Pre-1:25 you bush-camp to scout invades, saving your trinket charge for an impactful spot. Save the control ward (pink) to defend a zone against a gank or to set up an objective.",
-        "Leave CS to the ADC (damage without killing). Protect them in trades.",
+        "Level 2 prio: you hit level 2 with the first 6 minions + the 3 melees from the 2nd wave. Hit each minion in the first two waves without last-hitting. Your ADC takes the gold, you both rush level 2.",
+        <>First ward at 1:25 (not before): river bush opposite the jungler's starting side, to spot the first <Gloss term="scuttle">scuttle</Gloss>. Pre-1:25 you bush-camp to scout <Gloss term="invade">invades</Gloss>, saving your <Gloss term="trinket">trinket</Gloss> charge for an impactful spot. Save the <Gloss term="control ward">control ward</Gloss> (pink) to defend a zone against a gank or to set up an objective.</>,
+        <>Leave <Gloss term="CS">CS</Gloss> to the ADC (damage without killing). Protect them in trades.</>,
       ],
     },
     {
       title: "Mid game",
       timer: "14 → 25 min",
       items: [
-        "Roaming is rarely wrong: ahead, extend the lead; even, create one; behind, find tempo on stronger lanes instead of sinking into bot.",
-        "Set up vision before the objective spawns. Reaction time = distance from the pit to your deepest ward. Pair pit wards with control wards in high-traffic bushes.",
+        "Roam when your lane is ahead or even. Behind, look for tempo on a stronger lane instead of dying in bot.",
+        <>Set up vision before the objective spawns. Reaction time = distance from the <Gloss term="pit">pit</Gloss> to your deepest ward (the further out you ward, the more seconds you have to react). Pair pit wards with control wards in high-traffic bushes.</>,
         "Start or shut down teamfights based on your archetype (engage / enchanter / poke).",
       ],
     },
@@ -26,7 +26,7 @@ function SectionPhases() {
       timer: "25 min +",
       items: [
         "Deep vision around Baron pit; pink wards on choke points (entrances, jungle routes near objectives) to catch rotations.",
-        "Peel your carry: your CC, shields, or heals keep them alive.",
+        <><Gloss term="peel">Peel</Gloss> your carry: your CC, shields, or heals keep them alive.</>,
         "Engage or peel with the team, never isolated.",
       ],
     },
@@ -145,7 +145,7 @@ function SectionSkills() {
     },
     {
       title: "Lane reading",
-      desc: "Know when to push for level-2 prio, when to freeze to starve the enemy ADC, when to trade based on cooldowns.",
+      desc: <>Know when to push for level-2 prio, when to <Gloss term="freeze">freeze</Gloss> to starve the enemy ADC, when to trade based on cooldowns.</>,
       link: "/macro/wave-management",
     },
     {

@@ -40,7 +40,7 @@ function SectionChampions() {
       <SectionHead
         num="07"
         title="Your 3 champions to start"
-        lede="One enchanter (poke-killer), one engage (carry-killer) and one enchanter-peel (all-terrain)."
+        lede="One champion per archetype, picked for the difficulty curve. Soraka teaches map-reading without combos. Leona teaches level-2 all-ins and CC chains. Janna teaches peel and cautious positioning. Cover the triangle, swap as you learn the role."
       />
       <div className="champ-grid">
         {champs.map((c) => (
@@ -171,7 +171,7 @@ function SectionMatchups() {
   const rows = [
     // ordered: Easy → Playable → Hard
     ["Soraka vs Xerath", "Easy",     "You heal the Qs that land, call the reset at 50%.", "You stay in E range with no potion."],
-    ["Janna vs Leona",   "Playable", "You shield your ADC the moment E + Q chains.", "Your ADC overextends with no tribush vision."],
+    ["Janna vs Leona",   "Playable", "You shield your ADC the instant Leona starts her E + Q chain.", "Your ADC overextends with no tribush vision."],
     ["Janna vs Lulu",    "Playable", "You zone with W, you outscale on shields.", "Lulu solo-locks your ADC in an all-in."],
     ["Leona vs Blitz",   "Hard",     "You zone the bushes and stay above the ADC.", "You walk through a bush without warding."],
     ["Soraka vs Leona",  "Hard",     "You keep distance, control ward tribush, help mid.", "Leona reaches Q range with ult ready."],
@@ -295,7 +295,7 @@ function SectionPractice() {
           <div className="video-thumb">
             <span className="video-duration">3:12</span>
           </div>
-          <span className="video-meta">Video · Creator TBD</span>
+          <span className="video-meta">Video · Coach Curtis</span>
           <h3 className="video-title serif">Understanding bot lane vision</h3>
           <p className="exercise-text">Ward timings, control ward priority, tribush vs river choice.</p>
         </article>
@@ -303,7 +303,7 @@ function SectionPractice() {
           <div className="video-thumb">
             <span className="video-duration">4:48</span>
           </div>
-          <span className="video-meta">Video · Creator TBD</span>
+          <span className="video-meta">Video · Hi Im Gosu</span>
           <h3 className="video-title serif">Engage vs peel: how to choose</h3>
           <p className="exercise-text">Per-archetype demonstration with teamfight examples.</p>
         </article>
