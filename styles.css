@@ -130,11 +130,28 @@ a { color: inherit; text-decoration: none; }
   --s-4:  32px;
   --s-5:  40px;
   --s-6:  48px;
+  --s-7:  56px;
   --s-8:  64px;
 }
 
-/* Density — base spacing unit (--s drives existing calc(var(--s) * N) callsites) */
-:root[data-density="aere"]    { --s: 8px;    --section-y: 140px; --body-size: 16px; }
+/* Layout chrome — nav height + z-index scale.
+   Use --nav-h on every sticky offset (toc, tabrail, jumper). Use --z-* to
+   avoid ad-hoc z-index values; the scale is sparse so insertions are easy. */
+:root {
+  --nav-h:     64px;
+  --z-base:    1;
+  --z-toc:     30;
+  --z-sticky:  35;
+  --z-nav:     40;
+  --z-menu:    50;
+  --z-overlay: 100;
+}
+
+/* Density — base spacing unit (--s drives existing calc(var(--s) * N) callsites)
+   Aere = roomier reading layout (10px base, taller sections, larger body).
+   Compact = denser study layout (8px base, tighter sections, smaller body).
+   The two MUST differ on --s itself, otherwise the toggle is a no-op. */
+:root[data-density="aere"]    { --s: 10px;   --section-y: 140px; --body-size: 16px; }
 :root[data-density="compact"] { --s: 8px;    --section-y: 88px;  --body-size: 15px; }
 
 /* ── Global type ────────────────────────────────────────────────────────── */
@@ -216,7 +233,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 
 /* ── Nav ────────────────────────────────────────────────────────────────── */
 .nav {
-  position: sticky; top: 0; z-index: 40;
+  position: sticky; top: 0; z-index: var(--z-nav);
   background: color-mix(in oklab, var(--bg) 88%, transparent);
   backdrop-filter: blur(14px) saturate(120%);
   -webkit-backdrop-filter: blur(14px) saturate(120%);
@@ -279,7 +296,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   list-style: none; margin: 0; padding: 4px;
-  z-index: 50;
+  z-index: var(--z-menu);
 }
 .nav-roles-item {
   display: block;
@@ -312,7 +329,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
   list-style: none; margin: 0; padding: 4px;
-  z-index: 50;
+  z-index: var(--z-menu);
 }
 .lang-item {
   display: flex; align-items: baseline; gap: 8px;
@@ -1361,7 +1378,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   top: 50%;
   left: calc(var(--s) * 3);
   transform: translateY(-50%);
-  z-index: 30;
+  z-index: var(--z-toc);
   width: 188px;
   padding: 14px 0;
   pointer-events: auto;
@@ -2133,9 +2150,9 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   padding-bottom: calc(var(--s) * 3);
   border-bottom: 1px dashed var(--rule);
   position: sticky;
-  top: 64px; /* matches nav height */
+  top: var(--nav-h);
   background: var(--bg);
-  z-index: 5;
+  z-index: var(--z-sticky);
   padding-top: calc(var(--s) * 2);
 }
 .glossary-jumper-link {
