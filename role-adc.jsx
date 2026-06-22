@@ -209,7 +209,7 @@ const ROLE_DATA = {
 
   build: {
     title: "Runes & build path by champion",
-    lede: "A safe default for each starter champion. These are standard crit marksman setups, not meta-chasing. Refine afterwards via Lolalytics.",
+    lede: "A current high-Elo default for each starter, from Lolalytics (master, patch 26.12). Solid to copy, then refine as you learn the champion.",
     modes: {
       missfortune: {
         label: "Miss Fortune",
@@ -218,13 +218,13 @@ const ROLE_DATA = {
           ["Minor 1",   "Presence of Mind"],
           ["Minor 2",   "Legend: Alacrity"],
           ["Minor 3",   "Coup de Grace"],
-          ["Summoners", "Flash · Heal or Barrier"],
+          ["Summoners", "Flash · Cleanse"],
         ],
         build: [
-          ["Start",     "Doran's Blade + 1 potion"],
-          ["1st item",  "Stormrazor or The Collector"],
-          ["Boots",     "Berserker's Greaves"],
-          ["Follow-up", "Infinity Edge, Lord Dominik's Regards, Guardian Angel"],
+          ["Start",     "Doran's Bow + 2 potions"],
+          ["1st item",  "Bloodthirster"],
+          ["Boots",     "Plated Steelcaps or Mercury's Treads"],
+          ["Follow-up", "The Collector, Infinity Edge, Lord Dominik's Regards"],
         ],
       },
       caitlyn: {
@@ -234,13 +234,13 @@ const ROLE_DATA = {
           ["Minor 1",   "Presence of Mind"],
           ["Minor 2",   "Legend: Alacrity"],
           ["Minor 3",   "Coup de Grace"],
-          ["Summoners", "Flash · Heal or Barrier"],
+          ["Summoners", "Flash · Barrier"],
         ],
         build: [
           ["Start",     "Doran's Blade + 1 potion"],
           ["1st item",  "Hexoptics C44"],
           ["Boots",     "Berserker's Greaves"],
-          ["Follow-up", "Infinity Edge, Lord Dominik's Regards, Guardian Angel"],
+          ["Follow-up", "Infinity Edge, Phantom Dancer or The Collector, Lord Dominik's Regards"],
         ],
       },
       ashe: {
@@ -253,9 +253,9 @@ const ROLE_DATA = {
           ["Summoners", "Flash · Heal"],
         ],
         build: [
-          ["Start",     "Doran's Blade + 1 potion"],
+          ["Start",     "Doran's Bow + 2 potions"],
           ["1st item",  "Hexoptics C44"],
-          ["Boots",     "Berserker's Greaves"],
+          ["Boots",     "Plated Steelcaps or Mercury's Treads"],
           ["Follow-up", "Phantom Dancer, Infinity Edge, Lord Dominik's Regards"],
         ],
       },
