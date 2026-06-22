@@ -74,7 +74,11 @@ function App() {
       />
       {rendered.map(([key, Component], i) => {
         const num = String(i + 1).padStart(2, "0");
-        return <Component key={key} num={num} id={"s" + num} {...sectionProps(key, data)} />;
+        return (
+          <ErrorBoundary key={key} label={key}>
+            <Component num={num} id={"s" + num} {...sectionProps(key, data)} />
+          </ErrorBoundary>
+        );
       })}
       <Footer />
     </>

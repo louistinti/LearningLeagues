@@ -22,6 +22,43 @@ const LL_TIERS = [
 // Data Dragon patch version for champion portraits (single source of truth).
 const DDRAGON_VER = "14.23.1";
 
+// Current LoL patch shown across the guides. Bump this in ONE place when you
+// refresh content for a new patch; role data references it via LL_PATCH.
+const LL_PATCH = "26.12";
+
+/* ── ErrorBoundary ─────────────────────────────────────────────────────────
+   Wraps each section so a render error in one (e.g. a malformed role-data
+   entry) shows a small inline notice instead of blanking the whole page.
+   Note: this catches RENDER errors. A syntax error in a role-<x>.jsx file
+   stops that file from setting window.ROLE_DATA, which app.jsx already handles
+   with its own "No ROLE_DATA" guard. Together they keep the page from going
+   blank on a bad edit. */
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+  componentDidCatch(error, info) {
+    console.error("Section failed to render:", this.props.label || "", error, info);
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <section className="section shell">
+          <p className="section-lede" style={{ color: "var(--danger)" }}>
+            This section couldn't be displayed{this.props.label ? ` (${this.props.label})` : ""}.
+            The rest of the page is unaffected.
+          </p>
+        </section>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 /* ── Glossary ─────────────────────────────────────────────────────────────
    Single source of truth for short, inline LoL term definitions. Use the
    <Gloss term="..."/> component on the FIRST mention of a term in a guide
@@ -436,4 +473,4 @@ function TocSidebar({ items = [] }) {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, Callout, ErrorCard, LL_TIERS, LL_GLOSSARY, CALLOUT_TYPES, DDRAGON_VER });
+Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, Callout, ErrorCard, ErrorBoundary, LL_TIERS, LL_GLOSSARY, CALLOUT_TYPES, DDRAGON_VER, LL_PATCH });

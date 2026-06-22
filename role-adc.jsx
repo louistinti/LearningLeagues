@@ -12,7 +12,7 @@ const ROLE_DATA = {
     meta: [
       <><strong>Difficulty</strong><span className="stars">★★</span><span style={{opacity:.3}}>★</span></>,
       <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> 26.12</>,
+      <><strong>Patch</strong> {LL_PATCH}</>,
     ],
     sigilLabel: "SIGIL · ADC",
     sigil: (
@@ -209,7 +209,7 @@ const ROLE_DATA = {
 
   build: {
     title: "Runes & build path by champion",
-    lede: "A current high-Elo default for each starter, from Lolalytics (master, patch 26.12). Solid to copy, then refine as you learn the champion.",
+    lede: "A current high-Elo default for each starter, from Lolalytics (master, patch " + LL_PATCH + "). Solid to copy, then refine as you learn the champion.",
     modes: {
       missfortune: {
         label: "Miss Fortune",
