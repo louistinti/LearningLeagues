@@ -273,13 +273,13 @@ function SectionChampions({ num, id, title, lede, champions }) {
       <div className="champ-grid">
         {champions.map((c) => (
           <article key={c.name} className="champ-card">
-            <ChampionPortrait name={c.name} label={`PORTRAIT · ${c.name.toUpperCase()}`} />
+            <ChampionPortrait name={c.name} label={`PORTRAIT · ${(c.display || c.name).toUpperCase()}`} />
             <div className="champ-body">
               <div className="champ-meta">
                 <span className="tag">{c.tag}</span>
                 <span>Diff · {c.diff}</span>
               </div>
-              <h3 className="champ-name serif">{c.name}</h3>
+              <h3 className="champ-name serif">{c.display || c.name}</h3>
               <p className="champ-desc">{c.desc}</p>
               <a className="champ-link" href="#">Full profile →</a>
             </div>
