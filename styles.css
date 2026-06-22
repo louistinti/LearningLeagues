@@ -72,6 +72,7 @@ a { color: inherit; text-decoration: none; }
    palette. Support keeps amber (identical to the default). Place AFTER the
    [data-accent] rules so a future role's accent wins the cascade. */
 :root[data-role="support"] { --accent: var(--accent-ambre); }
+:root[data-role="adc"]     { --accent: var(--accent-bleu);  }
 
 /* Spacing scale — strict 8px ladder (Design System §04). 4px is the absolute
    minimum (hairline only); 12px is the only allowed half-step. */
