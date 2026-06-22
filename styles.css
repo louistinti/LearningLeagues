@@ -68,6 +68,11 @@ a { color: inherit; text-decoration: none; }
 :root[data-accent="ambre"] { --accent: var(--accent-ambre);}
 :root[data-accent="bleu"]  { --accent: var(--accent-bleu); }
 
+/* Role accent — each role guide gets a signature accent without touching the
+   palette. Support keeps amber (identical to the default). Place AFTER the
+   [data-accent] rules so a future role's accent wins the cascade. */
+:root[data-role="support"] { --accent: var(--accent-ambre); }
+
 /* Spacing scale — strict 8px ladder (Design System §04). 4px is the absolute
    minimum (hairline only); 12px is the only allowed half-step. */
 :root {
