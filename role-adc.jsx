@@ -285,8 +285,8 @@ const ROLE_DATA = {
     title: "To practice",
     lede: "Two short videos to watch and two drills to run in the practice tool.",
     videos: [
-      { duration: "6:24", creator: "Skill Capped", title: "How to attack-move and kite like the pros", desc: "The orb-walk rhythm: auto, move, auto. The single biggest mechanical gap in low Elo." },
-      { duration: "8:10", creator: "Skill Capped", title: "Wave management for marksmen", desc: "Freeze, slow-push and crash, and when each one wins you the lane." },
+      { creator: "Skill Capped", url: "https://www.youtube.com/watch?v=LrOqispLPLg", title: "Why You SUCK at ADC (and how to fix it)", desc: "The habits that keep ADC players stuck, and the fixes. A clean fundamentals reset." },
+      { creator: "Neon", url: "https://www.youtube.com/watch?v=5dc9EzeCnes", title: "The Ultimate ADC Guide for 2026", desc: "A full walkthrough of ADC fundamentals from a pro player's point of view." },
     ],
     drills: [
       { tag: "Drill 01 · Practice tool", title: "Clean CS, no abilities", body: <>Solo bot lane, no items, no abilities on minions. Hit <b>80 CS by 10:00</b>, then 100 by 13:00. Step away from the wave every 15 to 20s to mimic a trade.</> },
