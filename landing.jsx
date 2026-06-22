@@ -132,7 +132,7 @@ const ROLES = [
   { key: "top",     name: "Top",     icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png",     blurb: "Island duelist", href: "/roles/top" },
   { key: "jungle",  name: "Jungle",  icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png",  blurb: "Tempo & paths",  href: "/roles/jungle" },
   { key: "middle",  name: "Mid",     icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-middle.png",  blurb: "Map carry",      href: "/roles/middle" },
-  { key: "bottom",  name: "ADC",     icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-bottom.png",  blurb: "Late-game DPS",  href: "/roles/bottom" },
+  { key: "bottom",  name: "ADC",     icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-bottom.png",  blurb: "Late-game DPS",  href: "ADC.html" },
   { key: "utility", name: "Support", icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-utility.png", blurb: "Vision & engage", href: "Support.html" },
 ];
 
