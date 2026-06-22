@@ -45,6 +45,9 @@ function sectionProps(key, data) {
 
 function App() {
   const data = window.ROLE_DATA;
+  if (!data) {
+    return <p style={{ padding: "120px 24px", textAlign: "center" }}>No ROLE_DATA found. Ensure the role data file (role-&lt;role&gt;.jsx) loads before app.jsx.</p>;
+  }
   const rendered = SECTION_ORDER.filter(([key]) => hasData(data[key]));
   const tocItems = rendered.map(([key, , label], i) => ({
     id: "s" + String(i + 1).padStart(2, "0"),

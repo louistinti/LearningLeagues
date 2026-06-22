@@ -359,7 +359,12 @@ function SectionChecklist({ num, id, title, lede, storageKey, items, threshold =
   const [checked, setChecked] = React.useState(() => {
     try {
       const raw = localStorage.getItem(storageKey);
-      if (raw) return JSON.parse(raw);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        // Only trust stored state if it matches the current item count; otherwise
+        // the checklist changed and the old array would mis-map onto new items.
+        if (Array.isArray(parsed) && parsed.length === items.length) return parsed;
+      }
     } catch (e) {}
     return Array(items.length).fill(false);
   });
