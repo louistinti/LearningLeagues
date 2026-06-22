@@ -41,7 +41,7 @@ function SectionSkills({ num, id, title, lede, skills }) {
       <div className="skills-grid">
         {skills.map((s, i) => (
           <article key={i} className="skill">
-            <span className="skill-num">0{i + 1} / 0{skills.length}</span>
+            <span className="skill-num">{String(i + 1).padStart(2, "0")} / {String(skills.length).padStart(2, "0")}</span>
             <h3 className="skill-title serif">{s.title}</h3>
             <p className="skill-desc">{s.desc}</p>
             <a className="skill-link" href="#">{s.link} →</a>
@@ -104,18 +104,20 @@ function SectionMap({ num, id, title, lede, pins, mapSrc, mapAlt, mapCredit, leg
 function SectionTriangle({ num, id, title, lede, nodes, legend }) {
   const [hover, setHover] = React.useState(null);
   const stageRef = React.useRef(null);
-  const pokeRef = React.useRef(null);
-  const engageRef = React.useRef(null);
-  const encRef = React.useRef(null);
-  const refByKey = { poke: pokeRef, engage: engageRef, enchanter: encRef };
+  // The triangle is always 3 archetypes in a fixed visual cycle: node[0] top,
+  // node[1] bottom-right, node[2] bottom-left (set via each node's corner/x/y).
+  // Refs and arrows key off POSITION, not archetype name, so any role can supply
+  // its own 3 archetype keys in that order (Support: poke / engage / enchanter).
+  const refs = [React.useRef(null), React.useRef(null), React.useRef(null)];
+  const keys = Object.keys(nodes);
   const [arrows, setArrows] = React.useState(null);
 
   React.useLayoutEffect(() => {
     const compute = () => {
       const s = stageRef.current;
-      const p = pokeRef.current;
-      const a = engageRef.current;
-      const e = encRef.current;
+      const p = refs[0].current;
+      const a = refs[1].current;
+      const e = refs[2].current;
       if (!s || !p || !a || !e) return;
       const sr = s.getBoundingClientRect();
       if (!sr.width) return;
@@ -135,14 +137,17 @@ function SectionTriangle({ num, id, title, lede, nodes, legend }) {
       const vx = (v) => (v / sr.width)  * 100;
       const vy = (v) => (v / sr.height) * 100;
       setArrows({
+        // Enchanter → Poke: tail 16px above Enc's top-center, tip 16px below Poke's bottom-left corner
         encToPoke: {
           x1: vx(enc.cx),    y1: vy(enc.top - GAP),
           x2: vx(poke.left), y2: vy(poke.bottom + GAP),
         },
+        // Poke → Engage: tail 16px below Poke's bottom-right corner, tip 16px above Engage's top-center
         pokeToEngage: {
           x1: vx(poke.right), y1: vy(poke.bottom + GAP),
           x2: vx(engage.cx),  y2: vy(engage.top - GAP),
         },
+        // Engage → Enchanter: horizontal, centered on both boxes' y, 16px from each inner edge
         engageToEnc: {
           x1: vx(engage.left - GAP), y1: vy(engage.cy),
           x2: vx(enc.right  + GAP),  y2: vy(enc.cy),
@@ -168,6 +173,9 @@ function SectionTriangle({ num, id, title, lede, nodes, legend }) {
             <text x="50" y="63" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="3" letterSpacing="1" fill="var(--accent)">ARCHETYPES</text>
 
             {arrows && (() => {
+              // Arrow asset: native 12 × 123 viewBox. Triangle tip at (5.77, 0),
+              // shaft 2 wide (x∈[4.77, 6.77]) from y=9 to y=123.
+              // Scale chosen so shaft thickness ≈ old stroke width (0.45 vb units).
               const S = 0.22;
               const SHAFT_W = 2 * S;
               const HEAD_H  = 10 * S;
@@ -175,6 +183,8 @@ function SectionTriangle({ num, id, title, lede, nodes, legend }) {
               const renderArrow = (key, a) => {
                 const dx = a.x2 - a.x1, dy = a.y2 - a.y1;
                 const L = Math.hypot(dx, dy);
+                // Rotate native "+y-down" (tip → tail direction in the asset)
+                // to align with the tip→tail world direction.
                 const theta = Math.atan2(dx, -dy) * 180 / Math.PI;
                 const op = hover && hover !== key ? 0.18 : 0.95;
                 return (
@@ -190,18 +200,18 @@ function SectionTriangle({ num, id, title, lede, nodes, legend }) {
               };
               return (
                 <>
-                  {renderArrow("poke", arrows.pokeToEngage)}
-                  {renderArrow("engage", arrows.engageToEnc)}
-                  {renderArrow("enchanter", arrows.encToPoke)}
+                  {renderArrow(keys[0], arrows.pokeToEngage)}
+                  {renderArrow(keys[1], arrows.engageToEnc)}
+                  {renderArrow(keys[2], arrows.encToPoke)}
                 </>
               );
             })()}
           </svg>
 
-          {Object.entries(nodes).map(([key, n]) => (
+          {Object.entries(nodes).map(([key, n], i) => (
             <div
               key={key}
-              ref={refByKey[key]}
+              ref={refs[i]}
               className="arche-node"
               data-corner={n.corner}
               style={{ left: `${n.x}%`, top: `${n.y}%` }}
@@ -294,7 +304,7 @@ function SectionBuild({ num, id, title, lede, build }) {
             className={"archetype-tab" + (archetype === k ? " is-active" : "")}
             onClick={() => setArchetype(k)}
           >
-            <span className="mono tag">0{i + 1}</span>
+            <span className="mono tag">{String(i + 1).padStart(2, "0")}</span>
             <span className="label serif">{build[k].label}</span>
           </button>
         ))}
