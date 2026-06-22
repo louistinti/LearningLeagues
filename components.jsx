@@ -347,6 +347,10 @@ function LangSwitcher() {
 }
 
 function TocSidebar({ items = [] }) {
+  // `items` must be fully populated and stable at mount: the initial active id
+  // here and the scroll-spy effect's id list are both captured once. In the
+  // engine, app.jsx builds items synchronously from window.ROLE_DATA before
+  // first render and never changes them, so the empty [] effect dep is correct.
   const [active, setActive] = React.useState(items[0]?.id);
   const lockRef = React.useRef(false);
   const NAV_OFFSET = 80;
