@@ -50,6 +50,12 @@ const LL_GLOSSARY = {
   "summoners":     "Summoner Spells — the two extra abilities (Flash, Heal, Ignite…).",
   "Ezreal E":      "Ezreal's dash ability — short blink + skillshot.",
   "Lucian E":      "Lucian's dash ability — short skillshot dash.",
+  "kiting":        "Attacking then moving between each auto so you deal damage without standing still. Also called orb-walking.",
+  "attack-move":   "A click (default A + click) that auto-attacks the best target near the cursor instead of walking onto it.",
+  "power spike":   "A moment your champion gets much stronger — a key item, level, or ability rank.",
+  "hypercarry":    "A marksman that is weak early but becomes the team's main damage once it has items.",
+  "lethality":     "Flat armor penetration, strongest early. Used by burst marksmen and assassins.",
+  "shutdown":      "Bonus gold the enemy earns for killing a fed champion.",
 };
 
 /* <Gloss term="CS">CS</Gloss>
@@ -171,7 +177,7 @@ function RolesDropdown({ active }) {
     { name: "Top",     href: "/roles/top" },
     { name: "Jungle",  href: "/roles/jungle" },
     { name: "Mid",     href: "/roles/middle" },
-    { name: "ADC",     href: "/roles/bottom" },
+    { name: "ADC",     href: "ADC.html" },
     { name: "Support", href: "Support.html" },
   ];
 

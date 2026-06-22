@@ -273,13 +273,13 @@ function SectionChampions({ num, id, title, lede, champions }) {
       <div className="champ-grid">
         {champions.map((c) => (
           <article key={c.name} className="champ-card">
-            <ChampionPortrait name={c.name} label={`PORTRAIT · ${c.name.toUpperCase()}`} />
+            <ChampionPortrait name={c.name} label={`PORTRAIT · ${(c.display || c.name).toUpperCase()}`} />
             <div className="champ-body">
               <div className="champ-meta">
                 <span className="tag">{c.tag}</span>
                 <span>Diff · {c.diff}</span>
               </div>
-              <h3 className="champ-name serif">{c.name}</h3>
+              <h3 className="champ-name serif">{c.display || c.name}</h3>
               <p className="champ-desc">{c.desc}</p>
               <a className="champ-link" href="#">Full profile →</a>
             </div>
@@ -420,9 +420,13 @@ function SectionPractice({ num, id, title, lede, videos = [], drills = [] }) {
       <div className="practice-grid">
         {videos.map((v, i) => (
           <article key={i} className="video-card">
-            <div className="video-thumb"><span className="video-duration">{v.duration}</span></div>
+            <div className="video-thumb">{v.duration ? <span className="video-duration">{v.duration}</span> : null}</div>
             <span className="video-meta">Video · {v.creator}</span>
-            <h3 className="video-title serif">{v.title}</h3>
+            <h3 className="video-title serif">
+              {v.url
+                ? <a href={v.url} target="_blank" rel="noopener noreferrer">{v.title}</a>
+                : v.title}
+            </h3>
             <p className="exercise-text">{v.desc}</p>
           </article>
         ))}

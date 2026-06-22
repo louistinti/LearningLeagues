@@ -52,10 +52,12 @@ function App() {
     return <p style={{ padding: "120px 24px", textAlign: "center" }}>No ROLE_DATA found. Ensure the role data file (role-&lt;role&gt;.jsx) loads before app.jsx.</p>;
   }
   const rendered = SECTION_ORDER.filter(([key]) => hasData(data[key]));
+  // A role may override a section's TOC label via data[key].tocLabel; otherwise
+  // the generic SECTION_ORDER label is used.
   const tocItems = rendered.map(([key, , label], i) => ({
     id: "s" + String(i + 1).padStart(2, "0"),
     num: String(i + 1).padStart(2, "0"),
-    label,
+    label: (data[key] && data[key].tocLabel) || label,
   }));
   return (
     <>
