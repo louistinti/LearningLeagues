@@ -78,6 +78,19 @@ est structurellement identique : mêmes scripts partagés + son seul `role-<x>.j
 `app.jsx` générique qui lit `window.ROLE_DATA` et assemble TOC + sections + hero.
 L'attribut racine `data-role="<x>"` pilote l'accent.
 
+### Sections optionnelles par rôle
+
+`app.jsx` rend les sections depuis une **liste ordonnée** (`SECTION_ORDER`). Pour chaque
+entrée, il ne rend la section que si la clé de données correspondante est présente et non
+vide dans `ROLE_DATA`. Conséquences :
+- **Retirer une section pour un rôle** = ne pas fournir sa clé dans `ROLE_DATA`.
+- **Ajouter une section** = créer un composant générique dans `role-sections.jsx`,
+  l'ajouter à `SECTION_ORDER`, et fournir sa clé pour les rôles concernés.
+- La TOC se construit à partir des sections effectivement rendues (pas d'entrée morte).
+
+La numérotation des sections (01, 02, …) est dérivée de l'ordre de rendu effectif, pas
+codée en dur, pour rester cohérente quand un rôle saute une section.
+
 ## Plan de réalisation
 
 ### Phase 1 — Refacto moteur (pilote Support, zéro nouveau contenu)
