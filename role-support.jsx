@@ -2,7 +2,6 @@
 
 const ROLE_DATA = {
   meta: {
-    key: "support",
     activeKey: "roles",
     breadcrumb: "Support",
     eyebrow: <>ROLE <span className="dot"></span> SUPPORT</>,

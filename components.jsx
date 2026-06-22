@@ -1,4 +1,4 @@
-// components.jsx — shared primitives for the Support role page.
+// components.jsx — shared primitives for the role guide pages.
 
 /* ── Shared design-token data (single source of truth) ─────────────────────
    LL_TIERS is consumed by ds-foundations.jsx (palette swatches) and

@@ -89,7 +89,7 @@ function SectionMap({ num, id, title, lede, pins, mapSrc, mapAlt, mapCredit, leg
               onMouseEnter={() => setActive(p.n)}
               onMouseLeave={() => setActive(null)}
             >
-              <span className="legend-num">0{p.n}</span>
+              <span className="legend-num">{String(p.n).padStart(2, "0")}</span>
               <span className="legend-text">
                 <strong>{p.short}</strong>{p.long ? ` — ${p.long}` : null}
               </span>
@@ -108,6 +108,8 @@ function SectionTriangle({ num, id, title, lede, nodes, legend }) {
   // node[1] bottom-right, node[2] bottom-left (set via each node's corner/x/y).
   // Refs and arrows key off POSITION, not archetype name, so any role can supply
   // its own 3 archetype keys in that order (Support: poke / engage / enchanter).
+  // CONTRACT: `nodes` must have EXACTLY 3 entries in this order, or arrows
+  // silently won't render (refs[2] would be null and the effect early-returns).
   const refs = [React.useRef(null), React.useRef(null), React.useRef(null)];
   const keys = Object.keys(nodes);
   const [arrows, setArrows] = React.useState(null);

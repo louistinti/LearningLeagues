@@ -17,6 +17,9 @@ const SECTION_ORDER = [
   ["practice",  SectionPractice, "Practice"],
 ];
 
+// A section renders only if its data key is present and non-empty. To DROP a
+// section for a role, OMIT the key entirely — do not set it to {} or null, or
+// the component renders with undefined title/lede/payload.
 function hasData(v) {
   if (!v) return false;
   if (Array.isArray(v)) return v.length > 0;
