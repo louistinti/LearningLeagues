@@ -1,6 +1,5 @@
 /* ── Learning Leagues — Support role page ─────────────────────────────────
-   Design system: "Hextech éditorial" default, with Codex and Esport palettes.
-   Tokens are declared on :root and swapped via [data-palette].
+   Design system: "Hextech éditorial". Single dark palette on :root.
    Density tokens (--s) swapped via [data-density].
    Accent hue swapped via [data-accent].
    ───────────────────────────────────────────────────────────────────────── */
@@ -23,9 +22,9 @@ img { max-width: 100%; display: block; }
 button { font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
 
-/* ── Palettes ───────────────────────────────────────────────────────────── */
+/* ── Color tokens ───────────────────────────────────────────────────────── */
 
-:root[data-palette="hextech"] {
+:root {
   --bg:          #070a14;
   --bg-soft:     #0c1222;
   --surface:    #111a2e;
@@ -50,57 +49,7 @@ a { color: inherit; text-decoration: none; }
   --danger-soft:  rgba(201,122,110,.14);
 }
 
-:root[data-palette="codex"] {
-  --bg:          #0e0b06;
-  --bg-soft:     #14100a;
-  --surface:     #1a1510;
-  --surface-2:   #221b14;
-  --border:      #3a2f22;
-  --border-soft: #2a2118;
-  --fg:          #f0e6d2;
-  --fg-dim:      #c3b596;
-  --fg-mute:     #867a62;
-  --accent-or:   #b08d57;
-  --accent-ambre:#c98a3a;
-  --accent-bleu: #6b7f8e;
-  --rule:        rgba(240,230,210,.10);
-  --grid-line:   rgba(176,141,87,.22);
-  --gold-soft:   rgba(176,141,87,.14);
-  --shadow-lg:   0 30px 60px -30px rgba(0,0,0,.75);
-  /* Semantic — warmer mossy green / terracotta to fit codex's tan mood */
-  --success:      #8fa66b;
-  --danger:       #b86b58;
-  --warn:         var(--accent-ambre);
-  --success-soft: rgba(143,166,107,.16);
-  --danger-soft:  rgba(184,107,88,.16);
-}
-
-:root[data-palette="esport"] {
-  --bg:          #0a0b0f;
-  --bg-soft:     #111318;
-  --surface:     #151920;
-  --surface-2:   #1c2129;
-  --border:      #2a3240;
-  --border-soft: #1e2430;
-  --fg:          #e8ecf2;
-  --fg-dim:      #9da6b5;
-  --fg-mute:     #6b7485;
-  --accent-or:   #e7c065;
-  --accent-ambre:#f59e0b;
-  --accent-bleu: #7aa7d9;
-  --rule:        rgba(255,255,255,.08);
-  --grid-line:   rgba(245,158,11,.20);
-  --gold-soft:   rgba(245,158,11,.1);
-  --shadow-lg:   0 30px 60px -30px rgba(0,0,0,.7);
-  /* Semantic — slightly more vivid to match esport's neon amber */
-  --success:      #7fc26a;
-  --danger:       #e6604d;
-  --warn:         var(--accent-ambre);
-  --success-soft: rgba(127,194,106,.14);
-  --danger-soft:  rgba(230,96,77,.14);
-}
-
-/* Tier palette — universal LoL constructs, same hex across all palettes */
+/* Tier palette — universal LoL constructs */
 :root {
   --tier-iron:        #5b5959;
   --tier-bronze:      #a26939;
@@ -118,6 +67,11 @@ a { color: inherit; text-decoration: none; }
 :root[data-accent="or"]    { --accent: var(--accent-or);   }
 :root[data-accent="ambre"] { --accent: var(--accent-ambre);}
 :root[data-accent="bleu"]  { --accent: var(--accent-bleu); }
+
+/* Role accent — each role guide gets a signature accent without touching the
+   palette. Support keeps amber (identical to the default). Place AFTER the
+   [data-accent] rules so a future role's accent wins the cascade. */
+:root[data-role="support"] { --accent: var(--accent-ambre); }
 
 /* Spacing scale — strict 8px ladder (Design System §04). 4px is the absolute
    minimum (hairline only); 12px is the only allowed half-step. */

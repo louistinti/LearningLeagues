@@ -1,4 +1,4 @@
-// components.jsx — shared primitives for the Support role page.
+// components.jsx — shared primitives for the role guide pages.
 
 /* ── Shared design-token data (single source of truth) ─────────────────────
    LL_TIERS is consumed by ds-foundations.jsx (palette swatches) and
@@ -18,6 +18,9 @@ const LL_TIERS = [
   { name: "GM",         var: "--tier-grandmaster", hex: "#c9484a" },
   { name: "Challenger", var: "--tier-challenger",  hex: "#d4b468" },
 ];
+
+// Data Dragon patch version for champion portraits (single source of truth).
+const DDRAGON_VER = "14.23.1";
 
 /* ── Glossary ─────────────────────────────────────────────────────────────
    Single source of truth for short, inline LoL term definitions. Use the
@@ -200,15 +203,15 @@ function RolesDropdown({ active }) {
   );
 }
 
-function Breadcrumb() {
+function Breadcrumb({ current }) {
   return (
     <div className="shell">
       <div className="breadcrumb">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <span className="sep">›</span>
         <a href="#">Roles</a>
         <span className="sep">›</span>
-        <span className="current">Support</span>
+        <span className="current">{current}</span>
       </div>
     </div>
   );
@@ -226,51 +229,22 @@ function SectionHead({ num, title, lede }) {
   );
 }
 
-function Hero() {
+function Hero({ eyebrow, title, intro, meta = [], sigil, sigilLabel }) {
   return (
     <section className="hero">
       <div className="shell">
         <div className="hero-grid">
           <div>
-            <div className="eyebrow hero-eyebrow">
-              ROLE <span className="dot"></span> SUPPORT
-            </div>
-            <h1 className="serif">Support<em>.</em></h1>
-
-            <p className="hero-intro">
-              Support is the team's connective role. You don't farm and you don't
-              hunt kills for yourself. You provide vision, you start or cancel
-              engages, and you keep your ADC alive. Pick Support if reading the
-              map beats executing combos for you.
-            </p>
-
+            <div className="eyebrow hero-eyebrow">{eyebrow}</div>
+            <h1 className="serif">{title}<em>.</em></h1>
+            <p className="hero-intro">{intro}</p>
             <div className="hero-meta">
-              <span><strong>Difficulty</strong><span className="stars">★</span><span style={{opacity:.3}}>★★</span></span>
-              <span><strong>Read time</strong> ~15 min</span>
-              <span><strong>Patch</strong> 26.X</span>
+              {meta.map((m, i) => <span key={i}>{m}</span>)}
             </div>
           </div>
-
           <div className="hero-sigil" aria-hidden="true">
-            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8">
-              {/* outer hex */}
-              <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" strokeWidth="1" opacity="0.6" />
-              {/* inner hex */}
-              <polygon points="100,40 155,72 155,128 100,160 45,128 45,72" strokeWidth="0.8" opacity="0.4" />
-              {/* radial spokes */}
-              <line x1="100" y1="10" x2="100" y2="40" opacity=".5" />
-              <line x1="180" y1="55" x2="155" y2="72" opacity=".5" />
-              <line x1="180" y1="145" x2="155" y2="128" opacity=".5" />
-              <line x1="100" y1="190" x2="100" y2="160" opacity=".5" />
-              <line x1="20" y1="145" x2="45" y2="128" opacity=".5" />
-              <line x1="20" y1="55" x2="45" y2="72" opacity=".5" />
-              {/* support glyph — shield + eye */}
-              <path d="M100 70 L130 82 L130 108 C130 120 116 128 100 134 C84 128 70 120 70 108 L70 82 Z" strokeWidth="1.2" />
-              <circle cx="100" cy="102" r="8" strokeWidth="1" />
-              <circle cx="100" cy="102" r="2.5" fill="currentColor" stroke="none" />
-              <path d="M100 88 L100 70 M100 116 L100 134 M80 102 L70 96 M120 102 L130 96" opacity=".5" />
-            </svg>
-            <span className="tag">SIGIL · SUPPORT</span>
+            {sigil}
+            <span className="tag">{sigilLabel}</span>
           </div>
         </div>
       </div>
@@ -372,21 +346,12 @@ function LangSwitcher() {
   );
 }
 
-function TocSidebar() {
-  const items = [
-    { id: "s01", num: "01", label: "Phases" },
-    { id: "s02", num: "02", label: "Map" },
-    { id: "s03", num: "03", label: "Skills" },
-    { id: "s04", num: "04", label: "Triangle" },
-    { id: "s05", num: "05", label: "Prio lvl 2" },
-    { id: "s06", num: "06", label: "Mistakes" },
-    { id: "s07", num: "07", label: "Champions" },
-    { id: "s08", num: "08", label: "Build" },
-    { id: "s09", num: "09", label: "Matchups" },
-    { id: "s10", num: "10", label: "Checklist" },
-    { id: "s11", num: "11", label: "Practice" },
-  ];
-  const [active, setActive] = React.useState("s01");
+function TocSidebar({ items = [] }) {
+  // `items` must be fully populated and stable at mount: the initial active id
+  // here and the scroll-spy effect's id list are both captured once. In the
+  // engine, app.jsx builds items synchronously from window.ROLE_DATA before
+  // first render and never changes them, so the empty [] effect dep is correct.
+  const [active, setActive] = React.useState(items[0]?.id);
   const lockRef = React.useRef(false);
   const NAV_OFFSET = 80;
   const TRIGGER = NAV_OFFSET + 40;
@@ -465,4 +430,4 @@ function TocSidebar() {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, Callout, ErrorCard, LL_TIERS, LL_GLOSSARY, CALLOUT_TYPES });
+Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, Callout, ErrorCard, LL_TIERS, LL_GLOSSARY, CALLOUT_TYPES, DDRAGON_VER });

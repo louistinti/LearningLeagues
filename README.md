@@ -11,7 +11,7 @@ A static site to teach **League of Legends** properly — from MOBA-savvy beginn
 - `Support.html` — first complete role guide (phases, map, archetypes, errors, champions, build, matchups, checklist, practice)
 - `Fundamentals.html` — base-layer guide (map, items, runes, vision, wave management, neutral objectives)
 - `landing.jsx`, `app.jsx`, `components.jsx`, `fundamentals.jsx`, `sections-*.jsx` — React components transpiled in-browser via Babel
-- `styles.css` — Hextech design system: tokens swap via `[data-palette]`, `[data-density]`, `[data-accent]` on `<html>`
+- `styles.css` — Hextech design system: single `:root` palette, tokens swap via `[data-density]` and `[data-accent]` on `<html>`
 - `DesignSystem.html` + `design-system.{css,jsx}`, `ds-foundations.jsx`, `ds-components.jsx`, `ds-patterns.jsx` — visual reference page for the design system (foundations, components, patterns). Not linked from the live site; open the URL directly.
 - `assets/sr-map-clean.png` — Summoner's Rift map used by Section 02
 
@@ -35,10 +35,10 @@ Pushed to `main` → GitHub Pages serves it from the repo root. No CI step.
 
 ## Design system
 
-Three palettes (`hextech` default, `codex`, `esport`), three accents (`or`, `ambre`, `bleu`), two densities (`aere`, `compact`). Set on `<html>` directly:
+Single Hextech palette on `:root`, three accents (`or`, `ambre`, `bleu`), two densities (`aere`, `compact`). Set on `<html>` directly:
 
 ```html
-<html lang="en" data-palette="hextech" data-density="compact" data-accent="ambre">
+<html lang="en" data-density="compact" data-accent="ambre">
 ```
 
 CSS reads the data-attrs to swap tokens. EB Garamond for serif, Inter for sans, JetBrains Mono for the eyebrows.
