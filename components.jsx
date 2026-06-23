@@ -93,6 +93,15 @@ const LL_GLOSSARY = {
   "hypercarry":    "A marksman that is weak early but becomes the team's main damage once it has items.",
   "lethality":     "Flat armor penetration, strongest early. Used by burst marksmen and assassins.",
   "shutdown":      "Bonus gold the enemy earns for killing a fed champion.",
+  "trade":         "A short exchange of damage with your laner, then backing off before they retaliate.",
+  "slow push":     "Letting your wave grow by only last-hitting, so it crashes big into the enemy tower later.",
+  "crash":         "Pushing the whole wave into the enemy tower so it dies there, freeing you to recall or roam.",
+  "split push":    "Pushing a side lane on your own to threaten towers and pull enemies away from your team.",
+  "juggernaut":    "A melee fighter with high damage and durability but little mobility (Garen, Darius).",
+  "Voidgrubs":     "Early top-side river monsters; killing them grants a buff that helps your team break towers.",
+  "Rift Herald":   "A top-side river objective; the Eye of the Herald charges into a tower for free plates.",
+  "Conqueror":     "A keystone rune that stacks bonus damage as you keep fighting, then heals at full stacks.",
+  "Grasp":         "Grasp of the Undying — a keystone that adds bonus damage and healing on a hit every few seconds.",
 };
 
 /* <Gloss term="CS">CS</Gloss>
@@ -211,7 +220,7 @@ function RolesDropdown({ active }) {
   }, [open]);
 
   const roles = [
-    { name: "Top",     href: "/roles/top" },
+    { name: "Top",     href: "Top.html" },
     { name: "Jungle",  href: "/roles/jungle" },
     { name: "Mid",     href: "/roles/middle" },
     { name: "ADC",     href: "ADC.html" },
