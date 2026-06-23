@@ -102,6 +102,15 @@ const LL_GLOSSARY = {
   "Rift Herald":   "A top-side river objective; the Eye of the Herald charges into a tower for free plates.",
   "Conqueror":     "A keystone rune that stacks bonus damage as you keep fighting, then heals at full stacks.",
   "Grasp":         "Grasp of the Undying — a keystone that adds bonus damage and healing on a hit every few seconds.",
+  "roam":          "Leaving your lane to make a play somewhere else on the map.",
+  "lane priority": "The freedom to leave lane, earned when your wave is pushing or you've won the matchup.",
+  "waveclear":     "Killing a whole minion wave fast, usually with abilities.",
+  "shove":         "Pushing the wave into the enemy tower as fast as you can.",
+  "recall":        "Channelling back to base to spend gold and heal (the 'B' button).",
+  "skillshot":     "An ability you have to aim, that can miss (a line, a projectile, a zone).",
+  "burst":         "Dealing a large amount of damage in a very short window.",
+  "assassin":      "A champion built to delete a single target fast, then escape.",
+  "control mage":  "A mage that clears waves and zones space from range, scaling into teamfights.",
 };
 
 /* <Gloss term="CS">CS</Gloss>
@@ -222,7 +231,7 @@ function RolesDropdown({ active }) {
   const roles = [
     { name: "Top",     href: "Top.html" },
     { name: "Jungle",  href: "/roles/jungle" },
-    { name: "Mid",     href: "/roles/middle" },
+    { name: "Mid",     href: "Mid.html" },
     { name: "ADC",     href: "ADC.html" },
     { name: "Support", href: "Support.html" },
   ];
