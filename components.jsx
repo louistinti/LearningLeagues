@@ -111,6 +111,15 @@ const LL_GLOSSARY = {
   "burst":         "Dealing a large amount of damage in a very short window.",
   "assassin":      "A champion built to delete a single target fast, then escape.",
   "control mage":  "A mage that clears waves and zones space from range, scaling into teamfights.",
+  "Smite":         "The jungler's summoner spell: heavy damage to monsters, used to secure objectives.",
+  "pathing":       "The order you clear your jungle camps in.",
+  "gank":          "Ambushing an enemy in a lane with help from outside it.",
+  "leash":         "When a laner helps you damage your first camp at the start of the game.",
+  "counter-jungle":"Taking camps from the enemy jungler's side to deny them gold and XP.",
+  "jungle companion":"The starting jungle item (a small pet) that grows as you clear camps.",
+  "objective":     "A neutral monster that gives a team-wide reward: Dragon, Herald, Baron.",
+  "skirmish":      "A small fight, usually 2v2 or 3v3, often around a camp or objective.",
+  "power farm":    "Clearing camps non-stop to hit your item spikes fast instead of ganking.",
 };
 
 /* <Gloss term="CS">CS</Gloss>
@@ -230,7 +239,7 @@ function RolesDropdown({ active }) {
 
   const roles = [
     { name: "Top",     href: "Top.html" },
-    { name: "Jungle",  href: "/roles/jungle" },
+    { name: "Jungle",  href: "Jungle.html" },
     { name: "Mid",     href: "Mid.html" },
     { name: "ADC",     href: "ADC.html" },
     { name: "Support", href: "Support.html" },
