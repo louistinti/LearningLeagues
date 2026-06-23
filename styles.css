@@ -379,7 +379,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 /* hero visual: abstract sigil */
 .hero-sigil {
   aspect-ratio: 1;
-  max-width: 320px;
+  width: min(320px, 100%);
   justify-self: end;
   position: relative;
   border: 1px solid var(--border);
@@ -393,6 +393,15 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .hero-sigil::after { inset: 24px; border-color: var(--accent); opacity: .25; }
 .hero-sigil svg { width: 100%; height: 100%; }
+/* Role position icon (same art as the home page role cards), centred in the
+   sigil frame and tinted to the role accent via mask. */
+.hero-sigil-icon {
+  position: absolute; inset: 0; margin: auto;
+  width: 44%; height: 44%;
+  background: var(--accent);
+  -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; -webkit-mask-size: contain;
+  mask-repeat: no-repeat; mask-position: center; mask-size: contain;
+}
 .hero-sigil .tag {
   position: absolute; bottom: 10px; left: 12px;
   font-family: 'JetBrains Mono', monospace;
@@ -1528,7 +1537,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 }
 .landing-meta strong { color: var(--accent); font-weight: 500; margin-right: 6px; text-transform: uppercase; letter-spacing: 0.1em; }
 .landing-meta .dot-sep { opacity: .4; }
-.landing-sigil { max-width: 360px; aspect-ratio: 1; justify-self: end; }
+.landing-sigil { width: min(360px, 100%); aspect-ratio: 1; justify-self: end; }
 @media (max-width: 900px) { .landing-sigil { justify-self: start; max-width: 240px; } }
 
 /* ── Landing — generic showcase ─────────────────────────────────────────── */
