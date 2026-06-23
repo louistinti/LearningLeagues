@@ -39,6 +39,7 @@ a { color: inherit; text-decoration: none; }
   --accent-bleu: #6fa8dc;
   --accent-rouge:#c96f6f;
   --accent-violet:#a884d0;
+  --accent-jade: #5fb38f;
   --rule:        rgba(255,255,255,.09);
   --grid-line:   rgba(127,168,220,.22);
   --gold-soft:   rgba(212,180,104,.12);
@@ -71,6 +72,7 @@ a { color: inherit; text-decoration: none; }
 :root[data-accent="bleu"]  { --accent: var(--accent-bleu); }
 :root[data-accent="rouge"] { --accent: var(--accent-rouge);}
 :root[data-accent="violet"]{ --accent: var(--accent-violet);}
+:root[data-accent="jade"]  { --accent: var(--accent-jade); }
 
 /* Role accent — each role guide gets a signature accent without touching the
    palette. Support keeps amber (identical to the default). Place AFTER the
@@ -79,6 +81,7 @@ a { color: inherit; text-decoration: none; }
 :root[data-role="adc"]     { --accent: var(--accent-bleu);  }
 :root[data-role="top"]     { --accent: var(--accent-rouge); }
 :root[data-role="mid"]     { --accent: var(--accent-violet);}
+:root[data-role="jungle"]  { --accent: var(--accent-jade); }
 
 /* Spacing scale — strict 8px ladder (Design System §04). 4px is the absolute
    minimum (hairline only); 12px is the only allowed half-step. */
