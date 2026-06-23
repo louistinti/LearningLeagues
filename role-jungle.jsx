@@ -16,25 +16,7 @@ const ROLE_DATA = {
     ],
     sigilLabel: "SIGIL · JUNGLE",
     sigil: (
-      <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8">
-        {/* outer hex */}
-        <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" strokeWidth="1" opacity="0.6" />
-        {/* inner hex */}
-        <polygon points="100,40 155,72 155,128 100,160 45,128 45,72" strokeWidth="0.8" opacity="0.4" />
-        {/* radial spokes */}
-        <line x1="100" y1="10" x2="100" y2="40" opacity=".5" />
-        <line x1="180" y1="55" x2="155" y2="72" opacity=".5" />
-        <line x1="180" y1="145" x2="155" y2="128" opacity=".5" />
-        <line x1="100" y1="190" x2="100" y2="160" opacity=".5" />
-        <line x1="20" y1="145" x2="45" y2="128" opacity=".5" />
-        <line x1="20" y1="55" x2="45" y2="72" opacity=".5" />
-        {/* clear path — three camps linked into a route */}
-        <circle cx="74" cy="82" r="7" strokeWidth="1.2" />
-        <circle cx="126" cy="92" r="7" strokeWidth="1.2" />
-        <circle cx="98" cy="128" r="7" strokeWidth="1.2" />
-        <path d="M80 86 L120 90 M122 98 L104 122 M92 124 L80 90" strokeWidth="0.8" opacity=".55" strokeDasharray="3 3" />
-        <circle cx="100" cy="102" r="2.5" fill="currentColor" stroke="none" />
-      </svg>
+      <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png)" }} />
     ),
   },
 

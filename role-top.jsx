@@ -16,25 +16,7 @@ const ROLE_DATA = {
     ],
     sigilLabel: "SIGIL · TOP",
     sigil: (
-      <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8">
-        {/* outer hex */}
-        <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" strokeWidth="1" opacity="0.6" />
-        {/* inner hex */}
-        <polygon points="100,40 155,72 155,128 100,160 45,128 45,72" strokeWidth="0.8" opacity="0.4" />
-        {/* radial spokes */}
-        <line x1="100" y1="10" x2="100" y2="40" opacity=".5" />
-        <line x1="180" y1="55" x2="155" y2="72" opacity=".5" />
-        <line x1="180" y1="145" x2="155" y2="128" opacity=".5" />
-        <line x1="100" y1="190" x2="100" y2="160" opacity=".5" />
-        <line x1="20" y1="145" x2="45" y2="128" opacity=".5" />
-        <line x1="20" y1="55" x2="45" y2="72" opacity=".5" />
-        {/* duelist's blade — the 1v1 island */}
-        <line x1="100" y1="58" x2="100" y2="138" strokeWidth="1.4" />
-        <path d="M100 52 L94 64 L106 64 Z" fill="currentColor" stroke="none" />
-        <line x1="80" y1="120" x2="120" y2="120" strokeWidth="1.4" />
-        <path d="M88 134 Q100 150 112 134" strokeWidth="1" opacity=".6" />
-        <circle cx="100" cy="102" r="2.5" fill="currentColor" stroke="none" />
-      </svg>
+      <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)" }} />
     ),
   },
 
