@@ -413,23 +413,40 @@ function SectionChecklist({ num, id, title, lede, storageKey, items, threshold =
   );
 }
 
+// Pull the 11-char YouTube id out of a watch / youtu.be URL so we can build a
+// thumbnail without storing it per video.
+function youtubeId(url) {
+  if (!url) return null;
+  const m = url.match(/[?&]v=([\w-]{11})/) || url.match(/youtu\.be\/([\w-]{11})/);
+  return m ? m[1] : null;
+}
+
 function SectionPractice({ num, id, title, lede, videos = [], drills = [] }) {
   return (
     <section className="section shell" id={id}>
       <SectionHead num={num} title={title} lede={lede} />
       <div className="practice-grid">
-        {videos.map((v, i) => (
-          <article key={i} className="video-card">
-            <div className="video-thumb">{v.duration ? <span className="video-duration">{v.duration}</span> : null}</div>
-            <span className="video-meta">Video · {v.creator}</span>
-            <h3 className="video-title serif">
-              {v.url
-                ? <a href={v.url} target="_blank" rel="noopener noreferrer">{v.title}</a>
-                : v.title}
-            </h3>
-            <p className="exercise-text">{v.desc}</p>
-          </article>
-        ))}
+        {videos.map((v, i) => {
+          const ytId = youtubeId(v.url);
+          const thumb = v.thumb || (ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : null);
+          // Whole card is the link when we have a URL; otherwise a plain article.
+          const Card = v.url ? "a" : "article";
+          const linkProps = v.url ? { href: v.url, target: "_blank", rel: "noopener noreferrer" } : {};
+          return (
+            <Card key={i} className="video-card" data-clickable={v.url ? "1" : "0"} {...linkProps}>
+              <div
+                className="video-thumb"
+                data-empty={thumb ? "0" : "1"}
+                style={thumb ? { backgroundImage: `url(${thumb})` } : undefined}
+              >
+                {v.duration ? <span className="video-duration">{v.duration}</span> : null}
+              </div>
+              <span className="video-meta">Video · {v.creator}</span>
+              <h3 className="video-title serif">{v.title}</h3>
+              <p className="exercise-text">{v.desc}</p>
+            </Card>
+          );
+        })}
       </div>
       <div className="exercises">
         {drills.map((d, i) => (

@@ -277,8 +277,8 @@ const ROLE_DATA = {
     title: "To practice",
     lede: "Two short videos to watch and two drills to run in the practice tool.",
     videos: [
-      { duration: "3:12", creator: "Coach Curtis", title: "Understanding bot lane vision", desc: "Ward timings, control ward priority, tribush vs river choice." },
-      { duration: "4:48", creator: "Hi Im Gosu", title: "Engage vs peel: how to choose", desc: "Per-archetype demonstration with teamfight examples." },
+      { creator: "Skill Capped", url: "https://www.youtube.com/watch?v=h3a7zLISsts", title: "The ONLY SUPPORT Guide You'll EVER NEED", desc: "A full walkthrough of support fundamentals from the ground up: vision, roaming, and engaging. Watch this first if the role is new to you." },
+      { creator: "Skill Capped", url: "https://www.youtube.com/watch?v=z8jp-YjOwI0", title: "Why YOU SUCK at SUPPORT (And How to Fix It)", desc: "The habits that keep supports stuck, and the fix for each. A clean fundamentals reset." },
     ],
     drills: [
       { tag: "Drill 01 · Practice tool", title: "Blind ward placement", body: <>Enter the practice tool, place 10 wards on the 10 map spots without checking their names. Time yourself: <b>&lt; 3 min</b> = you know the map.</> },
