@@ -27,7 +27,7 @@
 }
 .ft-intro-meta strong {
   color: var(--fg-dim); font-weight: 500; margin-right: 7px;
-  text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em;
 }
 
 /* Intro sigil — a static preview of the graph idea */
@@ -46,7 +46,7 @@
 .ft-intro-sigil svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ft-intro-sigil .tag {
   position: absolute; bottom: 10px; left: 12px;
-  font-family: 'JetBrains Mono', monospace; font-size: 9.5px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
   letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute);
 }
 
@@ -83,13 +83,13 @@
 
 .ft-card-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: calc(var(--s) * 2); }
 .ft-card-num { font-family: 'EB Garamond', serif; font-style: italic; font-size: 30px; color: var(--accent); line-height: 1; }
-.ft-card-tier { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); }
+.ft-card-tier { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); }
 .ft-card-name { font-family: 'EB Garamond', serif; font-size: 26px; line-height: 1.1; margin-bottom: calc(var(--s) * 1.5); }
 .ft-card-lede { color: var(--fg-dim); font-size: 14.5px; line-height: 1.55; margin-bottom: calc(var(--s) * 3); flex: 1; }
 .ft-card-foot { display: flex; align-items: center; justify-content: space-between; padding-top: calc(var(--s) * 2); border-top: 1px dashed var(--rule); }
-.ft-card-links { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--fg-mute); letter-spacing: 0.04em; }
+.ft-card-links { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.04em; }
 .ft-card-links b { color: var(--fg-dim); font-weight: 500; }
-.ft-card-cta { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.ft-card-cta { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
 .ft-card:hover .ft-card-cta .arw { transform: translateX(3px); }
 .ft-card-cta .arw { transition: transform .2s; }
 
@@ -115,7 +115,7 @@
 .ft-incard-edge.is-active { stroke: var(--accent); stroke-width: 1.4; }
 .ft-incard-node { cursor: pointer; }
 .ft-incard-node .dot { fill: var(--surface-2); stroke: var(--border); stroke-width: 1.2; transition: stroke .18s, fill .18s; }
-.ft-incard-node .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.02em; fill: var(--fg-dim); text-anchor: middle; }
+.ft-incard-node .lbl { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.02em; fill: var(--fg-dim); text-anchor: middle; }
 .ft-incard-node:hover .dot { stroke: var(--accent); }
 .ft-incard-node.is-center .dot { fill: var(--accent); stroke: var(--accent); }
 .ft-incard-node.is-center .lbl { fill: var(--fg); font-weight: 600; }
@@ -123,10 +123,10 @@
 .ft-incard-node.is-active .lbl { fill: var(--fg); }
 
 .ft-overlay-body { position: relative; padding: calc(var(--s) * 5); display: flex; flex-direction: column; overflow-y: auto; }
-.ft-overlay-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: calc(var(--s) * 2); }
+.ft-overlay-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: calc(var(--s) * 2); }
 .ft-overlay-title { font-family: 'EB Garamond', serif; font-size: 34px; line-height: 1.05; margin-bottom: calc(var(--s) * 2); }
 .ft-overlay-lede { color: var(--fg-dim); font-size: 15.5px; line-height: 1.6; margin-bottom: calc(var(--s) * 4); }
-.ft-overlay-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: calc(var(--s) * 1.5); }
+.ft-overlay-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: calc(var(--s) * 1.5); }
 .ft-connect-list { display: flex; flex-direction: column; gap: 1px; margin-top: auto; }
 .ft-connect-row { display: flex; align-items: center; gap: calc(var(--s) * 1.5); padding: calc(var(--s) * 1.25) 0; border-top: 1px dashed var(--rule); cursor: pointer; color: var(--fg-dim); transition: color .15s; text-align: left; background: none; border-left: 0; border-right: 0; border-bottom: 0; font: inherit; width: 100%; }
 .ft-connect-row:hover, .ft-connect-row.is-active { color: var(--fg); }
@@ -170,7 +170,7 @@
 
 /* toolkit ring boundary */
 .ft-ring { fill: none; stroke: var(--border-soft); stroke-width: 1; stroke-dasharray: 3 6; opacity: .8; }
-.ft-ring-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--fg-mute); }
+.ft-ring-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--fg-mute); }
 
 /* nodes */
 .ft-node { cursor: pointer; }
@@ -203,7 +203,7 @@
 .ft-ctl svg { width: 15px; height: 15px; }
 
 .ft-legend { position: absolute; left: calc(var(--s) * 2); bottom: calc(var(--s) * 2); z-index: 6; display: flex; flex-direction: column; gap: 6px; padding: calc(var(--s) * 1.75) calc(var(--s) * 2); background: color-mix(in oklab, var(--bg) 66%, transparent); border: 1px solid var(--border); backdrop-filter: blur(6px); }
-.ft-legend-row { display: flex; align-items: center; gap: 9px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em; color: var(--fg-dim); }
+.ft-legend-row { display: flex; align-items: center; gap: 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em; color: var(--fg-dim); }
 .ft-legend-key { width: 16px; height: 12px; display: grid; place-items: center; flex-shrink: 0; }
 .ft-legend-key i { display: block; width: 11px; height: 11px; }
 .ft-key-primary { background: color-mix(in oklab, var(--accent) 20%, var(--surface)); border: 1.4px solid var(--accent); }
@@ -211,7 +211,7 @@
 .ft-key-toolkit { border: 1px dashed var(--border-soft); }
 .ft-key-edge { width: 16px; height: 0; border-top: 1.4px solid var(--accent); }
 
-.ft-hint { margin-top: calc(var(--s) * 2); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--fg-mute); letter-spacing: 0.04em; display: flex; gap: calc(var(--s) * 3); flex-wrap: wrap; }
+.ft-hint { margin-top: calc(var(--s) * 2); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.04em; display: flex; gap: calc(var(--s) * 3); flex-wrap: wrap; }
 .ft-hint span { display: inline-flex; align-items: center; gap: 6px; }
 .ft-hint kbd { font-family: inherit; border: 1px solid var(--border); padding: 1px 6px; color: var(--fg-dim); background: var(--surface); }
 
@@ -220,10 +220,10 @@
   background: color-mix(in oklab, var(--surface) 96%, transparent); border-left: 1px solid var(--border);
   backdrop-filter: blur(8px);
   display: flex; flex-direction: column; padding: calc(var(--s) * 4); overflow-y: auto; }
-.ft-drawer-tier { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: calc(var(--s) * 1.5); }
+.ft-drawer-tier { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: calc(var(--s) * 1.5); }
 .ft-drawer-title { font-family: 'EB Garamond', serif; font-size: 30px; line-height: 1.05; margin-bottom: calc(var(--s) * 2); }
 .ft-drawer-lede { color: var(--fg-dim); font-size: 15px; line-height: 1.6; margin-bottom: calc(var(--s) * 3.5); }
-.ft-drawer-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: calc(var(--s) * 1.5); }
+.ft-drawer-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: calc(var(--s) * 1.5); }
 .ft-drawer .ft-connect-list { margin-top: 0; }
 
 /* mobile: master tree */

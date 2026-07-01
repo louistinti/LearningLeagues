@@ -119,7 +119,7 @@ function InCardOverlay({ rootId, onClose }) {
   }, [onClose]);
 
   // Radial geometry: root at centre, connected nodes on a ring.
-  const cx = 200, cy = 200, R = 132, CENTER_R = 33, LEAF_R = 28;
+  const cx = 200, cy = 200, R = 134, CENTER_R = 52, LEAF_R = 48;
   const kids = root.connects.map((id, i) => {
     const a = (-90 + (360 / root.connects.length) * i) * (Math.PI / 180);
     return { id, x: cx + R * Math.cos(a), y: cy + R * Math.sin(a) };
@@ -199,13 +199,14 @@ function shortName(name) {
   return w.length > 1 ? w[0] : name;
 }
 
-// Auto-size a mono label so it stays inside a circle of radius r. Short words
-// keep the base size; long ones shrink to a readable floor. (mono advance ≈
-// 0.6em; keep the string within ~84% of the diameter.)
+// Auto-size a mono label so it stays inside a circle of radius r, but never
+// below the 12px accessibility floor (the overlay SVG renders at ~1:1, so 12
+// viewBox units ≈ 12px on screen). Short words keep the cap; long ones shrink
+// to 12. mono advance ≈ 0.64em; keep the string within ~82% of the diameter.
 function labelFont(text, r) {
-  const usable = r * 2 * 0.84;
-  const fs = usable / (text.length * 0.6);
-  return Math.round(Math.max(8, Math.min(11, fs)) * 10) / 10;
+  const usable = r * 2 * 0.82;
+  const fs = usable / (text.length * 0.64);
+  return Math.round(Math.max(12, Math.min(15, fs)) * 10) / 10;
 }
 
 Object.assign(window, { FundIntro, PrimaryCards, InCardOverlay });

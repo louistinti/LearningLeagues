@@ -85,6 +85,10 @@ function MasterTree() {
   const [focusId, setFocusId] = React.useState(null);   // drives highlight + drawer
   const [drawerId, setDrawerId] = React.useState(null);
   const [panning, setPanning] = React.useState(false);
+  // viewBox units per on-screen pixel. Node labels are SVG text, so they shrink
+  // with the stage. We divide the target px size by the container scale to hold
+  // a readable on-screen size (>=12px at zoom 1) on any viewport.
+  const [vbScale, setVbScale] = React.useState(1);
   const pointers = React.useRef(new Map());
   const panRef = React.useRef(null);
   const pinchRef = React.useRef(null);
@@ -208,6 +212,18 @@ function MasterTree() {
     return () => window.removeEventListener("pointermove", move);
   }, []);
 
+  // Track the stage's viewBox-per-pixel ratio so node labels keep a readable
+  // on-screen size regardless of viewport width.
+  React.useEffect(() => {
+    const el = svgRef.current;
+    if (!el) return;
+    const measure = () => { const w = el.getBoundingClientRect().width; if (w) setVbScale(VB_W / w); };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
   // ── background pan + pinch ──
   const onBgDown = (e) => {
     stageRef.current.setPointerCapture(e.pointerId);
@@ -279,14 +295,14 @@ function MasterTree() {
                    onMouseEnter={() => { hoverRef.current = n.id; }} onMouseLeave={() => { hoverRef.current = null; }}>
                   <circle className="halo" cx="0" cy="0" r={r + 12} />
                   {n.tier === "primary" ? <Hex className="shape" r={r} /> : <circle className="shape" cx="0" cy="0" r={r} />}
-                  <text className="lbl" x="0" y={off} style={{ fontSize: n.tier === "primary" ? 15 : n.toolkit ? 10.5 : 12 }}>{meta.name}</text>
+                  <text className="lbl" x="0" y={off} style={{ fontSize: (n.tier === "primary" ? 15 : n.toolkit ? 12 : 13) * vbScale }}>{meta.name}</text>
                 </g>
               );
             })}
           </g>
         </svg>
 
-        <div className="ft-controls">
+        <div className="ft-controls" onPointerDown={(e) => e.stopPropagation()}>
           <button className="ft-ctl" onClick={() => zoomBtn(1)} aria-label="Zoom in">+</button>
           <button className="ft-ctl" onClick={() => zoomBtn(-1)} aria-label="Zoom out">−</button>
           <button className="ft-ctl" onClick={resetView} aria-label="Reset view">
@@ -302,7 +318,7 @@ function MasterTree() {
         </div>
 
         {drawerId && (
-          <div className="ft-drawer">
+          <div className="ft-drawer" onPointerDown={(e) => e.stopPropagation()}>
             <DrawerBody id={drawerId} onPick={(id) => { setDrawerId(id); setFocus(id); }} onClose={() => { setDrawerId(null); setFocus(null); }} />
           </div>
         )}
