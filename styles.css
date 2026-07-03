@@ -118,6 +118,12 @@ a { color: inherit; text-decoration: none; }
 :root[data-density="aere"]    { --s: 10px;   --section-y: 140px; --body-size: 16px; }
 :root[data-density="compact"] { --s: 8px;    --section-y: 88px;  --body-size: 15px; }
 
+/* On phones, hold body text at the 16px accessibility minimum even in compact
+   density (avoids iOS auto-zoom and keeps prose comfortable). */
+@media (max-width: 768px) {
+  :root[data-density="compact"] { --body-size: 16px; }
+}
+
 /* ── Global type ────────────────────────────────────────────────────────── */
 
 body { font-size: var(--body-size); }
