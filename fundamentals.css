@@ -153,9 +153,7 @@
     linear-gradient(90deg, rgba(127,168,220,.05) 1px, transparent 1px) 0 0 / 44px 44px,
     radial-gradient(circle at 50% 46%, color-mix(in oklab, var(--accent) 6%, transparent), transparent 58%),
     var(--bg-soft);
-  touch-action: none; cursor: grab; user-select: none;
 }
-.ft-stage.is-panning { cursor: grabbing; }
 .ft-stage::before, .ft-stage::after { content: ""; position: absolute; width: 30px; height: 30px; pointer-events: none; z-index: 6; }
 .ft-stage::before { top: -1px; left: -1px; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); }
 .ft-stage::after  { bottom: -1px; right: -1px; border-bottom: 1px solid var(--accent); border-right: 1px solid var(--accent); }
@@ -196,12 +194,7 @@
 .ft-node--toolkit:hover .shape { stroke: var(--accent-bleu); stroke-dasharray: none; }
 .ft-node--toolkit:hover .lbl { fill: var(--fg-dim); }
 
-/* stage chrome — controls, legend */
-.ft-controls { position: absolute; top: calc(var(--s) * 2); right: calc(var(--s) * 2); z-index: 6; display: flex; gap: 5px; }
-.ft-ctl { width: 32px; height: 32px; display: grid; place-items: center; background: color-mix(in oklab, var(--bg) 60%, transparent); border: 1px solid var(--border); color: var(--fg-dim); cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 15px; transition: color .15s, border-color .15s; }
-.ft-ctl:hover { color: var(--accent); border-color: var(--accent); }
-.ft-ctl svg { width: 15px; height: 15px; }
-
+/* stage chrome — legend */
 .ft-legend { position: absolute; left: calc(var(--s) * 2); bottom: calc(var(--s) * 2); z-index: 6; display: flex; flex-direction: column; gap: 6px; padding: calc(var(--s) * 1.75) calc(var(--s) * 2); background: color-mix(in oklab, var(--bg) 66%, transparent); border: 1px solid var(--border); backdrop-filter: blur(6px); }
 .ft-legend-row { display: flex; align-items: center; gap: 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em; color: var(--fg-dim); }
 .ft-legend-key { width: 16px; height: 12px; display: grid; place-items: center; flex-shrink: 0; }
@@ -210,10 +203,6 @@
 .ft-key-secondary { background: var(--surface-2); border: 1.2px solid var(--border); transform: rotate(45deg); width: 9px; height: 9px; }
 .ft-key-toolkit { border: 1px dashed var(--border-soft); }
 .ft-key-edge { width: 16px; height: 0; border-top: 1.4px solid var(--accent); }
-
-.ft-hint { margin-top: calc(var(--s) * 2); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.04em; display: flex; gap: calc(var(--s) * 3); flex-wrap: wrap; }
-.ft-hint span { display: inline-flex; align-items: center; gap: 6px; }
-.ft-hint kbd { font-family: inherit; border: 1px solid var(--border); padding: 1px 6px; color: var(--fg-dim); background: var(--surface); }
 
 /* ── Drawer ───────────────────────────────────────────────────────────────── */
 .ft-drawer { position: absolute; top: 0; right: 0; height: 100%; width: min(360px, 82%); z-index: 7;
@@ -230,4 +219,14 @@
 @media (max-width: 720px) {
   .ft-legend { display: none; }
   .ft-drawer { width: 100%; }
+
+  /* Declutter: the 25-node graph is tiny on a phone, so all 25 labels collide
+     (43 overlapping pairs). Show only the 6 primary labels; tapping any node
+     opens the drawer, which names the node and its connections in full. */
+  .ft-node--secondary .lbl,
+  .ft-node--toolkit .lbl { display: none; }
+
+  /* Touch targets >= 44px (drawer close + connection rows). */
+  .ft-close { width: 44px; height: 44px; }
+  .ft-connect-row { padding: calc(var(--s) * 1.75) 0; }
 }
