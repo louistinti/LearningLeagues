@@ -314,8 +314,49 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .lang-item.is-active { color: var(--accent); }
 .lang-item.is-active .mono { color: var(--accent); }
 .lang-name { font-family: 'EB Garamond', serif; font-size: 15px; }
+/* ── Mobile nav (hamburger) ─────────────────────────────────────────────── */
+.nav-burger { display: none; }
+.nav-burger-icon { position: relative; display: block; width: 18px; height: 12px; }
+.nav-burger-icon i { position: absolute; left: 0; width: 100%; height: 1.5px; background: currentColor; border-radius: 1px; transition: transform .2s, opacity .2s; }
+.nav-burger-icon i:nth-child(1) { top: 0; }
+.nav-burger-icon i:nth-child(2) { top: 5px; }
+.nav-burger-icon i:nth-child(3) { top: 10px; }
+.nav-burger-icon.is-open i:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+.nav-burger-icon.is-open i:nth-child(2) { opacity: 0; }
+.nav-burger-icon.is-open i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+.nav-mobile-scrim {
+  position: fixed; inset: var(--nav-h) 0 0 0; z-index: var(--z-menu);
+  background: color-mix(in oklab, var(--bg) 55%, transparent);
+}
+.nav-mobile {
+  position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: calc(var(--z-menu) + 1);
+  display: flex; flex-direction: column;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: calc(var(--s) * 2);
+  max-height: calc(100dvh - var(--nav-h)); overflow-y: auto;
+}
+.nav-mobile-link { display: block; padding: 12px; font-size: 16px; color: var(--fg-dim); transition: color .15s; }
+.nav-mobile-link:hover, .nav-mobile-link.is-active { color: var(--accent); }
+.nav-mobile-label {
+  display: block; padding: 12px 12px 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--fg-mute);
+}
+.nav-mobile-sub { display: block; padding: 10px 12px 10px 24px; font-family: 'EB Garamond', serif; font-size: 17px; color: var(--fg-dim); transition: color .15s; }
+.nav-mobile-sub:hover { color: var(--accent); }
+
 @media (max-width: 900px) {
   .nav-links { display: none; }
+  .nav-cta { display: none; }         /* placeholder CTA; primary nav lives in the burger menu */
+  .nav-burger {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    background: transparent; border: 1px solid var(--border); border-radius: 2px;
+    color: var(--fg-dim); cursor: pointer; transition: color .15s, border-color .15s;
+  }
+  .nav-burger:hover { color: var(--accent); border-color: var(--accent); }
 }
 
 /* ── Breadcrumb ─────────────────────────────────────────────────────────── */

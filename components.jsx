@@ -198,6 +198,13 @@ function Nav({ activeKey = "roles" }) {
     className: "nav-link" + (activeKey === key ? " is-active" : ""),
     "aria-current": activeKey === key ? "page" : undefined,
   });
+  const mobileLinks = [
+    { key: "foundations", label: "Foundations", href: "Fundamentals.html" },
+    { roles: true },
+    { key: "champions", label: "Champions", href: "#" },
+    { key: "macro", label: "Macro", href: "#" },
+    { key: "glossary", label: "Glossary", href: "Glossary.html" },
+  ];
   return (
     <div className="nav">
       <div className="shell nav-inner">
@@ -215,11 +222,20 @@ function Nav({ activeKey = "roles" }) {
         <div className="nav-right">
           <LangSwitcher />
           <button className="nav-cta">Role quiz →</button>
+          <MobileMenu links={mobileLinks} activeKey={activeKey} />
         </div>
       </div>
     </div>
   );
 }
+
+const LL_ROLES = [
+  { name: "Top",     href: "Top.html" },
+  { name: "Jungle",  href: "Jungle.html" },
+  { name: "Mid",     href: "Mid.html" },
+  { name: "ADC",     href: "ADC.html" },
+  { name: "Support", href: "Support.html" },
+];
 
 function RolesDropdown({ active }) {
   const [open, setOpen] = React.useState(false);
@@ -237,13 +253,7 @@ function RolesDropdown({ active }) {
     };
   }, [open]);
 
-  const roles = [
-    { name: "Top",     href: "Top.html" },
-    { name: "Jungle",  href: "Jungle.html" },
-    { name: "Mid",     href: "Mid.html" },
-    { name: "ADC",     href: "ADC.html" },
-    { name: "Support", href: "Support.html" },
-  ];
+  const roles = LL_ROLES;
 
   return (
     <div className="nav-roles" ref={ref}>
@@ -270,6 +280,57 @@ function RolesDropdown({ active }) {
         </ul>
       )}
     </div>
+  );
+}
+
+// Mobile nav: a hamburger that opens a full-width menu below the bar. The
+// desktop .nav-links are hidden under 900px; this makes them reachable on phones.
+function MobileMenu({ links, activeKey }) {
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [open]);
+
+  return (
+    <>
+      <button
+        type="button"
+        className="nav-burger"
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span className={"nav-burger-icon" + (open ? " is-open" : "")}><i></i><i></i><i></i></span>
+      </button>
+      {open && (
+        <>
+          <div className="nav-mobile-scrim" onClick={() => setOpen(false)} />
+          <nav className="nav-mobile" aria-label="Mobile">
+            {links.map((l, i) => l.roles ? (
+              <div className="nav-mobile-group" key="roles">
+                <span className="nav-mobile-label">Roles</span>
+                {LL_ROLES.map((r) => (
+                  <a key={r.name} className="nav-mobile-sub" href={r.href} onClick={() => setOpen(false)}>{r.name}</a>
+                ))}
+              </div>
+            ) : (
+              <a
+                key={l.label}
+                className={"nav-mobile-link" + (activeKey && l.key === activeKey ? " is-active" : "")}
+                href={l.href}
+                onClick={() => setOpen(false)}
+              >{l.label}</a>
+            ))}
+          </nav>
+        </>
+      )}
+    </>
   );
 }
 

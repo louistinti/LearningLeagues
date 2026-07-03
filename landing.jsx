@@ -234,6 +234,14 @@ function ResourcesVisual() {
 
 // ── Landing nav ─────────────────────────────────────────────────────────
 function LandingNav() {
+  const mobileLinks = [
+    { label: "Fundamentals", href: "#s-fundamentals" },
+    { roles: true },
+    { label: "Champions", href: "#" },
+    { label: "Training", href: "#s-training" },
+    { label: "Resources", href: "#s-resources" },
+    { label: "Glossary", href: "Glossary.html" },
+  ];
   return (
     <div className="nav">
       <div className="shell nav-inner">
@@ -252,6 +260,7 @@ function LandingNav() {
         <div className="nav-right">
           <LangSwitcher />
           <button className="nav-cta">Role quiz →</button>
+          <MobileMenu links={mobileLinks} />
         </div>
       </div>
     </div>
