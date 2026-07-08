@@ -204,6 +204,7 @@ function Nav({ activeKey = "roles" }) {
     { key: "champions", label: "Champions", href: "#" },
     { key: "macro", label: "Macro", href: "#" },
     { key: "glossary", label: "Glossary", href: "Glossary.html" },
+    { key: "quiz", label: "Role quiz", href: "Quiz.html" },
   ];
   return (
     <div className="nav">
@@ -411,7 +412,7 @@ function Footer() {
               <h5>Resources</h5>
               <a href="#">Glossary</a>
               <a href="#">Objective timings</a>
-              <a href="#">Role quiz</a>
+              <a href="Quiz.html">Role quiz</a>
               <a href="#">Patch changelog</a>
             </div>
             <div className="footer-col">

@@ -241,6 +241,7 @@ function LandingNav() {
     { label: "Training", href: "#s-training" },
     { label: "Resources", href: "#s-resources" },
     { label: "Glossary", href: "Glossary.html" },
+    { label: "Role quiz", href: "Quiz.html" },
   ];
   return (
     <div className="nav">
