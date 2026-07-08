@@ -10,6 +10,7 @@ A static site to teach **League of Legends** properly — from MOBA-savvy beginn
 - `index.html` — landing page (hero, fundamentals, 5-roles grid, training, resources)
 - `Support.html` — first complete role guide (phases, map, archetypes, errors, champions, build, matchups, checklist, practice)
 - `Fundamentals.html` — base-layer guide (map, items, runes, vision, wave management, neutral objectives)
+- `Quiz.html` — role-orientation quiz (intro → 8 questions → all 5 roles ranked), backed by `quiz-data.jsx` + `quiz-app.jsx` + `quiz.css`
 - `landing.jsx`, `app.jsx`, `components.jsx`, `fundamentals.jsx`, `sections-*.jsx` — React components transpiled in-browser via Babel
 - `styles.css` — Hextech design system: single `:root` palette, tokens swap via `[data-density]` and `[data-accent]` on `<html>`
 - `DesignSystem.html` + `design-system.{css,jsx}`, `ds-foundations.jsx`, `ds-components.jsx`, `ds-patterns.jsx` — visual reference page for the design system (foundations, components, patterns). Not linked from the live site; open the URL directly.
