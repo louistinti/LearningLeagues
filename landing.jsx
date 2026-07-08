@@ -32,7 +32,7 @@ function LandingHero() {
                   <path d="M8 3v10M3 8l5 5 5-5" />
                 </svg>
               </a>
-              <a href="#" className="btn-ghost">
+              <a href="Quiz.html" className="btn-ghost">
                 <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
                   <circle cx="8" cy="8" r="6" />
                   <path d="M6 6.5c0-1.1.9-2 2-2s2 .9 2 2-2 1.5-2 3M8 11.5v.01" />
@@ -259,7 +259,7 @@ function LandingNav() {
         </nav>
         <div className="nav-right">
           <LangSwitcher />
-          <button className="nav-cta">Role quiz →</button>
+          <a className="nav-cta" href="Quiz.html">Role quiz →</a>
           <MobileMenu links={mobileLinks} />
         </div>
       </div>
