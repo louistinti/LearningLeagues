@@ -18,7 +18,7 @@ function QuizBreadcrumb() {
   return (
     <div className="shell">
       <div className="breadcrumb">
-        <a href="Landing.html">Home</a>
+        <a href="index.html">Home</a>
         <span className="sep">›</span>
         <span className="current">Role quiz</span>
       </div>
