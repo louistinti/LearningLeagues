@@ -221,7 +221,11 @@ function Nav({ activeKey = "roles" }) {
         </nav>
         <div className="nav-right">
           <LangSwitcher />
-          <button className="nav-cta">Role quiz →</button>
+          <a
+            className={"nav-cta" + (activeKey === "quiz" ? " is-active" : "")}
+            href="Quiz.html"
+            aria-current={activeKey === "quiz" ? "page" : undefined}
+          >Role quiz →</a>
           <MobileMenu links={mobileLinks} activeKey={activeKey} />
         </div>
       </div>
