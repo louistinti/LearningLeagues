@@ -342,12 +342,8 @@
 .ds-icon-cell svg { width: 28px; height: 28px; }
 .ds-icon-cell span { font-size: 10px; letter-spacing: 0.12em; color: var(--fg-mute); text-transform: uppercase; }
 
-/* ── Components: button states extras ─────────────────────────────────── */
-.btn-primary.is-hover {
-  background: color-mix(in oklab, var(--accent) 88%, white);
-  box-shadow: 0 0 0 1px var(--accent), 0 0 24px -4px var(--accent);
-}
-.btn-ghost.is-hover { border-color: var(--accent); color: var(--accent); }
+/* ── Components: forced button-state specimens retired 2026-08-30 — they
+   live on the LearningLeagues-Lib docs site, the Button's single source. ── */
 
 /* ── Components grid ──────────────────────────────────────────────────── */
 .ds-comp-grid {

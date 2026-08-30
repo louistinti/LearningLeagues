@@ -169,7 +169,7 @@ function EmptyStatePattern() {
         <span className="mono ds-empty-tag">NO MATCHES · 404</span>
         <h3 className="ds-empty-title">Pas encore de games sur ce patch.</h3>
         <p>Joue au moins 3 games classées sur le patch 26.X pour débloquer ton recap hebdomadaire.</p>
-        <button className="btn-ghost">Voir le dernier patch</button>
+        <LL.Button variant="secondary">Voir le dernier patch</LL.Button>
       </div>
     </div>
   );

@@ -77,19 +77,21 @@ function GlossShowcase() {
 }
 
 function ButtonsShowcase() {
+  {/* Buttons live in LearningLeagues-Lib since 2026-08-30: the library docs
+      are the single source (variants, forced states, props, guidelines).
+      Only the product-side one-offs (nav CTA, skill link) stay showcased. */}
   return (
     <div className="ds-comp-grid">
-      <DemoCell label="Primary · default">
-        <button className="btn-primary">Quiz rôle →</button>
+      <DemoCell label="Primary · from the library">
+        <LL.Button>Quiz rôle →</LL.Button>
       </DemoCell>
-      <DemoCell label="Primary · hover">
-        <button className="btn-primary is-hover">Quiz rôle →</button>
+      <DemoCell label="Secondary · from the library">
+        <LL.Button variant="secondary">Voir la map</LL.Button>
       </DemoCell>
-      <DemoCell label="Ghost · default">
-        <button className="btn-ghost">Voir la map</button>
-      </DemoCell>
-      <DemoCell label="Ghost · hover">
-        <button className="btn-ghost is-hover">Voir la map</button>
+      <DemoCell label="Full documentation">
+        <a className="skill-link" href="https://louistinti.github.io/LearningLeagues-Lib/components/button.html">
+          Button — états, props, guidelines →
+        </a>
       </DemoCell>
       <DemoCell label="Nav CTA">
         <button className="nav-cta">Quiz rôle →</button>

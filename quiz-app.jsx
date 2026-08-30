@@ -41,12 +41,12 @@ function QzIntro({ onStart }) {
         <span><strong>Time</strong> ~2 min</span>
         <span><strong>Result</strong> all 5 roles, ranked</span>
       </div>
-      <button className="btn-primary" onClick={onStart} data-comment-anchor="quiz-start">
+      <LL.Button onClick={onStart}>
         <span>Start the quiz</span>
         <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
           <path d="M3 8h10M8 3l5 5-5 5" />
         </svg>
-      </button>
+      </LL.Button>
       <div className="qz-intro-roles" aria-hidden="true">
         <span className="qz-intro-roles-label">Top · Jungle · Mid · ADC · Support</span>
         {QUIZ_ROLE_ORDER.map((k) => (
@@ -141,13 +141,13 @@ function QzResult({ answers, onRetake }) {
       </ol>
 
       <div className="qz-result-ctas">
-        <a className="btn-primary" href={first.role.href}>
+        <LL.Button href={first.role.href}>
           <span>Read the {first.role.name} guide</span>
           <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
             <path d="M3 8h10M8 3l5 5-5 5" />
           </svg>
-        </a>
-        <button className="btn-ghost" onClick={onRetake}>Retake the quiz</button>
+        </LL.Button>
+        <LL.Button variant="secondary" onClick={onRetake}>Retake the quiz</LL.Button>
       </div>
     </div>
   );

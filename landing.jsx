@@ -26,19 +26,19 @@ function LandingHero() {
             </p>
 
             <div className="landing-cta-row">
-              <a href="#s-fundamentals" className="btn-primary" onClick={onExplore}>
+              <LL.Button href="#s-fundamentals" onClick={onExplore}>
                 <span>Explore</span>
                 <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
                   <path d="M8 3v10M3 8l5 5 5-5" />
                 </svg>
-              </a>
-              <a href="Quiz.html" className="btn-ghost">
+              </LL.Button>
+              <LL.Button variant="secondary" href="Quiz.html">
                 <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
                   <circle cx="8" cy="8" r="6" />
                   <path d="M6 6.5c0-1.1.9-2 2-2s2 .9 2 2-2 1.5-2 3M8 11.5v.01" />
                 </svg>
                 <span>Role quiz</span>
-              </a>
+              </LL.Button>
             </div>
 
             <div className="landing-meta">
@@ -88,12 +88,16 @@ function Showcase({ id, num, eyebrow, title, lede, ctaLabel, ctaHref, variant, c
             <div className="eyebrow eyebrow--accent showcase-eyebrow">{eyebrow}</div>
             <h2 className="showcase-title serif">{title}</h2>
             <p className="showcase-lede">{lede}</p>
-            <a href={ctaHref} className="btn-primary showcase-cta">
-              <span>{ctaLabel}</span>
-              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
-                <path d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-            </a>
+            {/* .showcase-cta is product layout (align-self) — it lives on a
+                wrapper, never on the library component's own element. */}
+            <div className="showcase-cta">
+              <LL.Button href={ctaHref}>
+                <span>{ctaLabel}</span>
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </LL.Button>
+            </div>
           </div>
           <div className="showcase-visual">{children}</div>
         </div>

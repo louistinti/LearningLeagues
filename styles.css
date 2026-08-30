@@ -1517,54 +1517,8 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   .toc { display: none; }
 }
 
-/* ── Landing — buttons ──────────────────────────────────────────────────── */
-.btn-primary, .btn-ghost {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 12px 22px;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  border-radius: 0;
-  cursor: pointer;
-  position: relative;
-  transition: background .18s, color .18s, border-color .18s, box-shadow .18s;
-}
-.btn-primary {
-  background: var(--accent);
-  color: var(--bg);
-  border: 1px solid var(--accent);
-  font-weight: 600;
-}
-.btn-primary::before, .btn-primary::after {
-  content: ""; position: absolute;
-  width: 8px; height: 8px;
-  border-color: var(--bg);
-  pointer-events: none;
-}
-.btn-primary::before { top: 3px;    left: 3px;    border-top: 1px solid; border-left: 1px solid; }
-.btn-primary::after  { bottom: 3px; right: 3px;   border-bottom: 1px solid; border-right: 1px solid; }
-.btn-primary:hover {
-  background: color-mix(in oklab, var(--accent) 88%, white);
-  box-shadow: 0 0 0 1px var(--accent), 0 0 24px -4px var(--accent);
-}
-.btn-primary:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-.btn-ghost {
-  background: transparent;
-  color: var(--fg);
-  border: 1px solid var(--border);
-}
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.btn-ghost:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
+/* ── Landing — buttons: provided by LearningLeagues-Lib since 2026-08-30
+   (lib/ll-lib.css + lib/ll-lib.jsx, vendored at a pin). ──────────────────── */
 
 /* ── Landing — hero ─────────────────────────────────────────────────────── */
 .landing-hero { padding: calc(var(--s) * 14) 0 calc(var(--s) * 14); border-bottom: 1px solid var(--rule); }
