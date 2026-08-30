@@ -222,11 +222,12 @@ function Nav({ activeKey = "roles" }) {
         </nav>
         <div className="nav-right">
           <LangSwitcher />
-          <a
-            className={"nav-cta" + (activeKey === "quiz" ? " is-active" : "")}
-            href="Quiz.html"
-            aria-current={activeKey === "quiz" ? "page" : undefined}
-          >Role quiz →</a>
+          {/* Library Button since 2026-08-30 (arbitrated: secondary, active
+              state dropped — a selected/aria-current state is a filed library
+              ask). .nav-cta-wrap is product layout: mobile hiding. */}
+          <span className="nav-cta-wrap">
+            <LL.Button variant="secondary" href="Quiz.html">Role quiz →</LL.Button>
+          </span>
           <MobileMenu links={mobileLinks} activeKey={activeKey} />
         </div>
       </div>

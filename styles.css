@@ -243,7 +243,10 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   cursor: pointer; transition: background .15s;
 }
 .nav-cta:hover { background: var(--gold-soft); }
-.nav-cta.is-active { background: var(--accent); color: var(--bg); }
+/* The header quiz CTA is the library Button since 2026-08-30 — .nav-cta-wrap
+   is its product layout hook (alignment here, hiding on mobile). The filled
+   active state retired with it (arbitrated; selected-state = library ask). */
+.nav-cta-wrap { display: inline-flex; }
 .nav-right { display: flex; align-items: center; gap: 12px; }
 
 /* Roles dropdown — replaces the static "Roles" nav link */
@@ -350,7 +353,8 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
-  .nav-cta { display: none; }         /* placeholder CTA; primary nav lives in the burger menu */
+  .nav-cta,
+  .nav-cta-wrap { display: none; }    /* primary nav lives in the burger menu */
   .nav-burger {
     display: inline-flex; align-items: center; justify-content: center;
     width: 44px; height: 44px;

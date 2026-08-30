@@ -264,7 +264,9 @@ function LandingNav() {
         </nav>
         <div className="nav-right">
           <LangSwitcher />
-          <a className="nav-cta" href="Quiz.html">Role quiz →</a>
+          <span className="nav-cta-wrap">
+            <LL.Button variant="secondary" href="Quiz.html">Role quiz →</LL.Button>
+          </span>
           <MobileMenu links={mobileLinks} />
         </div>
       </div>
