@@ -284,7 +284,10 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .lang-wrap { position: relative; }
 .lang-btn {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 6px 10px;
+  /* Same vertical formula as the library Button beside it (12px block
+     padding, natural line height) so the two stay height-matched. */
+  padding: 12px 14px;
+  line-height: normal;
   background: transparent;
   border: 1px solid var(--border);
   color: var(--fg-dim);

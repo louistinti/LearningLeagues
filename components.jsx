@@ -226,7 +226,12 @@ function Nav({ activeKey = "roles" }) {
               state dropped — a selected/aria-current state is a filed library
               ask). .nav-cta-wrap is product layout: mobile hiding. */}
           <span className="nav-cta-wrap">
-            <LL.Button variant="secondary" href="Quiz.html">Role quiz →</LL.Button>
+            <LL.Button variant="secondary" href="Quiz.html">
+              <span>Role quiz</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </LL.Button>
           </span>
           <MobileMenu links={mobileLinks} activeKey={activeKey} />
         </div>
