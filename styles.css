@@ -883,31 +883,8 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 @media (max-width: 900px) {
   .callout-grid { grid-template-columns: 1fr; }
 }
-.callout {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: calc(var(--s) * 4);
-  position: relative;
-  display: flex; flex-direction: column; gap: calc(var(--s) * 2);
-}
-.callout-tag {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--accent);
-  align-self: flex-start;
-  padding: 4px 10px;
-  border: 1px solid var(--accent);
-}
-.callout-tag .gl { width: 10px; height: 10px; display: inline-block; }
-.callout-tag .gl--key { background: var(--accent); transform: rotate(45deg); }
-.callout-tag .gl--pro { border: 1px solid var(--accent); border-radius: 50%; }
-.callout-tag .gl--trap { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 9px solid var(--accent); background: transparent; }
-
-.callout-title { font-size: 26px; line-height: 1.2; }
-.callout-body { font-size: 15px; color: var(--fg-dim); line-height: 1.65; }
-.callout-body b { color: var(--fg); font-weight: 600; }
+/* .callout / .callout-tag / .callout-title / .callout-body: gone — the library's
+   LL.Callout carries its own chrome (lib/ll-lib.css). Only .callout-grid stays. */
 
 /* ── Errors (Section 06) ──────────────────────────────────────────────────
    Subgrid: each card spans 4 parent rows (title + Symptom/Cause/Fix). Rows

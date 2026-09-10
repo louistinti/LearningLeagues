@@ -246,7 +246,7 @@ function SectionCallouts({ num, id, title, lede, callouts }) {
       <SectionHead num={num} title={title} lede={lede} />
       <div className="callout-grid">
         {callouts.map((c, i) => (
-          <Callout key={i} type={c.type} title={c.title}>{c.body}</Callout>
+          <LL.Callout key={i} type={c.type} title={c.title}>{c.body}</LL.Callout>
         ))}
       </div>
     </section>

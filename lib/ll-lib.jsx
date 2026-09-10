@@ -1,4 +1,4 @@
-/* VENDORED from LearningLeagues-Lib @ 6be46f668e976833eef4c71b2161269753dc2c13 (dist/ll-lib.jsx).
+/* VENDORED from LearningLeagues-Lib @ 8dd599df1b1c9bf61f9daa4996261eaf81c94f05 (dist/ll-lib.jsx).
  * GENERATED twice over: by `pnpm dist:build`, then pinned here by
  * `node scripts/vendor-dist.ts --write`. Never edit in this repository —
  * bump the pin by re-running the vendoring at a new lib commit. */
@@ -27,4 +27,21 @@ function Button({
     </button>;
 }
 
-window.LL = Object.assign(window.LL || {}, { Button });
+// ── Callout (callout) ──
+const LABELS = {
+  key: "Key concept",
+  pro: "Pro tip",
+  trap: "Trap"
+};
+function Callout({ type, title, children }) {
+  return <article className={`ll-callout ll-callout--${type}`}>
+      <span className="ll-callout-tag">
+        <i className="ll-callout-glyph" aria-hidden="true" />
+        {LABELS[type]}
+      </span>
+      {title ? <h3 className="ll-callout-title">{title}</h3> : null}
+      <div className="ll-callout-body">{children}</div>
+    </article>;
+}
+
+window.LL = Object.assign(window.LL || {}, { Button, Callout });

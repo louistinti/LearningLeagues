@@ -31,7 +31,7 @@ function Components() {
         <GlossShowcase />
       </DSSection>
 
-      <DSSection num="08" title="Callout" lede="Key concept / Pro tip / Trap. Use the <Callout type='key|pro|trap' title=''> component — never re-implement the article.callout markup inline.">
+      <DSSection num="08" title="Callout" lede="Key concept / Pro tip / Trap. The library's <LL.Callout type='key|pro|trap' title=''> — never re-implement the callout markup inline; the 2-column .callout-grid stays product-side.">
         <CalloutShowcase />
       </DSSection>
 
@@ -156,9 +156,7 @@ function InputsShowcase() {
 function TagsShowcase() {
   return (
     <div className="ds-tagrow">
-      <span className="callout-tag"><span className="gl gl--key"></span> KEY POINT</span>
-      <span className="callout-tag"><span className="gl gl--pro"></span> PRO TIP</span>
-      <span className="callout-tag"><span className="gl gl--trap"></span> TRAP</span>
+      {/* The Key concept / Pro tip / Trap tags are the library Callout's own chrome: see section 08. */}
       <span className="pill pill--easy">EASY</span>
       <span className="pill pill--playable">PLAYABLE</span>
       <span className="pill pill--hard">HARD</span>
@@ -335,15 +333,15 @@ function DemoCell({ label, children }) {
 function CalloutShowcase() {
   return (
     <div className="callout-grid">
-      <Callout type="key" title="The one rule">
+      <LL.Callout type="key" title="The one rule">
         Body of a <b>Key concept</b>. Use for the single most important takeaway of a section. Maximum one per section.
-      </Callout>
-      <Callout type="pro" title="Time it on cooldowns">
+      </LL.Callout>
+      <LL.Callout type="pro" title="Time it on cooldowns">
         Body of a <b>Pro tip</b>. Use for actionable advice that follows from the Key concept. Multiple allowed per section.
-      </Callout>
-      <Callout type="trap" title="Don't roam blind">
+      </LL.Callout>
+      <LL.Callout type="trap" title="Don't roam blind">
         Body of a <b>Trap</b>. Use for common low-Elo mistakes. Short. Direct. No hedging.
-      </Callout>
+      </LL.Callout>
     </div>
   );
 }
