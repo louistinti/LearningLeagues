@@ -1,4 +1,4 @@
-/* VENDORED from LearningLeagues-Lib @ 8dd599df1b1c9bf61f9daa4996261eaf81c94f05 (dist/ll-lib.css).
+/* VENDORED from LearningLeagues-Lib @ 45ea047402cda781752de0789cf558ec603aac03 (dist/ll-lib.css).
  * GENERATED twice over: by `pnpm dist:build`, then pinned here by
  * `node scripts/vendor-dist.ts --write`. Never edit in this repository —
  * bump the pin by re-running the vendoring at a new lib commit. */
@@ -257,6 +257,17 @@
 .ll-button--secondary:hover {
   border-color: var(--ll-accent);
   color: var(--ll-accent);
+}
+
+/* Current — "you are here" (RFC §3.1 / §4.1, §7 2026-09-16): the site's
+   measured filled state, keyed on the semantic attribute so the visual never
+   exists without it. Hover is inert on a current secondary: the state is
+   stable, not an invitation. Primary + current: attribute only (RFC §5). */
+.ll-button--secondary[aria-current="page"],
+.ll-button--secondary[aria-current="page"]:hover {
+  background: var(--ll-accent);
+  color: var(--ll-bg);
+  border-color: var(--ll-accent);
 }
 
 /* Keyboard-only focus ring (§4.2): 2px accent, 3px offset, both variants. */

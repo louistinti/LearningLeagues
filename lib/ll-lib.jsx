@@ -1,4 +1,4 @@
-/* VENDORED from LearningLeagues-Lib @ 8dd599df1b1c9bf61f9daa4996261eaf81c94f05 (dist/ll-lib.jsx).
+/* VENDORED from LearningLeagues-Lib @ 45ea047402cda781752de0789cf558ec603aac03 (dist/ll-lib.jsx).
  * GENERATED twice over: by `pnpm dist:build`, then pinned here by
  * `node scripts/vendor-dist.ts --write`. Never edit in this repository —
  * bump the pin by re-running the vendoring at a new lib commit. */
@@ -13,16 +13,18 @@ function Button({
   variant = "primary",
   href,
   type = "button",
+  current = false,
   onClick,
   children
 }) {
   const className = `ll-button ll-button--${variant}`;
+  const ariaCurrent = current ? "page" : void 0;
   if (href !== void 0) {
-    return <a className={className} href={href} onClick={onClick}>
+    return <a className={className} href={href} aria-current={ariaCurrent} onClick={onClick}>
         {children}
       </a>;
   }
-  return <button className={className} type={type} onClick={onClick}>
+  return <button className={className} type={type} aria-current={ariaCurrent} onClick={onClick}>
       {children}
     </button>;
 }

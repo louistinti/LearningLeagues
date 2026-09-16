@@ -245,7 +245,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .nav-cta:hover { background: var(--gold-soft); }
 /* The header quiz CTA is the library Button since 2026-08-30 — .nav-cta-wrap
    is its product layout hook (alignment here, hiding on mobile). The filled
-   active state retired with it (arbitrated; selected-state = library ask). */
+   you-are-here state returned 2026-09-16 as the library's current prop. */
 .nav-cta-wrap { display: inline-flex; }
 .nav-right { display: flex; align-items: center; gap: 12px; }
 

@@ -204,11 +204,12 @@ function Nav({ activeKey = "roles" }) {
         </nav>
         <div className="nav-right">
           <LangSwitcher />
-          {/* Library Button since 2026-08-30 (arbitrated: secondary, active
-              state dropped — a selected/aria-current state is a filed library
-              ask). .nav-cta-wrap is product layout: mobile hiding. */}
+          {/* Library Button since 2026-08-30; its current (you-are-here) state
+              since 2026-09-16 — the ask filed at adoption, delivered as the
+              library's current prop (lib pin 45ea047). .nav-cta-wrap is
+              product layout: mobile hiding. */}
           <span className="nav-cta-wrap">
-            <LL.Button variant="secondary" href="Quiz.html">
+            <LL.Button variant="secondary" href="Quiz.html" current={activeKey === "quiz"}>
               <span>Role quiz</span>
               <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square">
                 <path d="M3 8h10M9 4l4 4-4 4" />
