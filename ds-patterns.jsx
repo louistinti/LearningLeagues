@@ -122,7 +122,7 @@ function LeaderboardPattern() {
           {LEADERBOARD.map(p => (
             <tr key={p.rank} className={p.you ? "is-you" : ""}>
               <td className="mono">{String(p.rank).padStart(2, "0")}</td>
-              <td><span className="ds-lb-name">{p.name}{p.you && <span className="mono ds-lb-youtag"> · YOU</span>}</span></td>
+              <td><span className="ds-lb-name">{p.name}{p.you && <>{" "}<LL.Eyebrow tone="accent">· YOU</LL.Eyebrow></>}</span></td>
               <td className="mono">{p.tier} {p.div}</td>
               <td className="r mono">{p.lp}</td>
               <td className={"r mono " + (p.delta >= 0 ? "up" : "down")}>{p.delta >= 0 ? "+" : ""}{p.delta}</td>
@@ -166,7 +166,7 @@ function EmptyStatePattern() {
         </svg>
       </div>
       <div className="ds-empty-meta">
-        <span className="mono ds-empty-tag">NO MATCHES · 404</span>
+        <LL.Eyebrow tone="accent">NO MATCHES · 404</LL.Eyebrow>
         <h3 className="ds-empty-title">Pas encore de games sur ce patch.</h3>
         <p>Joue au moins 3 games classées sur le patch 26.X pour débloquer ton recap hebdomadaire.</p>
         <LL.Button variant="secondary">Voir le dernier patch</LL.Button>

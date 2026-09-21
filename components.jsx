@@ -360,7 +360,7 @@ function Hero({ eyebrow, title, intro, meta = [], sigil, sigilLabel }) {
       <div className="shell">
         <div className="hero-grid">
           <div>
-            <div className="eyebrow hero-eyebrow">{eyebrow}</div>
+            <div className="label-slot hero-eyebrow"><LL.Eyebrow>{eyebrow}</LL.Eyebrow></div>
             <h1 className="serif">{title}<em>.</em></h1>
             <p className="hero-intro">{intro}</p>
             <div className="hero-meta">
@@ -369,7 +369,7 @@ function Hero({ eyebrow, title, intro, meta = [], sigil, sigilLabel }) {
           </div>
           <div className="hero-sigil" aria-hidden="true">
             {sigil}
-            <span className="tag">{sigilLabel}</span>
+            <span className="label-slot sigil-label"><LL.Eyebrow>{sigilLabel}</LL.Eyebrow></span>
           </div>
         </div>
       </div>

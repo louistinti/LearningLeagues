@@ -29,7 +29,7 @@ function QuizBreadcrumb() {
 function QzIntro({ onStart }) {
   return (
     <div className="qz-intro">
-      <div className="eyebrow eyebrow--accent">ROLE QUIZ</div>
+      <div className="label-slot"><LL.Eyebrow tone="accent">ROLE QUIZ</LL.Eyebrow></div>
       <h1 className="qz-intro-title">Which role <em>suits you?</em></h1>
       <p className="qz-intro-lede">
         Eight questions — half in-game situations, half honest personality checks.
@@ -105,7 +105,7 @@ function QzQuestion({ index, picked, onPick, onBack }) {
   return (
     <div className="qz-v-ledger">
       <QzProgress index={index} onBack={onBack} />
-      <div className="qz-tag">{question.tag}</div>
+      <div className="qz-tag"><LL.Eyebrow tone="accent">{question.tag}</LL.Eyebrow></div>
       <h2 className="qz-question">{question.q}</h2>
       <QzOptionRows question={question} picked={picked} onPick={onPick} />
       <QzKbdHint />
@@ -119,7 +119,7 @@ function QzResult({ answers, onRetake }) {
   const max = Math.max(1, first.score);
   return (
     <div className="qz-result">
-      <div className="eyebrow eyebrow--accent">VERDICT · {QZ_TOTAL}/{QZ_TOTAL} ANSWERED</div>
+      <div className="label-slot"><LL.Eyebrow tone="accent">VERDICT · {QZ_TOTAL}/{QZ_TOTAL} ANSWERED</LL.Eyebrow></div>
       <h1 className="qz-result-title">You&rsquo;re <em>{first.role.article}.</em></h1>
       <blockquote className="qz-result-blurb">{first.role.blurb}</blockquote>
 

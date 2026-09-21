@@ -123,11 +123,10 @@ a:hover { color: var(--accent); }
 .qz-progress-back:hover { color: var(--accent); }
 .qz-progress-back:disabled { opacity: 0; pointer-events: none; }
 
+/* The question tag's text is an LL.Eyebrow; the diamond before it is a
+   product-side ornament (library RFC §7 Q5). */
 .qz-tag {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent);
   margin-bottom: calc(var(--s) * 2.5);
 }
 .qz-tag::before {

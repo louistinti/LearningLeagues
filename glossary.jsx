@@ -10,8 +10,8 @@ function GlossaryHero() {
       <div className="shell">
         <div className="hero-grid">
           <div>
-            <div className="eyebrow hero-eyebrow">
-              REFERENCE <span className="dot"></span> GLOSSARY
+            <div className="label-slot hero-eyebrow">
+              <LL.Eyebrow>REFERENCE <span className="dot"></span> GLOSSARY</LL.Eyebrow>
             </div>
             <h1 className="serif">Glossary<em>.</em></h1>
 
@@ -44,7 +44,7 @@ function GlossaryHero() {
               <line x1="100" y1="70" x2="100" y2="126" opacity=".6" />
               <path d="M74 92 L94 88 M74 104 L94 100 M74 116 L94 112 M106 88 L126 92 M106 100 L126 104 M106 112 L126 116" opacity=".5" />
             </svg>
-            <span className="tag">SIGIL · GLOSSARY</span>
+            <span className="label-slot sigil-label"><LL.Eyebrow>SIGIL · GLOSSARY</LL.Eyebrow></span>
           </div>
         </div>
       </div>

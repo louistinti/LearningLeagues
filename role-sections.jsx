@@ -276,7 +276,7 @@ function SectionChampions({ num, id, title, lede, champions }) {
             <ChampionPortrait name={c.name} label={`PORTRAIT · ${(c.display || c.name).toUpperCase()}`} />
             <div className="champ-body">
               <div className="champ-meta">
-                <span className="tag">{c.tag}</span>
+                <LL.Eyebrow tone="accent">{c.tag}</LL.Eyebrow>
                 <span>Diff · {c.diff}</span>
               </div>
               <h3 className="champ-name serif">{c.display || c.name}</h3>
@@ -306,14 +306,17 @@ function SectionBuild({ num, id, title, lede, build }) {
             className={"archetype-tab" + (archetype === k ? " is-active" : "")}
             onClick={() => setArchetype(k)}
           >
-            <span className="mono tag">{String(i + 1).padStart(2, "0")}</span>
+            <LL.Eyebrow tone={archetype === k ? "accent" : "mute"}>{String(i + 1).padStart(2, "0")}</LL.Eyebrow>
             <span className="label serif">{build[k].label}</span>
           </button>
         ))}
       </div>
       <div className="build-grid">
         <div className="build-block">
-          <h3 className="serif">Default runes<span className="tag">{cur.label}</span></h3>
+          <div className="build-head">
+            <LL.Eyebrow tone="accent">{cur.label}</LL.Eyebrow>
+            <h3 className="serif">Default runes</h3>
+          </div>
           <dl>
             {cur.runes.map(([k, v], i) => (
               <div key={i} className="build-row"><dt>{k}</dt><dd>{v}</dd></div>
@@ -321,7 +324,10 @@ function SectionBuild({ num, id, title, lede, build }) {
           </dl>
         </div>
         <div className="build-block">
-          <h3 className="serif">Build path<span className="tag">{cur.label}</span></h3>
+          <div className="build-head">
+            <LL.Eyebrow tone="accent">{cur.label}</LL.Eyebrow>
+            <h3 className="serif">Build path</h3>
+          </div>
           <dl>
             {cur.build.map(([k, v], i) => (
               <div key={i} className="build-row"><dt>{k}</dt><dd>{v}</dd></div>
@@ -451,7 +457,7 @@ function SectionPractice({ num, id, title, lede, videos = [], drills = [] }) {
       <div className="exercises">
         {drills.map((d, i) => (
           <article key={i} className="exercise">
-            <span className="exercise-tag">{d.tag}</span>
+            <LL.Eyebrow tone="accent">{d.tag}</LL.Eyebrow>
             <h4 className="exercise-title serif">{d.title}</h4>
             <p className="exercise-text">{d.body}</p>
           </article>

@@ -8,7 +8,7 @@ function FundIntro() {
       <div className="shell">
         <div className="ft-intro-grid">
           <div>
-            <div className="eyebrow eyebrow--accent">FUNDAMENTALS · THE BASE LAYER</div>
+            <div className="label-slot"><LL.Eyebrow tone="accent">FUNDAMENTALS · THE BASE LAYER</LL.Eyebrow></div>
             <h1 className="serif">
               The fundamentals aren't a list.<br />
               They're a <em>system.</em>
@@ -51,7 +51,7 @@ function FundIntro() {
               <circle cx="100" cy="100" r="13" strokeWidth="1.4" />
               <circle cx="100" cy="100" r="4" fill="currentColor" stroke="none" />
             </svg>
-            <span className="tag">DEPENDENCY GRAPH</span>
+            <span className="label-slot sigil-label"><LL.Eyebrow>DEPENDENCY GRAPH</LL.Eyebrow></span>
           </div>
         </div>
       </div>
@@ -159,9 +159,11 @@ function InCardOverlay({ rootId, onClose }) {
         </div>
 
         <div className="ft-overlay-body">
-          <div className="ft-overlay-eyebrow">
-            {sel.tier === "primary" ? "Primary skill" : "Connected skill"}
-            {selId !== rootId ? " · via " + root.name : ""}
+          <div className="label-slot ft-overlay-eyebrow">
+            <LL.Eyebrow tone="accent">
+              {sel.tier === "primary" ? "Primary skill" : "Connected skill"}
+              {selId !== rootId ? " · via " + root.name : ""}
+            </LL.Eyebrow>
           </div>
           <div className="ft-overlay-title serif">{sel.name}</div>
           <p className="ft-overlay-lede">{sel.lede}</p>

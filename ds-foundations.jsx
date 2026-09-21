@@ -140,15 +140,15 @@ function TypeScale() {
     { tag: "H3 · serif",           cls: "ts-h3",        text: "Vision & roaming",  meta: "EB Garamond / 24px" },
     { tag: "BODY · sans",          cls: "ts-body",      text: "Le Support est le rôle transverse de l'équipe. Tu ne farms pas, tu donnes la vision.", meta: "Inter 400 / 15px / 1.55" },
     { tag: "DIM · sans",           cls: "ts-dim",       text: "Lecture estimée 15 minutes. Patch 26.X.", meta: "Inter 400 / 14px / fg-dim" },
-    { tag: "EYEBROW · mono",       cls: "ts-eyebrow",   text: "RÔLE · SUPPORT",    meta: "JetBrains Mono / 11px / 0.18em" },
+    { tag: "EYEBROW · mono",       cls: "ts-eyebrow",   el: <LL.Eyebrow tone="accent">Rôle · Support</LL.Eyebrow>, meta: "LL.Eyebrow / type/meta 11px / uppercase" },
     { tag: "META · mono",          cls: "ts-meta",      text: "01 · 23m 14s · WIN", meta: "JetBrains Mono / 10.5px / tnum" },
   ];
   return (
     <div className="ds-type-scale">
       {items.map((i, idx) => (
         <div key={idx} className="ds-type-row">
-          <span className="ds-type-tag mono">{i.tag}</span>
-          <span className={"ds-type-sample " + i.cls}>{i.text}</span>
+          <span className="label-slot ds-type-tag"><LL.Eyebrow>{i.tag}</LL.Eyebrow></span>
+          <span className={"ds-type-sample " + i.cls}>{i.el || i.text}</span>
           <span className="ds-type-meta mono">{i.meta}</span>
         </div>
       ))}

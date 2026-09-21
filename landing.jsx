@@ -68,7 +68,7 @@ function LandingHero() {
               {/* corner ticks */}
               <path d="M100 14 L100 22 M100 178 L100 186 M24 100 L32 100 M168 100 L176 100" opacity=".55" strokeWidth="1" />
             </svg>
-            <span className="tag">RIFT · COMPASS</span>
+            <span className="label-slot sigil-label"><LL.Eyebrow>RIFT · COMPASS</LL.Eyebrow></span>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@ function Showcase({ id, num, eyebrow, title, lede, ctaLabel, ctaHref, variant, c
         <div className="showcase-grid">
           <div className="showcase-text">
             <div className="showcase-num mono">{num}</div>
-            <div className="eyebrow eyebrow--accent showcase-eyebrow">{eyebrow}</div>
+            <div className="label-slot showcase-eyebrow"><LL.Eyebrow tone="accent">{eyebrow}</LL.Eyebrow></div>
             <h2 className="showcase-title serif">{title}</h2>
             <p className="showcase-lede">{lede}</p>
             {/* .showcase-cta is product layout (align-self) — it lives on a
@@ -121,7 +121,7 @@ function FundamentalsVisual() {
         {cells.map((c, i) => (
           <div className="fund-cell" key={c.tag}>
             <span className="fund-cell-num mono">{String(i + 1).padStart(2, "0")}</span>
-            <span className="fund-cell-tag mono">{c.tag}</span>
+            <LL.Eyebrow tone="accent">{c.tag}</LL.Eyebrow>
             <span className="fund-cell-label">{c.label}</span>
           </div>
         ))}
@@ -145,7 +145,7 @@ function RolesSection() {
       <div className="shell">
         <div className="showcase-grid showcase-grid--centered">
           <div className="showcase-text">
-            <div className="eyebrow eyebrow--accent showcase-eyebrow">THE FIVE POSITIONS</div>
+            <div className="label-slot showcase-eyebrow"><LL.Eyebrow tone="accent">THE FIVE POSITIONS</LL.Eyebrow></div>
             <h2 className="showcase-title serif">Choose your <em>role.</em></h2>
             <p className="showcase-lede">
               Five positions, five mindsets. Your role decides your job on the map.
@@ -197,7 +197,7 @@ function TrainingVisual() {
           <li key={d.id} className={"train-row" + (i === 2 ? " is-active" : "")}>
             <span className="train-row-id mono">{d.id}</span>
             <span className="train-row-name">{d.name}</span>
-            <span className="train-row-tag mono">{d.tag}</span>
+            <span className="label-slot train-row-tag"><LL.Eyebrow>{d.tag}</LL.Eyebrow></span>
             <span className="train-row-dur mono">{d.dur}</span>
           </li>
         ))}
@@ -222,9 +222,9 @@ function ResourcesVisual() {
             <span className="res-row-num mono">{String(i + 1).padStart(2, "0")}</span>
             <span className="res-row-name serif">{t}</span>
             <span className="res-row-line"></span>
-            <span className="res-row-tag mono">
+            <LL.Eyebrow>
               {i === 0 ? "STATS · BUILDS" : i === 1 ? "MATCHUPS" : i === 2 ? "PROFILES" : "PRO REPLAYS"}
-            </span>
+            </LL.Eyebrow>
           </li>
         ))}
       </ul>

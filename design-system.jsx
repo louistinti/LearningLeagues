@@ -41,7 +41,7 @@ function DSNav({ tab, setTab }) {
         <a className="logo" href="index.html">
           <LogoMark />
           <span>Learning Leagues</span>
-          <span className="ds-brand-tag mono">/ DESIGN SYSTEM</span>
+          <span className="label-slot ds-brand-tag"><LL.Eyebrow>/ DESIGN SYSTEM</LL.Eyebrow></span>
         </a>
         <nav className="nav-links" aria-label="Design system">
           {TABS.map(t => (
@@ -68,8 +68,8 @@ function DSHero() {
       <div className="shell">
         <div className="ds-hero-grid">
           <div>
-            <div className="eyebrow ds-hero-eyebrow">
-              SYSTEM <span className="dot"></span> v1.0 <span className="dot"></span> HEXTECH ÉDITORIAL
+            <div className="label-slot ds-hero-eyebrow">
+              <LL.Eyebrow>SYSTEM <span className="dot"></span> v1.0 <span className="dot"></span> HEXTECH ÉDITORIAL</LL.Eyebrow>
             </div>
             <h1 className="ds-hero-h1">
               Learning Leagues<em>.</em>
@@ -120,7 +120,7 @@ function DSHeroSigil() {
         <line x1="0" y1="120" x2="22" y2="120" opacity=".3"/>
         <line x1="218" y1="120" x2="240" y2="120" opacity=".3"/>
       </svg>
-      <span className="tag">SIGIL · LL/DS · v1</span>
+      <span className="label-slot sigil-label"><LL.Eyebrow>SIGIL · LL/DS · v1</LL.Eyebrow></span>
     </div>
   );
 }
