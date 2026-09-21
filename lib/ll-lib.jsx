@@ -1,4 +1,4 @@
-/* VENDORED from LearningLeagues-Lib @ bb039ef28bb000a8d33bd510aafa02a7c57da2eb (dist/ll-lib.jsx).
+/* VENDORED from LearningLeagues-Lib @ c60f6550fe2a48cb840ea58724f7cd1ed188dd4d (dist/ll-lib.jsx).
  * GENERATED twice over: by `pnpm dist:build`, then pinned here by
  * `node scripts/vendor-dist.ts --write`. Never edit in this repository —
  * bump the pin by re-running the vendoring at a new lib commit. */
