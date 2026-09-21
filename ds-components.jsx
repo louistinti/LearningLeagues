@@ -11,7 +11,7 @@ function Components() {
         <InputsShowcase />
       </DSSection>
 
-      <DSSection num="03" title="Tags & pills" lede="Inline metadata. The bare mono label is the library's <LL.Eyebrow tone='mute|accent'> — never restate its recipe in CSS, never put it inside a heading. Pills and chips add a 1px border or a tinted bg.">
+      <DSSection num="03" title="Tags & pills" lede="Inline metadata. The bare mono label is the library's <LL.Eyebrow tone='dim|accent'> — never restate its recipe in CSS, never put it inside a heading. Pills and chips add a 1px border or a tinted bg.">
         <TagsShowcase />
       </DSSection>
 
@@ -157,7 +157,7 @@ function TagsShowcase() {
   return (
     <div className="ds-tagrow">
       {/* The Key concept / Pro tip / Trap tags are the library Callout's own chrome: see section 08. */}
-      <LL.Eyebrow>Mute label</LL.Eyebrow>
+      <LL.Eyebrow>Dim label</LL.Eyebrow>
       <LL.Eyebrow tone="accent">Accent label</LL.Eyebrow>
       <span className="pill pill--easy">EASY</span>
       <span className="pill pill--playable">PLAYABLE</span>
@@ -184,7 +184,7 @@ function TabsShowcase() {
           className={"archetype-tab" + (tab === t.id ? " is-active" : "")}
           onClick={() => setTab(t.id)}
         >
-          <LL.Eyebrow tone={tab === t.id ? "accent" : "mute"}>{t.tag}</LL.Eyebrow>
+          <LL.Eyebrow tone={tab === t.id ? "accent" : "dim"}>{t.tag}</LL.Eyebrow>
           <span className="label">{t.label}</span>
         </button>
       ))}

@@ -1,4 +1,4 @@
-/* VENDORED from LearningLeagues-Lib @ c17e44315601f83b87364ec134b0c075f9de6e81 (dist/ll-lib.jsx).
+/* VENDORED from LearningLeagues-Lib @ bb039ef28bb000a8d33bd510aafa02a7c57da2eb (dist/ll-lib.jsx).
  * GENERATED twice over: by `pnpm dist:build`, then pinned here by
  * `node scripts/vendor-dist.ts --write`. Never edit in this repository —
  * bump the pin by re-running the vendoring at a new lib commit. */
@@ -47,7 +47,7 @@ function Callout({ type, title, children }) {
 }
 
 // ── Eyebrow (eyebrow) ──
-function Eyebrow({ tone = "mute", children }) {
+function Eyebrow({ tone = "dim", children }) {
   return <span className={`ll-eyebrow ll-eyebrow--${tone}`}>{children}</span>;
 }
 

@@ -306,7 +306,7 @@ function SectionBuild({ num, id, title, lede, build }) {
             className={"archetype-tab" + (archetype === k ? " is-active" : "")}
             onClick={() => setArchetype(k)}
           >
-            <LL.Eyebrow tone={archetype === k ? "accent" : "mute"}>{String(i + 1).padStart(2, "0")}</LL.Eyebrow>
+            <LL.Eyebrow tone={archetype === k ? "accent" : "dim"}>{String(i + 1).padStart(2, "0")}</LL.Eyebrow>
             <span className="label serif">{build[k].label}</span>
           </button>
         ))}

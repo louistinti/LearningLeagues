@@ -134,7 +134,7 @@ body { font-size: var(--body-size); }
 h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font-weight: 500; letter-spacing: -0.01em; margin: 0; }
 
 /* ── Mono labels ("eyebrow" above a title, "tag" in a card or a row) are the
-   library's <LL.Eyebrow tone="mute|accent"> (lib/ll-lib.*): never restate the
+   library's <LL.Eyebrow tone="dim|accent"> (lib/ll-lib.*): never restate the
    recipe here. The library ships no layout for it, so placement is ours:
    .label-slot puts one on its own line. Line-height 0 removes the slot's own
    strut, so the slot is as tall as the label (which sets its own line-height)
