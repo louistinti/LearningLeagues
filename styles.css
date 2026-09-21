@@ -1023,7 +1023,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .champ-body { padding: calc(var(--s) * 3); display: flex; flex-direction: column; gap: calc(var(--s) * 1.5); flex: 1; }
 .champ-meta {
   display: flex; justify-content: space-between; gap: 12px;
-  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
   letter-spacing: 0.08em; color: var(--fg-mute);
   text-transform: uppercase;
   padding-bottom: calc(var(--s) * 1);
