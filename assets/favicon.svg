@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Provisional tab icon: the landing sigil's rift compass (landing.jsx) on the surface square. -->
+  <rect width="64" height="64" fill="#111a2e"/>
+  <rect x="0.5" y="0.5" width="63" height="63" fill="none" stroke="#223152"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#e39a3c" stroke-width="2"/>
+  <path d="M32 6 L35.5 32 L32 58 L28.5 32 Z" fill="#e39a3c"/>
+  <path d="M6 32 L32 28.5 L58 32 L32 35.5 Z" fill="#e39a3c" opacity=".45"/>
+  <circle cx="32" cy="32" r="2.5" fill="#111a2e"/>
+</svg>
