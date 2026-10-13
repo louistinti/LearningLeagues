@@ -49,7 +49,7 @@ function LandingHero() {
             </div>
           </div>
 
-          <div className="hero-sigil landing-sigil" aria-hidden="true">
+          <div className="landing-sigil"><LL.Sigil>
             <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8">
               <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" strokeWidth="1" opacity="0.55" />
               <polygon points="100,40 155,72 155,128 100,160 45,128 45,72" strokeWidth="0.8" opacity="0.4" />
@@ -68,8 +68,7 @@ function LandingHero() {
               {/* corner ticks */}
               <path d="M100 14 L100 22 M100 178 L100 186 M24 100 L32 100 M168 100 L176 100" opacity=".55" strokeWidth="1" />
             </svg>
-            <span className="label-slot sigil-label"><LL.Eyebrow>RIFT · COMPASS</LL.Eyebrow></span>
-          </div>
+          </LL.Sigil></div>
         </div>
       </div>
     </section>

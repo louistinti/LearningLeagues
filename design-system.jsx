@@ -97,7 +97,7 @@ function DSHero() {
 
 function DSHeroSigil() {
   return (
-    <div className="ds-hero-sigil" aria-hidden="true">
+    <div className="ds-hero-sigil-slot"><LL.Sigil>
       <svg viewBox="0 0 240 240" fill="none" stroke="currentColor" strokeWidth="0.7">
         {/* hexagonal token grid */}
         <polygon points="120,12 218,68 218,172 120,228 22,172 22,68" strokeWidth="1" opacity=".6"/>
@@ -120,8 +120,7 @@ function DSHeroSigil() {
         <line x1="0" y1="120" x2="22" y2="120" opacity=".3"/>
         <line x1="218" y1="120" x2="240" y2="120" opacity=".3"/>
       </svg>
-      <span className="label-slot sigil-label"><LL.Eyebrow>SIGIL · LL/DS · v1</LL.Eyebrow></span>
-    </div>
+    </LL.Sigil></div>
   );
 }
 

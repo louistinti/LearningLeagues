@@ -1,4 +1,4 @@
-/* VENDORED from LearningLeagues-Lib @ c60f6550fe2a48cb840ea58724f7cd1ed188dd4d (dist/ll-lib.jsx).
+/* VENDORED from LearningLeagues-Lib @ c2ef3c3daed097426d3fcea9f76b543d79c3161e (dist/ll-lib.jsx).
  * GENERATED twice over: by `pnpm dist:build`, then pinned here by
  * `node scripts/vendor-dist.ts --write`. Never edit in this repository —
  * bump the pin by re-running the vendoring at a new lib commit. */
@@ -51,4 +51,11 @@ function Eyebrow({ tone = "dim", children }) {
   return <span className={`ll-eyebrow ll-eyebrow--${tone}`}>{children}</span>;
 }
 
-window.LL = Object.assign(window.LL || {}, { Button, Callout, Eyebrow });
+// ── Sigil (sigil) ──
+function Sigil({ children }) {
+  return <div className="ll-sigil" aria-hidden="true">
+      <div className="ll-sigil-art">{children}</div>
+    </div>;
+}
+
+window.LL = Object.assign(window.LL || {}, { Button, Callout, Eyebrow, Sigil });
