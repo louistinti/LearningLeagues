@@ -70,7 +70,6 @@ function App() {
         intro={data.meta.intro}
         meta={data.meta.meta}
         sigil={data.meta.sigil}
-        sigilLabel={data.meta.sigilLabel}
       />
       {rendered.map(([key, Component], i) => {
         const num = String(i + 1).padStart(2, "0");

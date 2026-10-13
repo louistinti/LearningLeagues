@@ -25,7 +25,7 @@ function FundIntro() {
               <span><strong>Patch</strong> 26.X</span>
             </div>
           </div>
-          <div className="ft-intro-sigil" aria-hidden="true">
+          <div className="ft-intro-sigil-slot"><LL.Sigil>
             <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8">
               {/* spokes */}
               <g opacity="0.5">
@@ -51,8 +51,7 @@ function FundIntro() {
               <circle cx="100" cy="100" r="13" strokeWidth="1.4" />
               <circle cx="100" cy="100" r="4" fill="currentColor" stroke="none" />
             </svg>
-            <span className="label-slot sigil-label"><LL.Eyebrow>DEPENDENCY GRAPH</LL.Eyebrow></span>
-          </div>
+          </LL.Sigil></div>
         </div>
       </div>
     </section>

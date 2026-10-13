@@ -28,7 +28,7 @@ function GlossaryHero() {
             </div>
           </div>
 
-          <div className="hero-sigil" aria-hidden="true">
+          <div className="hero-sigil-slot"><LL.Sigil>
             <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8">
               <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" strokeWidth="1" opacity="0.6" />
               <polygon points="100,40 155,72 155,128 100,160 45,128 45,72" strokeWidth="0.8" opacity="0.4" />
@@ -44,8 +44,7 @@ function GlossaryHero() {
               <line x1="100" y1="70" x2="100" y2="126" opacity=".6" />
               <path d="M74 92 L94 88 M74 104 L94 100 M74 116 L94 112 M106 88 L126 92 M106 100 L126 104 M106 112 L126 116" opacity=".5" />
             </svg>
-            <span className="label-slot sigil-label"><LL.Eyebrow>SIGIL · GLOSSARY</LL.Eyebrow></span>
-          </div>
+          </LL.Sigil></div>
         </div>
       </div>
     </section>

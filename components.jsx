@@ -354,7 +354,7 @@ function SectionHead({ num, title, lede }) {
   );
 }
 
-function Hero({ eyebrow, title, intro, meta = [], sigil, sigilLabel }) {
+function Hero({ eyebrow, title, intro, meta = [], sigil }) {
   return (
     <section className="hero">
       <div className="shell">
@@ -367,9 +367,8 @@ function Hero({ eyebrow, title, intro, meta = [], sigil, sigilLabel }) {
               {meta.map((m, i) => <span key={i}>{m}</span>)}
             </div>
           </div>
-          <div className="hero-sigil" aria-hidden="true">
-            {sigil}
-            <span className="label-slot sigil-label"><LL.Eyebrow>{sigilLabel}</LL.Eyebrow></span>
+          <div className="hero-sigil-slot">
+            <LL.Sigil>{sigil}</LL.Sigil>
           </div>
         </div>
       </div>

@@ -14,7 +14,6 @@ const ROLE_DATA = {
       <><strong>Read time</strong> ~15 min</>,
       <><strong>Patch</strong> {LL_PATCH}</>,
     ],
-    sigilLabel: "SIGIL · TOP",
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)" }} />
     ),
