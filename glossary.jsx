@@ -70,11 +70,13 @@ function GlossaryList() {
 
   return (
     <section className="section shell" id="s-glossary">
-      <SectionHead
-        num="01"
-        title="Every term, defined"
-        lede="Hover any glossed word in a guide and you'll see the same definition that lives here. The list is patch-stable — if a term changes meaning between seasons, it changes here too."
-      />
+      <div className="section-head-slot">
+        <LL.SectionHead
+          num="01"
+          title="Every term, defined"
+          lede="Hover any glossed word in a guide and you'll see the same definition that lives here. The list is patch-stable — if a term changes meaning between seasons, it changes here too."
+        />
+      </div>
 
       <nav className="glossary-jumper" aria-label="Letter index">
         {letters.map((l) => (

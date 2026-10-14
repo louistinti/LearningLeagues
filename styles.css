@@ -169,38 +169,11 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .section { padding: var(--section-y) 0; border-top: 1px solid var(--rule); position: relative; }
 .section--flush { border-top: 0; padding-top: calc(var(--section-y) * 0.6); }
 
-.section-head {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: calc(var(--s) * 4);
-  margin-bottom: calc(var(--s) * 7);
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .section-head { grid-template-columns: 1fr; gap: calc(var(--s) * 2); }
-}
-.section-num {
-  font-family: 'EB Garamond', serif;
-  font-size: 56px; font-style: italic; font-weight: 400;
-  color: var(--accent);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  position: relative;
-  padding-top: calc(var(--s) * 0.5);
-}
-.section-num::after {
-  content: ""; position: absolute; left: 0; bottom: -14px;
-  width: 60px; height: 1px; background: var(--accent); opacity: .5;
-}
-.section-title { font-size: 36px; line-height: 1.1; margin-bottom: calc(var(--s) * 1.5); max-width: none; white-space: nowrap; }
-.section-lede { color: var(--fg-dim); max-width: none; font-size: 16px; line-height: 1.6; }
-@media (max-width: 900px) {
-  .section-title { white-space: normal; }
-}
-@media (max-width: 768px) {
-  .section-title { font-size: 28px; }
-  .section-num { font-size: 44px; }
-}
+/* Slot around LL.SectionHead: layout only (distance to the section body). */
+.section-head-slot { margin-bottom: calc(var(--s) * 7); }
+
+/* ErrorBoundary fallback message (components.jsx). */
+.section-error { color: var(--danger); font-size: 16px; line-height: 1.6; }
 
 /* ── Nav ────────────────────────────────────────────────────────────────── */
 .nav {

@@ -16,7 +16,9 @@ function ChampionPortrait({ name, label }) {
 function SectionPhases({ num, id, title, lede, phases }) {
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="phase-grid">
         {phases.map((p, i) => (
           <article key={i} className="phase-card">
@@ -37,7 +39,9 @@ function SectionPhases({ num, id, title, lede, phases }) {
 function SectionSkills({ num, id, title, lede, skills }) {
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="skills-grid">
         {skills.map((s, i) => (
           <article key={i} className="skill">
@@ -57,7 +61,9 @@ function SectionMap({ num, id, title, lede, pins, mapSrc, mapAlt, mapCredit, leg
   const legendPins = pins.filter((p, i) => pins.findIndex((q) => q.n === p.n) === i);
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="map-wrap">
         <div className="map-frame">
           <div className="map-corners"><span></span><span></span><span></span><span></span></div>
@@ -165,7 +171,9 @@ function SectionTriangle({ num, id, title, lede, nodes, legend }) {
 
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="triangle-wrap">
         <div className="triangle-stage" ref={stageRef}>
           <svg viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -243,7 +251,9 @@ function SectionTriangle({ num, id, title, lede, nodes, legend }) {
 function SectionCallouts({ num, id, title, lede, callouts }) {
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="callout-grid">
         {callouts.map((c, i) => (
           <LL.Callout key={i} type={c.type} title={c.title}>{c.body}</LL.Callout>
@@ -256,7 +266,9 @@ function SectionCallouts({ num, id, title, lede, callouts }) {
 function SectionErrors({ num, id, title, lede, errors }) {
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="errors-grid">
         {errors.map((e, i) => (
           <ErrorCard key={i} title={e.title} symptom={e.s} cause={e.c} fix={e.f} />
@@ -269,7 +281,9 @@ function SectionErrors({ num, id, title, lede, errors }) {
 function SectionChampions({ num, id, title, lede, champions }) {
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="champ-grid">
         {champions.map((c) => (
           <article key={c.name} className="champ-card">
@@ -296,7 +310,9 @@ function SectionBuild({ num, id, title, lede, build }) {
   const cur = build[archetype];
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="archetype-switch" role="tablist" aria-label="Archetype">
         {keys.map((k, i) => (
           <button
@@ -343,7 +359,9 @@ function SectionMatchups({ num, id, title, lede, matchups }) {
   const pillClass = (d) => "pill pill--" + d.toLowerCase();
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <table className="matchup-table">
         <thead>
           <tr><th>Matchup</th><th>Difficulty</th><th>You win if…</th><th>You lose if…</th></tr>
@@ -384,7 +402,9 @@ function SectionChecklist({ num, id, title, lede, storageKey, items, threshold =
   const ready = count >= threshold;
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} id={`${id}-title`} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} id={`${id}-title`} title={title} lede={lede} />
+      </div>
       <div className="checklist-wrap">
         <div className="checklist-progress">
           <div className="progress-num">{count}<span className="of">/{items.length}</span></div>
@@ -435,7 +455,9 @@ function youtubeId(url) {
 function SectionPractice({ num, id, title, lede, videos = [], drills = [] }) {
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <div className="section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       <div className="practice-grid">
         {videos.map((v, i) => {
           const ytId = youtubeId(v.url);

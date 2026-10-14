@@ -48,7 +48,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.error) {
       return (
         <section className="section shell">
-          <p className="section-lede" style={{ color: "var(--danger)" }}>
+          <p className="section-error">
             This section couldn't be displayed{this.props.label ? ` (${this.props.label})` : ""}.
             The rest of the page is unaffected.
           </p>
@@ -342,18 +342,6 @@ function Breadcrumb({ current }) {
   );
 }
 
-function SectionHead({ num, title, lede, id }) {
-  return (
-    <div className="section-head">
-      <div className="section-num">{num}</div>
-      <div>
-        <h2 className="section-title" id={id}>{title}</h2>
-        <p className="section-lede">{lede}</p>
-      </div>
-    </div>
-  );
-}
-
 function Hero({ eyebrow, title, intro, meta = [], sigil }) {
   return (
     <section className="hero">
@@ -552,4 +540,4 @@ function TocSidebar({ items = [] }) {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, ErrorCard, ErrorBoundary, LL_TIERS, LL_GLOSSARY, DDRAGON_VER, LL_PATCH });
+Object.assign(window, { LogoMark, Nav, Breadcrumb, Hero, Footer, LangSwitcher, TocSidebar, Gloss, ErrorCard, ErrorBoundary, LL_TIERS, LL_GLOSSARY, DDRAGON_VER, LL_PATCH });

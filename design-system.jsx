@@ -150,13 +150,9 @@ function DSTabRail({ tab, setTab }) {
 function DSSection({ num, title, lede, children }) {
   return (
     <section className="ds-section">
-      <header className="ds-section-head">
-        <div className="ds-section-num">{num}</div>
-        <div>
-          <h2 className="ds-section-title">{title}</h2>
-          {lede && <p className="ds-section-lede">{lede}</p>}
-        </div>
-      </header>
+      <div className="ds-section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       {children}
     </section>
   );
