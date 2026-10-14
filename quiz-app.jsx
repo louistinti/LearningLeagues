@@ -54,7 +54,10 @@ function QzIntro({ onStart }) {
       <div className="qz-intro-roles" aria-hidden="true">
         <span className="qz-intro-roles-label">Top · Jungle · Mid · ADC · Support</span>
         {QUIZ_ROLE_ORDER.map((k) => (
-          <img key={k} src={QUIZ_ROLES[k].icon} alt="" />
+          <span key={k} className="qz-intro-role">
+            <img src={QUIZ_ROLES[k].icon} alt="" />
+            <span className="qz-intro-role-name">{QUIZ_ROLES[k].name}</span>
+          </span>
         ))}
       </div>
     </div>
