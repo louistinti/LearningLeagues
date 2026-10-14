@@ -384,13 +384,18 @@ function SectionChecklist({ num, id, title, lede, storageKey, items, threshold =
   const ready = count >= threshold;
   return (
     <section className="section shell" id={id}>
-      <SectionHead num={num} title={title} lede={lede} />
+      <SectionHead num={num} id={`${id}-title`} title={title} lede={lede} />
       <div className="checklist-wrap">
         <div className="checklist-progress">
           <div className="progress-num">{count}<span className="of">/{items.length}</span></div>
           <div className="progress-label">Validated · saved locally</div>
-          <div className="progress-bar">
-            <div className="progress-bar-fill" style={{ width: `${(count / items.length) * 100}%` }} />
+          <div className="progress-bar-slot">
+            <LL.ProgressBar
+              value={count}
+              max={items.length}
+              valueText={`${count} of ${items.length} validated`}
+              labelledBy={`${id}-title`}
+            />
           </div>
           <p className={"progress-readout" + (ready ? " ready" : "")}>
             {ready

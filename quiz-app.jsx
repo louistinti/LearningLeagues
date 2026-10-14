@@ -67,8 +67,13 @@ function QzProgress({ index, onBack }) {
       <span className="qz-progress-count">
         Q {String(index + 1).padStart(2, "0")} <span className="of">/ {String(QZ_TOTAL).padStart(2, "0")}</span>
       </span>
-      <div className="qz-progress-bar">
-        <div className="qz-progress-fill" style={{ width: `${(index / QZ_TOTAL) * 100}%` }}></div>
+      <div className="qz-progress-bar-slot">
+        <LL.ProgressBar
+          value={index + 1}
+          max={QZ_TOTAL}
+          valueText={`Question ${index + 1} of ${QZ_TOTAL}`}
+          label="Quiz progress"
+        />
       </div>
       <button className="qz-progress-back" onClick={onBack} disabled={index === 0}>
         ← Back

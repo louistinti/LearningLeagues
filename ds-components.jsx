@@ -237,7 +237,9 @@ function ChartsShowcase() {
     <div className="ds-charts-grid">
       <DSBlock label="PROGRESS · BAR" title="XP rail">
         <div className="ds-progress-demo">
-          <div className="progress-bar"><div className="progress-bar-fill" style={{width: "62%"}}></div></div>
+          <div className="progress-bar-slot">
+            <LL.ProgressBar value={620} max={1000} valueText="620 of 1000 XP" label="XP rail" />
+          </div>
           <div className="ds-progress-meta">
             <span className="mono">LVL 14</span>
             <span className="mono">620 / 1000 XP</span>

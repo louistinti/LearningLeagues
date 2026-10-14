@@ -94,17 +94,9 @@ a:hover { color: var(--accent); }
   white-space: nowrap;
 }
 .qz-progress-count .of { color: var(--fg-mute); }
-.qz-progress-bar {
-  flex: 1; height: 2px;
-  background: var(--border-soft);
-  position: relative;
-  align-self: center;
-}
-.qz-progress-fill {
-  position: absolute; left: 0; top: 0; bottom: 0;
-  background: var(--accent);
-  transition: width .35s cubic-bezier(.3,.7,.4,1);
-}
+/* Slot around LL.ProgressBar: layout only (fills the row between the
+   counter and Back). */
+.qz-progress-bar-slot { flex: 1; align-self: center; }
 .qz-progress-back {
   appearance: none; background: transparent; border: 0;
   font-family: 'JetBrains Mono', monospace;

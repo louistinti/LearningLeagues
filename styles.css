@@ -1128,18 +1128,8 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   margin-top: calc(var(--s) * 1);
   margin-bottom: calc(var(--s) * 2);
 }
-.progress-bar {
-  height: 4px;
-  background: var(--border-soft);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: calc(var(--s) * 2);
-}
-.progress-bar-fill {
-  position: absolute; left: 0; top: 0; bottom: 0;
-  background: var(--accent);
-  transition: width .3s cubic-bezier(.3,.7,.4,1);
-}
+/* Slot around LL.ProgressBar: layout only (the bar fills its width). */
+.progress-bar-slot { margin-bottom: calc(var(--s) * 2); }
 .progress-readout {
   font-size: 13px;
   color: var(--fg-dim);

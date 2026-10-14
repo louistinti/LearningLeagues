@@ -342,12 +342,12 @@ function Breadcrumb({ current }) {
   );
 }
 
-function SectionHead({ num, title, lede }) {
+function SectionHead({ num, title, lede, id }) {
   return (
     <div className="section-head">
       <div className="section-num">{num}</div>
       <div>
-        <h2 className="section-title">{title}</h2>
+        <h2 className="section-title" id={id}>{title}</h2>
         <p className="section-lede">{lede}</p>
       </div>
     </div>
