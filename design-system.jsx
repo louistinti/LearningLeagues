@@ -77,7 +77,7 @@ function DSHero() {
               Design System.
             </h1>
             <p className="ds-hero-lede">
-              The visual language behind Learning Leagues — a Hextech-inspired editorial system
+              The visual language behind Learning Leagues: a Hextech-inspired editorial system
               built for League players studying their craft. Dark by default, amber by accent,
               compact by density. Every token, component and pattern documented here.
             </p>

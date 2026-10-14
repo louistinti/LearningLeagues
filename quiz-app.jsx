@@ -32,7 +32,7 @@ function QzIntro({ onStart }) {
       <div className="label-slot"><LL.Eyebrow tone="accent">ROLE QUIZ</LL.Eyebrow></div>
       <h1 className="qz-intro-title">Which role <em>suits you?</em></h1>
       <p className="qz-intro-lede">
-        Eight questions — half in-game situations, half honest personality checks.
+        Eight questions: half in-game situations, half honest personality checks.
         No wrong answers, no meta knowledge required. We rank all five roles for
         you at the end, not just one.
       </p>
@@ -104,7 +104,7 @@ function QzOptionRows({ question, picked, onPick }) {
 function QzKbdHint() {
   return (
     <p className="qz-kbd-hint">
-      Keyboard — <b>A</b><b>B</b><b>C</b><b>D</b> to answer · <b>⌫</b> to go back
+      Keyboard: <b>A</b><b>B</b><b>C</b><b>D</b> to answer · <b>⌫</b> to go back
     </p>
   );
 }

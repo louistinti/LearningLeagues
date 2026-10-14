@@ -8,7 +8,7 @@ const QUIZ_ROLES = {
     article: "a Top laner",
     icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png",
     href: "Top.html",
-    blurb: "The island dweller. You want a fair 1v1 — and by \u201cfair\u201d you mean you win. Teleport is your one concession to teamwork.",
+    blurb: "The island dweller. You want a fair 1v1. And by \u201cfair\u201d you mean you win. Teleport is your one concession to teamwork.",
   },
   jungle: {
     key: "jungle",
@@ -16,7 +16,7 @@ const QUIZ_ROLES = {
     article: "a Jungler",
     icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png",
     href: "Jungle.html",
-    blurb: "The conductor. You don\u2019t play a lane — you play the whole map. Everyone blames you, and everyone needs you.",
+    blurb: "The conductor. You don\u2019t play a lane. You play the whole map. Everyone blames you, and everyone needs you.",
   },
   mid: {
     key: "mid",
@@ -40,7 +40,7 @@ const QUIZ_ROLES = {
     article: "a Support",
     icon: "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-utility.png",
     href: "Support.html",
-    blurb: "The playmaker. You see everything, start everything, and take credit for nothing. Your KDA lies — your vision score doesn\u2019t.",
+    blurb: "The playmaker. You see everything, start everything, and take credit for nothing. Your KDA lies. Your vision score doesn\u2019t.",
   },
 };
 
@@ -49,10 +49,10 @@ const QUIZ_ROLE_ORDER = ["top", "jungle", "mid", "adc", "support"];
 const QUIZ_QUESTIONS = [
   {
     tag: "SCENARIO",
-    q: "Minute 15. A fight breaks out at Dragon — without you. What were you doing?",
+    q: "Minute 15. A fight breaks out at Dragon. Without you. What were you doing?",
     options: [
       { label: "Split-pushing top. Someone has to make them pay for it.", w: { top: 3 } },
-      { label: "Nothing — I pinged that Dragon 40 seconds ago and nobody came.", w: { jungle: 3 } },
+      { label: "Nothing. I pinged that Dragon 40 seconds ago and nobody came.", w: { jungle: 3 } },
       { label: "Shoving mid so I could arrive fashionably late and clean up.", w: { mid: 3 } },
       { label: "Taking the tower they abandoned. Objectives don\u2019t fight back.", w: { adc: 2, top: 1 } },
     ],
@@ -63,7 +63,7 @@ const QUIZ_QUESTIONS = [
     options: [
       { label: "Zero. It\u2019s not a lane, it\u2019s a duel.", w: { top: 3 } },
       { label: "Lane? The whole map is my lane.", w: { jungle: 3 } },
-      { label: "A short lane with two exits — I don\u2019t stay anywhere for long.", w: { mid: 3 } },
+      { label: "A short lane with two exits. I don\u2019t stay anywhere for long.", w: { mid: 3 } },
       { label: "One partner who trusts me with their life.", w: { support: 2, adc: 2 } },
     ],
   },
@@ -92,7 +92,7 @@ const QUIZ_QUESTIONS = [
     q: "Your team loses three fights in a row. Your fix:",
     options: [
       { label: "Stop fighting. I\u2019ll drag three of them top while you take mid.", w: { top: 3 } },
-      { label: "We fight on my timers, around my objectives — not on tilt.", w: { jungle: 3 } },
+      { label: "We fight on my timers, around my objectives. Not on tilt.", w: { jungle: 3 } },
       { label: "Catch someone first. Fights are much easier at 5v4.", w: { support: 2, mid: 1 } },
       { label: "Buy me ten more minutes. I\u2019ll win the fights myself.", w: { adc: 3 } },
     ],
@@ -103,7 +103,7 @@ const QUIZ_QUESTIONS = [
     options: [
       { label: "Getting camped before minute six.", w: { top: 3 } },
       { label: "Reading \u201cjungle diff\u201d in chat at minute four.", w: { jungle: 3 } },
-      { label: "My roam works — and my wave dies under tower behind me.", w: { mid: 3 } },
+      { label: "My roam works. And my wave dies under tower behind me.", w: { mid: 3 } },
       { label: "Landing the perfect engage and turning around to find nobody followed.", w: { support: 3 } },
     ],
   },
@@ -119,12 +119,12 @@ const QUIZ_QUESTIONS = [
   },
   {
     tag: "PERSONALITY",
-    q: "Honestly — why do you play?",
+    q: "Honestly: why do you play?",
     options: [
       { label: "To beat one person so thoroughly it feels personal.", w: { top: 3 } },
       { label: "To run the game like a chess clock everyone else forgot about.", w: { jungle: 3 } },
       { label: "To be the main character. It\u2019s called mid for a reason.", w: { mid: 3 } },
-      { label: "To be the reason we won — even if I finish 0/2/24.", w: { support: 2, adc: 1 } },
+      { label: "To be the reason we won. Even if I finish 0/2/24.", w: { support: 2, adc: 1 } },
     ],
   },
 ];

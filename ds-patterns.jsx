@@ -7,7 +7,7 @@ function Patterns() {
         <LessonCardPattern />
       </DSSection>
 
-      <DSSection num="02" title="League tier display" lede="Shows a player's current rank, LP and trajectory. Tier color informs the icon only — never the surrounding chrome.">
+      <DSSection num="02" title="League tier display" lede="Shows a player's current rank, LP and trajectory. Tier color informs the icon only. Never the surrounding chrome.">
         <TierDisplayPattern />
       </DSSection>
 

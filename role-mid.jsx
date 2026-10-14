@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The Rift from the centre",
     lede: "Where you stand, where ganks come from on both sides, and where your roams go. A mid-lane read of the map.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 44.0, y: 45.0, short: "Mid brush",        long: "The lane bushes. You fight and dodge ganks around them. Both junglers flank mid through here, so don't sit in them blind." },
       { n: 1, x: 55.0, y: 54.0, short: "Mid brush",        long: "The lane bushes. You fight and dodge ganks around them. Both junglers flank mid through here, so don't sit in them blind." },

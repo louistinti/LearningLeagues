@@ -97,7 +97,7 @@ function SectionMap({ num, id, title, lede, pins, mapSrc, mapAlt, mapCredit, leg
             >
               <span className="legend-num">{String(p.n).padStart(2, "0")}</span>
               <span className="legend-text">
-                <strong>{p.short}</strong>{p.long ? ` — ${p.long}` : null}
+                <strong>{p.short}</strong>{p.long ? `: ${p.long}` : null}
               </span>
             </div>
           ))}

@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The jungle, camp by camp",
     lede: "Your office. The camps you farm, the crab you fight over, and the objectives that win games. A read of the neutral map.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 20.0, y: 40.0, short: "Blue buff",        long: "One of your two buffs. Blue gives mana and ability haste, the backbone of a sustained or AP clear. Start here or at red depending on your first play." },
       { n: 2, x: 41.0, y: 71.0, short: "Red buff",         long: "Your other buff. Red adds damage over time and a slow, which makes your early ganks and skirmishes much stronger." },

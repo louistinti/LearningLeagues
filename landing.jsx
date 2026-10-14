@@ -159,7 +159,7 @@ function RolesSection() {
               <a
                 className="role-card"
                 href={r.href}
-                aria-label={`${r.name} role — open the dedicated guide`}
+                aria-label={`${r.name} role: open the dedicated guide`}
               >
                 <div className="role-card-corners"><span></span><span></span><span></span><span></span></div>
                 <div className="role-card-icon">

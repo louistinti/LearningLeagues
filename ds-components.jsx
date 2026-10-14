@@ -11,7 +11,7 @@ function Components() {
         <InputsShowcase />
       </DSSection>
 
-      <DSSection num="03" title="Tags & pills" lede="Inline metadata. The bare mono label is the library's <LL.Eyebrow tone='dim|accent'> — never restate its recipe in CSS, never put it inside a heading. Pills and chips add a 1px border or a tinted bg.">
+      <DSSection num="03" title="Tags & pills" lede="Inline metadata. The bare mono label is the library's <LL.Eyebrow tone='dim|accent'>. Never restate its recipe in CSS, never put it inside a heading. Pills and chips add a 1px border or a tinted bg.">
         <TagsShowcase />
       </DSSection>
 
@@ -27,11 +27,11 @@ function Components() {
         <ChartsShowcase />
       </DSSection>
 
-      <DSSection num="07" title="Gloss" lede="Inline annotation for LoL terms on first mention. Dotted underline + native tooltip. Sourced from LL_GLOSSARY (components.jsx) — never inline ad-hoc.">
+      <DSSection num="07" title="Gloss" lede="Inline annotation for LoL terms on first mention. Dotted underline + native tooltip. Sourced from LL_GLOSSARY (components.jsx). Never inline ad-hoc.">
         <GlossShowcase />
       </DSSection>
 
-      <DSSection num="08" title="Callout" lede="Key concept / Pro tip / Trap. The library's <LL.Callout type='key|pro|trap' title=''> — never re-implement the callout markup inline; the 2-column .callout-grid stays product-side.">
+      <DSSection num="08" title="Callout" lede="Key concept / Pro tip / Trap. The library's <LL.Callout type='key|pro|trap' title=''>. Never re-implement the callout markup inline; the 2-column .callout-grid stays product-side.">
         <CalloutShowcase />
       </DSSection>
 
@@ -90,7 +90,7 @@ function ButtonsShowcase() {
       </DemoCell>
       <DemoCell label="Full documentation">
         <a className="skill-link" href="https://louistinti.github.io/LearningLeagues-Lib/components/button.html">
-          Button — états, props, guidelines →
+          Button: états, props, guidelines →
         </a>
       </DemoCell>
       <DemoCell label="Nav CTA">

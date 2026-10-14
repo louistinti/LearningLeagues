@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The Rift from the top island",
     lede: "Where you stand, where ganks come from, and where the early objective lives. A top-lane read of the upper half of the map.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 24.0, y: 27.0, short: "Lane brush",      long: "The bush in the lane. Don't sit in it unwarded. Trades and gank setups start here. Control it when you're pushing." },
       { n: 2, x: 44.0, y: 13.0, short: "Enemy tri-brush", long: "Where you dive from when you're ahead, and where the enemy jungler hides for a counter-gank. Ward it before you commit." },

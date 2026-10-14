@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The Rift from the backline",
     lede: "Where you stand, where danger comes from, and where to fight. A bot-lane read from the ADC's side.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 70.3, y: 57.9, short: "Tri-brush",        long: "Gank entry. The jungler arrives here for dives. When it's unwarded, hug the far side of your minions." },
       { n: 1, x: 64.3, y: 67.5, short: "Tri-brush",        long: "Gank entry. The jungler arrives here for dives. When it's unwarded, hug the far side of your minions." },

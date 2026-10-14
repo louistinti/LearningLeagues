@@ -55,9 +55,9 @@ const ROLE_DATA = {
     title: "The Rift from your point of view",
     lede: "Your zones, vision angles and typical threats. A Support-specific map read.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
     { n: 1, x: 70.3, y: 57.9, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights. Defensive when you're stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },
     { n: 1, x: 64.3, y: 67.5, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights. Defensive when you're stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },

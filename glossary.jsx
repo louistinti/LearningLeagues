@@ -74,7 +74,7 @@ function GlossaryList() {
         <LL.SectionHead
           num="01"
           title="Every term, defined"
-          lede="Hover any glossed word in a guide and you'll see the same definition that lives here. The list is patch-stable — if a term changes meaning between seasons, it changes here too."
+          lede="Hover any glossed word in a guide and you'll see the same definition that lives here. The list is patch-stable: if a term changes meaning between seasons, it changes here too."
         />
       </div>
 
