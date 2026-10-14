@@ -1,7 +1,7 @@
 /* design-system.css — DS-only styles. Builds on top of styles.css. */
 
 /* ── Layout ─────────────────────────────────────────────────────────────── */
-.ds-main { padding: calc(var(--s) * 6) 0 calc(var(--s) * 10); }
+.ds-main { padding-block: calc(var(--s) * 6) calc(var(--s) * 10); }
 
 .ds-section {
   padding: calc(var(--s) * 8) 0;
