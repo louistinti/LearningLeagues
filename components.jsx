@@ -363,9 +363,7 @@ function Hero({ eyebrow, title, intro, meta = [], sigil }) {
             <div className="label-slot hero-eyebrow"><LL.Eyebrow>{eyebrow}</LL.Eyebrow></div>
             <h1 className="serif">{title}<em>.</em></h1>
             <p className="hero-intro">{intro}</p>
-            <div className="hero-meta">
-              {meta.map((m, i) => <span key={i}>{m}</span>)}
-            </div>
+            <LL.MetaStrip items={meta} />
           </div>
           <div className="hero-sigil-slot">
             <LL.Sigil>{sigil}</LL.Sigil>

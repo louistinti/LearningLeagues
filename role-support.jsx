@@ -8,9 +8,9 @@ const ROLE_DATA = {
     title: "Support",
     intro: "Support is the team's connective role. You don't farm and you don't hunt kills for yourself. You provide vision, you start or cancel engages, and you keep your ADC alive. Pick Support if reading the map beats executing combos for you.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★</span><span style={{opacity:.3}}>★★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> 26.X</>,
+      { label: "Difficulty", value: "Easy" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: "26.X" },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-utility.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-utility.png)" }} />

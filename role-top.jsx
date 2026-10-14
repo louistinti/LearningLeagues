@@ -10,9 +10,9 @@ const ROLE_DATA = {
     title: "Top",
     intro: "Top is the team's island. You play a long 1v1 lane far from the rest of the map, where controlling the wave and trading well decide the lane more than kills do. You win by managing the wave, spending your Teleport on the right play, and turning a side-lane lead into pressure on the whole map. Pick Top if you like self-reliant, duel-focused play.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★★</span><span style={{opacity:.3}}>★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> {LL_PATCH}</>,
+      { label: "Difficulty", value: "Medium" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: LL_PATCH },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)" }} />

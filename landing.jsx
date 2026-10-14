@@ -40,13 +40,14 @@ function LandingHero() {
               </LL.Button>
             </div>
 
-            <div className="landing-meta">
-              <span><strong>5 sections</strong> · structured path</span>
-              <span className="dot-sep">·</span>
-              <span><strong>By role</strong> · top, jungle, mid, adc, support</span>
-              <span className="dot-sep">·</span>
-              <span><strong>Iron → Platinium</strong></span>
-            </div>
+            <LL.MetaStrip
+              tone="accent"
+              items={[
+                { label: "5 sections", value: "· structured path" },
+                { label: "By role", value: "· top, jungle, mid, adc, support" },
+                { label: "Iron → Platinium" },
+              ]}
+            />
           </div>
 
           <div className="landing-sigil"><LL.Sigil>

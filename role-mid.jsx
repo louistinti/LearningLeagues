@@ -10,9 +10,9 @@ const ROLE_DATA = {
     title: "Mid",
     intro: "Mid is the centre of the map. You play a short lane next to every objective, which puts you in the best spot to roam and swing fights all over the Rift. You win by managing the wave to create roam timers, keeping lane priority, and turning that map presence into kills and vision. Pick Mid if you like influencing the whole game, not just one lane.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★★</span><span style={{opacity:.3}}>★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> {LL_PATCH}</>,
+      { label: "Difficulty", value: "Medium" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: LL_PATCH },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-middle.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-middle.png)" }} />

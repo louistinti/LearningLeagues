@@ -81,12 +81,15 @@ function DSHero() {
               built for League players studying their craft. Dark by default, amber by accent,
               compact by density. Every token, component and pattern documented here.
             </p>
-            <div className="ds-hero-meta">
-              <span><strong>Density</strong> Compact</span>
-              <span><strong>Accent</strong> Ambre</span>
-              <span><strong>Mode</strong> Dark only</span>
-              <span><strong>Patch</strong> 26.X</span>
-            </div>
+            <LL.MetaStrip
+              tone="accent"
+              items={[
+                { label: "Density", value: "Compact" },
+                { label: "Accent", value: "Ambre" },
+                { label: "Mode", value: "Dark only" },
+                { label: "Patch", value: "26.X" },
+              ]}
+            />
           </div>
           <DSHeroSigil />
         </div>

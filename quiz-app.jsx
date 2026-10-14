@@ -36,10 +36,14 @@ function QzIntro({ onStart }) {
         No wrong answers, no meta knowledge required. We rank all five roles for
         you at the end, not just one.
       </p>
-      <div className="qz-intro-meta">
-        <span><strong>Questions</strong> 8</span>
-        <span><strong>Time</strong> ~2 min</span>
-        <span><strong>Result</strong> all 5 roles, ranked</span>
+      <div className="qz-intro-meta-slot">
+        <LL.MetaStrip
+          items={[
+            { label: "Questions", value: "8" },
+            { label: "Time", value: "~2 min" },
+            { label: "Result", value: "all 5 roles, ranked" },
+          ]}
+        />
       </div>
       <LL.Button onClick={onStart}>
         <span>Start the quiz</span>

@@ -58,16 +58,11 @@ a:hover { color: var(--accent); }
   max-width: 52ch;
   margin: 0 0 calc(var(--s) * 5);
 }
-.qz-intro-meta {
-  display: flex; flex-wrap: wrap; gap: calc(var(--s) * 3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.06em;
-  color: var(--fg-mute);
-  padding: calc(var(--s) * 3) 0;
-  border-top: 1px dashed var(--rule);
+/* Slot around LL.MetaStrip: layout only (distance to the Start button). */
+.qz-intro-meta-slot {
+  padding-bottom: calc(var(--s) * 3);
   margin-bottom: calc(var(--s) * 5);
 }
-.qz-intro-meta strong { color: var(--fg-dim); font-weight: 500; text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em; margin-right: 6px; }
 .qz-intro-roles {
   display: flex; gap: calc(var(--s) * 3);
   margin-top: calc(var(--s) * 7);

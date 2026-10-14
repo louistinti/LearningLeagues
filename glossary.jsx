@@ -21,11 +21,13 @@ function GlossaryHero() {
               or skim it once to anchor the vocabulary.
             </p>
 
-            <div className="hero-meta">
-              <span><strong>{count} terms</strong> · alphabetised</span>
-              <span><strong>Scope</strong> · macro &amp; mechanics</span>
-              <span><strong>Patch-stable</strong></span>
-            </div>
+            <LL.MetaStrip
+              items={[
+                { label: `${count} terms`, value: "· alphabetised" },
+                { label: "Scope", value: "· macro & mechanics" },
+                { label: "Patch-stable" },
+              ]}
+            />
           </div>
 
           <div className="hero-sigil-slot"><LL.Sigil>

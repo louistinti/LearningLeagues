@@ -10,9 +10,9 @@ const ROLE_DATA = {
     title: "Jungle",
     intro: "Jungle is the role without a lane. You farm the monsters between the lanes, read the whole map, and decide where the game is won. You win by clearing efficiently, ganking at the right moment, and controlling objectives with Smite. Pick Jungle if you like making calls for the whole team and being everywhere at once.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★★★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> {LL_PATCH}</>,
+      { label: "Difficulty", value: "Hard" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: LL_PATCH },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png)" }} />
