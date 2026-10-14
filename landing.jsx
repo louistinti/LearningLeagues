@@ -77,13 +77,12 @@ function LandingHero() {
 }
 
 // ── Showcase (Fundamentals / Training / Resources) ──────────────────────
-function Showcase({ id, num, eyebrow, title, lede, ctaLabel, ctaHref, variant, children }) {
+function Showcase({ id, eyebrow, title, lede, ctaLabel, ctaHref, variant, children }) {
   return (
     <section id={id} className={"section showcase showcase--" + (variant || "default")}>
       <div className="shell">
         <div className="showcase-grid">
           <div className="showcase-text">
-            <div className="showcase-num mono">{num}</div>
             <div className="label-slot showcase-eyebrow"><LL.Eyebrow tone="accent">{eyebrow}</LL.Eyebrow></div>
             <h2 className="showcase-title serif">{title}</h2>
             <p className="showcase-lede">{lede}</p>

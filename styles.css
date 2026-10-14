@@ -1479,13 +1479,6 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   .showcase--reverse .showcase-grid > .showcase-text,
   .showcase--reverse .showcase-grid > .showcase-visual { order: 0; }
 }
-.showcase-num {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--fg-mute);
-  text-transform: uppercase;
-  margin-bottom: calc(var(--s) * 2);
-}
 .showcase-eyebrow { margin-bottom: calc(var(--s) * 2); }
 .showcase-title {
   font-size: clamp(36px, 4.5vw, 56px);

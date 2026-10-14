@@ -86,7 +86,7 @@ function GlossaryList() {
 
       {letters.map((l) => (
         <div key={l} className="glossary-group" id={`letter-${l}`}>
-          <h2 className="glossary-letter serif">{l}</h2>
+          <h3 className="glossary-letter serif">{l}</h3>
           <dl className="glossary-list">
             {groups[l].map(([term, def]) => (
               <div key={term} className="glossary-entry">
