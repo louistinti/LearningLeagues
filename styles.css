@@ -166,7 +166,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .shell { max-width: 1200px; margin: 0 auto; padding: 0 calc(var(--s) * 3); }
 @media (max-width: 768px) { .shell { padding: 0 calc(var(--s) * 2); } }
 
-.section { padding: var(--section-y) 0; border-top: 1px solid var(--rule); position: relative; }
+.section { padding-block: var(--section-y); border-top: 1px solid var(--rule); position: relative; }
 .section--flush { border-top: 0; padding-top: calc(var(--section-y) * 0.6); }
 
 /* Slot around LL.SectionHead: layout only (distance to the section body). */
