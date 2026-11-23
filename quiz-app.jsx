@@ -1,4 +1,4 @@
-// quiz-app.jsx — Role quiz flow: intro → 8 questions (one per screen) → ranked result.
+// quiz-app.jsx: Role quiz flow: intro → 8 questions (one per screen) → ranked result.
 // Ledger question style; shared Nav/Footer from components.jsx.
 
 const QZ_LS_KEY = "ll-quiz-v1";
@@ -32,14 +32,18 @@ function QzIntro({ onStart }) {
       <div className="label-slot"><LL.Eyebrow tone="accent">ROLE QUIZ</LL.Eyebrow></div>
       <h1 className="qz-intro-title">Which role <em>suits you?</em></h1>
       <p className="qz-intro-lede">
-        Eight questions — half in-game situations, half honest personality checks.
+        Eight questions: half in-game situations, half honest personality checks.
         No wrong answers, no meta knowledge required. We rank all five roles for
         you at the end, not just one.
       </p>
-      <div className="qz-intro-meta">
-        <span><strong>Questions</strong> 8</span>
-        <span><strong>Time</strong> ~2 min</span>
-        <span><strong>Result</strong> all 5 roles, ranked</span>
+      <div className="qz-intro-meta-slot">
+        <LL.MetaStrip
+          items={[
+            { label: "Questions", value: "8" },
+            { label: "Time", value: "~2 min" },
+            { label: "Result", value: "all 5 roles, ranked" },
+          ]}
+        />
       </div>
       <LL.Button onClick={onStart}>
         <span>Start the quiz</span>
@@ -50,7 +54,10 @@ function QzIntro({ onStart }) {
       <div className="qz-intro-roles" aria-hidden="true">
         <span className="qz-intro-roles-label">Top · Jungle · Mid · ADC · Support</span>
         {QUIZ_ROLE_ORDER.map((k) => (
-          <img key={k} src={QUIZ_ROLES[k].icon} alt="" />
+          <span key={k} className="qz-intro-role">
+            <img src={QUIZ_ROLES[k].icon} alt="" />
+            <span className="qz-intro-role-name">{QUIZ_ROLES[k].name}</span>
+          </span>
         ))}
       </div>
     </div>
@@ -63,8 +70,13 @@ function QzProgress({ index, onBack }) {
       <span className="qz-progress-count">
         Q {String(index + 1).padStart(2, "0")} <span className="of">/ {String(QZ_TOTAL).padStart(2, "0")}</span>
       </span>
-      <div className="qz-progress-bar">
-        <div className="qz-progress-fill" style={{ width: `${(index / QZ_TOTAL) * 100}%` }}></div>
+      <div className="qz-progress-bar-slot">
+        <LL.ProgressBar
+          value={index + 1}
+          max={QZ_TOTAL}
+          valueText={`Question ${index + 1} of ${QZ_TOTAL}`}
+          label="Quiz progress"
+        />
       </div>
       <button className="qz-progress-back" onClick={onBack} disabled={index === 0}>
         ← Back
@@ -95,7 +107,7 @@ function QzOptionRows({ question, picked, onPick }) {
 function QzKbdHint() {
   return (
     <p className="qz-kbd-hint">
-      Keyboard — <b>A</b><b>B</b><b>C</b><b>D</b> to answer · <b>⌫</b> to go back
+      Keyboard: <b>A</b><b>B</b><b>C</b><b>D</b> to answer · <b>⌫</b> to go back
     </p>
   );
 }

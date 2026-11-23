@@ -1,7 +1,7 @@
-/* design-system.css — DS-only styles. Builds on top of styles.css. */
+/* design-system.css: DS-only styles. Builds on top of styles.css. */
 
 /* ── Layout ─────────────────────────────────────────────────────────────── */
-.ds-main { padding: calc(var(--s) * 6) 0 calc(var(--s) * 10); }
+.ds-main { padding-block: calc(var(--s) * 6) calc(var(--s) * 10); }
 
 .ds-section {
   padding: calc(var(--s) * 8) 0;
@@ -10,29 +10,8 @@
 }
 .ds-section:first-child { border-top: 0; }
 
-.ds-section-head {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: calc(var(--s) * 4);
-  margin-bottom: calc(var(--s) * 5);
-  align-items: start;
-}
-@media (max-width: 768px) { .ds-section-head { grid-template-columns: 1fr; gap: calc(var(--s) * 2); } }
-.ds-section-num {
-  font-family: 'EB Garamond', serif;
-  font-style: italic;
-  font-size: 56px;
-  color: var(--accent);
-  line-height: 1;
-  position: relative;
-  padding-top: calc(var(--s) * 0.5);
-}
-.ds-section-num::after {
-  content: ""; position: absolute; left: 0; bottom: -14px;
-  width: 60px; height: 1px; background: var(--accent); opacity: .5;
-}
-.ds-section-title { font-size: 36px; line-height: 1.1; margin-bottom: calc(var(--s) * 1.5); }
-.ds-section-lede { color: var(--fg-dim); max-width: 78ch; font-size: 15.5px; line-height: 1.6; margin: 0; }
+/* Slot around LL.SectionHead: layout only (distance to the first block). */
+.ds-section-head-slot { margin-bottom: calc(var(--s) * 5); }
 
 .ds-block { margin-bottom: calc(var(--s) * 5); }
 .ds-block:last-child { margin-bottom: 0; }
@@ -82,20 +61,7 @@
   font-size: 16.5px; line-height: 1.65; color: var(--fg-dim);
   max-width: 60ch; margin: 0 0 calc(var(--s) * 4);
 }
-.ds-hero-meta {
-  display: flex; flex-wrap: wrap; gap: calc(var(--s) * 3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--fg-mute);
-  letter-spacing: 0.04em;
-  padding-top: calc(var(--s) * 3);
-  border-top: 1px dashed var(--rule);
-}
-.ds-hero-meta strong {
-  color: var(--accent); font-weight: 500; margin-right: 8px;
-  text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em;
-}
-/* Sigil slot — layout only; the frame is LL.Sigil (lib). */
+/* Sigil slot: layout only; the frame is LL.Sigil (lib). */
 .ds-hero-sigil-slot { width: 100%; max-width: 320px; justify-self: end; }
 
 .ds-brand-tag { margin-left: 8px; }
@@ -319,7 +285,7 @@
 .ds-icon-cell svg { width: 28px; height: 28px; }
 .ds-icon-cell span { font-size: 10px; letter-spacing: 0.12em; color: var(--fg-mute); text-transform: uppercase; }
 
-/* ── Components: forced button-state specimens retired 2026-08-30 — they
+/* ── Components: forced button-state specimens retired 2026-08-30. They
    live on the LearningLeagues-Lib docs site, the Button's single source. ── */
 
 /* ── Components grid ──────────────────────────────────────────────────── */

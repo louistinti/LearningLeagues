@@ -1,4 +1,4 @@
-// role-jungle.jsx — content for the Jungle role guide. window.ROLE_DATA.
+// role-jungle.jsx: content for the Jungle role guide. window.ROLE_DATA.
 // Content researched 2026-06-23 against current patch 26.12 + Riot patch notes.
 // Builds transcribed from u.gg (pending user screenshot confirmation); videos picked by the user.
 
@@ -10,9 +10,9 @@ const ROLE_DATA = {
     title: "Jungle",
     intro: "Jungle is the role without a lane. You farm the monsters between the lanes, read the whole map, and decide where the game is won. You win by clearing efficiently, ganking at the right moment, and controlling objectives with Smite. Pick Jungle if you like making calls for the whole team and being everywhere at once.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★★★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> {LL_PATCH}</>,
+      { label: "Difficulty", value: "Hard" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: LL_PATCH },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-jungle.png)" }} />
@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The jungle, camp by camp",
     lede: "Your office. The camps you farm, the crab you fight over, and the objectives that win games. A read of the neutral map.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 20.0, y: 40.0, short: "Blue buff",        long: "One of your two buffs. Blue gives mana and ability haste, the backbone of a sustained or AP clear. Start here or at red depending on your first play." },
       { n: 2, x: 41.0, y: 71.0, short: "Red buff",         long: "Your other buff. Red adds damage over time and a slow, which makes your early ganks and skirmishes much stronger." },

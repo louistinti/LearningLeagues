@@ -1,4 +1,4 @@
-// landing.jsx — Learning Leagues landing page sections.
+// landing.jsx: Learning Leagues landing page sections.
 // Reuses the existing Hextech design system (tokens from styles.css, components from components.jsx).
 
 // ── Hero ────────────────────────────────────────────────────────────────
@@ -40,13 +40,14 @@ function LandingHero() {
               </LL.Button>
             </div>
 
-            <div className="landing-meta">
-              <span><strong>5 sections</strong> · structured path</span>
-              <span className="dot-sep">·</span>
-              <span><strong>By role</strong> · top, jungle, mid, adc, support</span>
-              <span className="dot-sep">·</span>
-              <span><strong>Iron → Platinium</strong></span>
-            </div>
+            <LL.MetaStrip
+              tone="accent"
+              items={[
+                { label: "5 sections", value: "· structured path" },
+                { label: "By role", value: "· top, jungle, mid, adc, support" },
+                { label: "Iron → Platinium" },
+              ]}
+            />
           </div>
 
           <div className="landing-sigil"><LL.Sigil>
@@ -76,17 +77,16 @@ function LandingHero() {
 }
 
 // ── Showcase (Fundamentals / Training / Resources) ──────────────────────
-function Showcase({ id, num, eyebrow, title, lede, ctaLabel, ctaHref, variant, children }) {
+function Showcase({ id, eyebrow, title, lede, ctaLabel, ctaHref, variant, children }) {
   return (
     <section id={id} className={"section showcase showcase--" + (variant || "default")}>
       <div className="shell">
         <div className="showcase-grid">
           <div className="showcase-text">
-            <div className="showcase-num mono">{num}</div>
             <div className="label-slot showcase-eyebrow"><LL.Eyebrow tone="accent">{eyebrow}</LL.Eyebrow></div>
             <h2 className="showcase-title serif">{title}</h2>
             <p className="showcase-lede">{lede}</p>
-            {/* .showcase-cta is product layout (align-self) — it lives on a
+            {/* .showcase-cta is product layout (align-self): it lives on a
                 wrapper, never on the library component's own element. */}
             <div className="showcase-cta">
               <LL.Button href={ctaHref}>
@@ -159,7 +159,7 @@ function RolesSection() {
               <a
                 className="role-card"
                 href={r.href}
-                aria-label={`${r.name} role — open the dedicated guide`}
+                aria-label={`${r.name} role: open the dedicated guide`}
               >
                 <div className="role-card-corners"><span></span><span></span><span></span><span></span></div>
                 <div className="role-card-icon">

@@ -1,4 +1,4 @@
-// glossary.jsx — Glossary page composition.
+// glossary.jsx: Glossary page composition.
 // Renders every entry of LL_GLOSSARY (defined in components.jsx) as an
 // alphabetised definition list. The page is intentionally lean: hero,
 // list, footer. No tabs, no archetypes, just the terms.
@@ -21,11 +21,13 @@ function GlossaryHero() {
               or skim it once to anchor the vocabulary.
             </p>
 
-            <div className="hero-meta">
-              <span><strong>{count} terms</strong> · alphabetised</span>
-              <span><strong>Scope</strong> · macro &amp; mechanics</span>
-              <span><strong>Patch-stable</strong></span>
-            </div>
+            <LL.MetaStrip
+              items={[
+                { label: `${count} terms`, value: "· alphabetised" },
+                { label: "Scope", value: "· macro & mechanics" },
+                { label: "Patch-stable" },
+              ]}
+            />
           </div>
 
           <div className="hero-sigil-slot"><LL.Sigil>
@@ -68,11 +70,13 @@ function GlossaryList() {
 
   return (
     <section className="section shell" id="s-glossary">
-      <SectionHead
-        num="01"
-        title="Every term, defined"
-        lede="Hover any glossed word in a guide and you'll see the same definition that lives here. The list is patch-stable — if a term changes meaning between seasons, it changes here too."
-      />
+      <div className="section-head-slot">
+        <LL.SectionHead
+          num="01"
+          title="Every term, defined"
+          lede="Hover any glossed word in a guide and you'll see the same definition that lives here. The list is patch-stable: if a term changes meaning between seasons, it changes here too."
+        />
+      </div>
 
       <nav className="glossary-jumper" aria-label="Letter index">
         {letters.map((l) => (
@@ -82,7 +86,7 @@ function GlossaryList() {
 
       {letters.map((l) => (
         <div key={l} className="glossary-group" id={`letter-${l}`}>
-          <h2 className="glossary-letter serif">{l}</h2>
+          <h3 className="glossary-letter serif">{l}</h3>
           <dl className="glossary-list">
             {groups[l].map(([term, def]) => (
               <div key={term} className="glossary-entry">

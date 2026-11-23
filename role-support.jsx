@@ -1,4 +1,4 @@
-// role-support.jsx — content for the Support role guide. window.ROLE_DATA.
+// role-support.jsx: content for the Support role guide. window.ROLE_DATA.
 
 const ROLE_DATA = {
   meta: {
@@ -8,9 +8,9 @@ const ROLE_DATA = {
     title: "Support",
     intro: "Support is the team's connective role. You don't farm and you don't hunt kills for yourself. You provide vision, you start or cancel engages, and you keep your ADC alive. Pick Support if reading the map beats executing combos for you.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★</span><span style={{opacity:.3}}>★★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> 26.X</>,
+      { label: "Difficulty", value: "Easy" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: "26.X" },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-utility.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-utility.png)" }} />
@@ -55,9 +55,9 @@ const ROLE_DATA = {
     title: "The Rift from your point of view",
     lede: "Your zones, vision angles and typical threats. A Support-specific map read.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
     { n: 1, x: 70.3, y: 57.9, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights. Defensive when you're stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },
     { n: 1, x: 64.3, y: 67.5, short: "Tri-brush",         long: "Sees the jungler arrive at tower fights. Defensive when you're stuck under yours (dive risk), offensive when you're pushed under theirs (counter-gank risk)." },

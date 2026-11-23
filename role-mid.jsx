@@ -1,4 +1,4 @@
-// role-mid.jsx — content for the Mid role guide. window.ROLE_DATA.
+// role-mid.jsx: content for the Mid role guide. window.ROLE_DATA.
 // Content researched 2026-06-23 against current patch 26.12 + Riot patch notes.
 // Builds transcribed from u.gg (pending user confirmation at master tier); videos picked by the user.
 
@@ -10,9 +10,9 @@ const ROLE_DATA = {
     title: "Mid",
     intro: "Mid is the centre of the map. You play a short lane next to every objective, which puts you in the best spot to roam and swing fights all over the Rift. You win by managing the wave to create roam timers, keeping lane priority, and turning that map presence into kills and vision. Pick Mid if you like influencing the whole game, not just one lane.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★★</span><span style={{opacity:.3}}>★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> {LL_PATCH}</>,
+      { label: "Difficulty", value: "Medium" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: LL_PATCH },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-middle.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-middle.png)" }} />
@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The Rift from the centre",
     lede: "Where you stand, where ganks come from on both sides, and where your roams go. A mid-lane read of the map.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 44.0, y: 45.0, short: "Mid brush",        long: "The lane bushes. You fight and dodge ganks around them. Both junglers flank mid through here, so don't sit in them blind." },
       { n: 1, x: 55.0, y: 54.0, short: "Mid brush",        long: "The lane bushes. You fight and dodge ganks around them. Both junglers flank mid through here, so don't sit in them blind." },

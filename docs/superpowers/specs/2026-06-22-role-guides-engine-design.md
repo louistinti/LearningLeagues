@@ -1,4 +1,4 @@
-# Design — Moteur data-driven pour les guides de rôle + déploiement des 4 rôles restants
+# Design: Moteur data-driven pour les guides de rôle + déploiement des 4 rôles restants
 
 **Date :** 2026-06-22
 **Statut :** validé en brainstorming, en attente de relecture utilisateur
@@ -31,14 +31,14 @@ le moteur contre une page déjà connue-bonne, sans nouveau contenu à inventer.
 Nouveau fichier `role-sections.jsx`, extrait de `sections-01-03.jsx` / `04-06` / `07-11`.
 Chaque section ne porte plus de contenu, seulement la mise en page, et reçoit ses données en props :
 
-- `<SectionPhases phases={…} />` — les 3 cartes de phase (titre, timer, items)
-- `<SectionMap pins={…} mapSrc lede />` — map annotée ; les coordonnées de pins sont en data
+- `<SectionPhases phases={…} />`: les 3 cartes de phase (titre, timer, items)
+- `<SectionMap pins={…} mapSrc lede />`: map annotée ; les coordonnées de pins sont en data
 - `<SectionSkills skills={…} />`
-- `<SectionTriangle triangle={…} />` — les 3 archetypes du rôle
-- `<SectionErrors errors={…} />` — réutilise `<ErrorCard>`
+- `<SectionTriangle triangle={…} />`: les 3 archetypes du rôle
+- `<SectionErrors errors={…} />`: réutilise `<ErrorCard>`
 - `<SectionChampions champions={…} />`
 - `<SectionBuild build={…} />`
-- `<SectionMatchups matchups={…} />` — placeholder structurel tant que l'import de matchups n'est pas fait (pas de `<MatchupRow>` ni colonne Priority pour l'instant)
+- `<SectionMatchups matchups={…} />`: placeholder structurel tant que l'import de matchups n'est pas fait (pas de `<MatchupRow>` ni colonne Priority pour l'instant)
 - `<SectionChecklist items={…} />`
 - `<SectionPractice creators={…} />`
 
@@ -63,7 +63,7 @@ window.ROLE_DATA = {
   build:   { … },
   matchups: [ … ],       // placeholder pour l'instant
   checklist: [ … ],
-  creators: [ … ],       // §11 — créateurs vidéo committés pour le rôle
+  creators: [ … ],       // §11: créateurs vidéo committés pour le rôle
 };
 ```
 
@@ -93,14 +93,14 @@ codée en dur, pour rester cohérente quand un rôle saute une section.
 
 ## Plan de réalisation
 
-### Phase 1 — Refacto moteur (pilote Support, zéro nouveau contenu)
+### Phase 1: Refacto moteur (pilote Support, zéro nouveau contenu)
 1. Extraire les sections de Support vers `role-sections.jsx` (génériques, props).
 2. Déplacer tout le contenu Support actuel dans `role-support.jsx` (`window.ROLE_DATA`).
 3. Rendre `app.jsx` générique (lit `ROLE_DATA`).
 4. Ajouter l'axe `[data-role]` dans `styles.css` (token d'accent par rôle, Support = `ambre`).
 5. **Critère de succès :** le Support refactoré rend identique à l'actuel (vérif preview + screenshot avant/après, console sans erreur).
 
-### Phase 2 — Les 4 rôles, un par un (ADC → Top → Mid → Jungle)
+### Phase 2: Les 4 rôles, un par un (ADC → Top → Mid → Jungle)
 Pour chaque rôle, sur sa propre branche :
 1. Recherche (web + patch notes Riot pour chiffres/timings/champions/orthographes).
 2. Rédaction du `role-<x>.jsx` + `<X>.html`, selon les règles de voix.

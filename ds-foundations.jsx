@@ -1,4 +1,4 @@
-// ds-foundations.jsx — Foundations tab: color, type, spacing, motion
+// ds-foundations.jsx: Foundations tab: color, type, spacing, motion
 
 const COLOR_GROUPS = [
   {
@@ -31,14 +31,14 @@ const COLOR_GROUPS = [
     title: "Accents", label: "Hextech amber",
     tokens: [
       { name: "--accent-or",    value: "#d4b468", note: "Hextech gold" },
-      { name: "--accent-ambre", value: "#e39a3c", note: "Live accent — amber" },
+      { name: "--accent-ambre", value: "#e39a3c", note: "Live accent: amber" },
       { name: "--accent-bleu",  value: "#6fa8dc", note: "Cool secondary" },
       { name: "--gold-soft",    value: "rgba(212,180,104,.12)", note: "Tinted bg" },
     ],
   },
 ];
 
-// TIER_COLORS is sourced from LL_TIERS (components.jsx) — single source of truth.
+// TIER_COLORS is sourced from LL_TIERS (components.jsx): single source of truth.
 // Swatches read the live CSS token so palette overrides (if ever added) work
 // without touching this file.
 
@@ -48,7 +48,7 @@ function Foundations() {
       <DSSection
         num="01"
         title="Color"
-        lede="Dark-only system. The page sits on a deep midnight blue; surfaces step up two values; amber carries the eye through the page. We never mix in pure black or pure white — every neutral is tinted toward Hextech blue."
+        lede="Dark-only system. The page sits on a deep midnight blue; surfaces step up two values; amber carries the eye through the page. We never mix in pure black or pure white. Every neutral is tinted toward Hextech blue."
       >
         <div className="ds-color-grid">
           {COLOR_GROUPS.map(g => (
@@ -60,7 +60,7 @@ function Foundations() {
       <DSSection
         num="02"
         title="Tier palette"
-        lede="Ranked tiers carry their own swatches, used sparingly — leaderboard chips, progress bars, profile badges. Never as a primary surface or text color."
+        lede="Ranked tiers carry their own swatches, used sparingly: leaderboard chips, progress bars, profile badges. Never as a primary surface or text color."
       >
         <div className="ds-tier-row">
           {LL_TIERS.map(t => (
@@ -103,7 +103,7 @@ function Foundations() {
       <DSSection
         num="06"
         title="Iconography"
-        lede="Stroke-only line work, 1px–1.2px weight, 24px grid. Inspired by Hextech runes — angular, hexagonal, never pillowy."
+        lede="Stroke-only line work, 1px–1.2px weight, 24px grid. Inspired by Hextech runes: angular, hexagonal, never pillowy."
       >
         <IconGrid />
       </DSSection>
@@ -182,7 +182,7 @@ function FontStack() {
 
 function SpacingScale() {
   const stops = [
-    { mult: "0.5", css: "--s-05", px: "4px",  note: "Minimum — hairline gaps" },
+    { mult: "0.5", css: "--s-05", px: "4px",  note: "Minimum: hairline gaps" },
     { mult: "1",   css: "--s-1",  px: "8px",  note: "Base unit" },
     { mult: "1.5", css: "--s-15", px: "12px", note: "Inline / tight" },
     { mult: "2",   css: "--s-2",  px: "16px", note: "Default gap" },
@@ -209,7 +209,7 @@ function SpacingScale() {
         <span className="ds-block-label mono">Scale</span>
         <h4 className="ds-aside-title">8px base · 4px minimum</h4>
         <p>
-          Spacing follows a strict <b>8px scale</b> — every gap, padding and margin
+          Spacing follows a strict <b>8px scale</b>: every gap, padding and margin
           is a multiple of <b>8</b>. <b>4px</b> is the minimum (hairline only);
           <b>12px</b> is the one allowed half-step for inline / tight contexts.
           The full ladder: <span className="mono">4 · 8 · 12 · 16 · 24 · 32 · 40 · 48 · 64</span>.

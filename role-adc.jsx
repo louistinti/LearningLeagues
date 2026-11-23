@@ -1,4 +1,4 @@
-// role-adc.jsx — content for the ADC role guide. window.ROLE_DATA.
+// role-adc.jsx: content for the ADC role guide. window.ROLE_DATA.
 // Content researched 2026-06-22 against current patch 26.12 + Riot patch notes.
 // Builds and video picks are flagged for expert validation before merge.
 
@@ -10,9 +10,9 @@ const ROLE_DATA = {
     title: "ADC",
     intro: "ADC is the team's primary ranged damage. You turn farm into items, then deal sustained damage from the backline. You win by staying alive and hitting the right target, not by chasing kills. Pick ADC if you like clean mechanics and scaling into a late-game threat.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★★</span><span style={{opacity:.3}}>★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> {LL_PATCH}</>,
+      { label: "Difficulty", value: "Medium" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: LL_PATCH },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-bottom.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-bottom.png)" }} />
@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The Rift from the backline",
     lede: "Where you stand, where danger comes from, and where to fight. A bot-lane read from the ADC's side.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 70.3, y: 57.9, short: "Tri-brush",        long: "Gank entry. The jungler arrives here for dives. When it's unwarded, hug the far side of your minions." },
       { n: 1, x: 64.3, y: 67.5, short: "Tri-brush",        long: "Gank entry. The jungler arrives here for dives. When it's unwarded, hug the far side of your minions." },

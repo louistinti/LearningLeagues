@@ -1,4 +1,4 @@
-// fundamentals-cards.jsx — intro, section 01 primary cards, in-card radial overlay.
+// fundamentals-cards.jsx: intro, section 01 primary cards, in-card radial overlay.
 // Depends on fundamentals-data.jsx (FUND_NODES, FUND_BY_ID) and components.jsx.
 
 // ── Intro ───────────────────────────────────────────────────────────────────
@@ -18,12 +18,14 @@ function FundIntro() {
               how the pieces connect, so you can see where a weak habit is quietly costing
               you three lanes over. No jargon, no chasing the meta.
             </p>
-            <div className="ft-intro-meta">
-              <span><strong>25</strong> fundamentals</span>
-              <span><strong>6</strong> that carry your rank</span>
-              <span><strong>Read</strong> ~12 min</span>
-              <span><strong>Patch</strong> 26.X</span>
-            </div>
+            <LL.MetaStrip
+              items={[
+                { label: "25", value: "fundamentals" },
+                { label: "6", value: "that carry your rank" },
+                { label: "Read", value: "~12 min" },
+                { label: "Patch", value: "26.X" },
+              ]}
+            />
           </div>
           <div className="ft-intro-sigil-slot"><LL.Sigil>
             <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8">
@@ -58,7 +60,7 @@ function FundIntro() {
   );
 }
 
-// ── Section 01 — the 6 primary cards ────────────────────────────────────────
+// ── Section 01: the 6 primary cards ────────────────────────────────────────
 function PrimaryCards() {
   const primaries = FUND_NODES.filter((n) => n.tier === "primary");
   const [openId, setOpenId] = React.useState(null);

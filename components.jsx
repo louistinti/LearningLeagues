@@ -1,4 +1,4 @@
-// components.jsx — shared primitives for the role guide pages.
+// components.jsx: shared primitives for the role guide pages.
 
 /* ── Shared design-token data (single source of truth) ─────────────────────
    LL_TIERS is consumed by ds-foundations.jsx (palette swatches) and
@@ -48,7 +48,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.error) {
       return (
         <section className="section shell">
-          <p className="section-lede" style={{ color: "var(--danger)" }}>
+          <p className="section-error">
             This section couldn't be displayed{this.props.label ? ` (${this.props.label})` : ""}.
             The rest of the page is unaffected.
           </p>
@@ -63,33 +63,33 @@ class ErrorBoundary extends React.Component {
    Single source of truth for short, inline LoL term definitions. Use the
    <Gloss term="..."/> component on the FIRST mention of a term in a guide
    to wrap it in a dotted underline + native tooltip. If a term is missing
-   here, add it once — never inline glosses ad-hoc in section files.
+   here, add it once. Never inline glosses ad-hoc in section files.
    ──────────────────────────────────────────────────────────────────────── */
 const LL_GLOSSARY = {
-  "CS":            "Creep Score — minions you last-hit for gold.",
+  "CS":            "Creep Score: minions you last-hit for gold.",
   "trinket":       "The free warding tool every champion starts with.",
-  "control ward":  "Pink ward — denies enemy vision in its area.",
-  "pink ward":     "Older name for a control ward — denies enemy vision.",
-  "scuttle":       "The neutral crab in the river — first one spawns at 2:55.",
+  "control ward":  "Pink ward: denies enemy vision in its area.",
+  "pink ward":     "Older name for a control ward. Denies enemy vision.",
+  "scuttle":       "The neutral crab in the river. First one spawns at 2:55.",
   "invade":        "An early enemy push into your jungle, usually pre-1:30.",
   "peel":          "Standing between your carry and the threat that wants them dead.",
   "pit":           "The walled area where an objective (Drake, Baron) spawns.",
   "freeze":        "Holding the wave near your tower so it never pushes.",
   "vision score":  "The in-game stat measuring your contribution to map vision.",
-  "TP":            "Teleport — Summoner spell that lets you re-enter a lane from base.",
-  "APC":           "AP Carry — a magic-damage carry (e.g. Veigar, Karthus bot).",
-  "ADC":           "Attack Damage Carry — the ranged auto-attacker of the bot lane.",
+  "TP":            "Teleport: Summoner spell that lets you re-enter a lane from base.",
+  "APC":           "AP Carry: a magic-damage carry (e.g. Veigar, Karthus bot).",
+  "ADC":           "Attack Damage Carry: the ranged auto-attacker of the bot lane.",
   "keystone":      "The top-row rune that defines your laning identity.",
-  "engage":        "Starting a fight — usually with a hard CC ability.",
+  "engage":        "Starting a fight. Usually with a hard CC ability.",
   "all-in":        "Committing every cooldown to kill the enemy now.",
   "poke":          "Chipping enemy HP from range without committing to a fight.",
   "enchanter":     "A support archetype focused on shields, heals and buffs.",
-  "summoners":     "Summoner Spells — the two extra abilities (Flash, Heal, Ignite…).",
-  "Ezreal E":      "Ezreal's dash ability — short blink + skillshot.",
-  "Lucian E":      "Lucian's dash ability — short skillshot dash.",
+  "summoners":     "Summoner Spells: the two extra abilities (Flash, Heal, Ignite…).",
+  "Ezreal E":      "Ezreal's dash ability: short blink + skillshot.",
+  "Lucian E":      "Lucian's dash ability: short skillshot dash.",
   "kiting":        "Attacking then moving between each auto so you deal damage without standing still. Also called orb-walking.",
   "attack-move":   "A click (default A + click) that auto-attacks the best target near the cursor instead of walking onto it.",
-  "power spike":   "A moment your champion gets much stronger — a key item, level, or ability rank.",
+  "power spike":   "A moment your champion gets much stronger: a key item, level, or ability rank.",
   "hypercarry":    "A marksman that is weak early but becomes the team's main damage once it has items.",
   "lethality":     "Flat armor penetration, strongest early. Used by burst marksmen and assassins.",
   "shutdown":      "Bonus gold the enemy earns for killing a fed champion.",
@@ -101,7 +101,7 @@ const LL_GLOSSARY = {
   "Voidgrubs":     "Early top-side river monsters; killing them grants a buff that helps your team break towers.",
   "Rift Herald":   "A top-side river objective; the Eye of the Herald charges into a tower for free plates.",
   "Conqueror":     "A keystone rune that stacks bonus damage as you keep fighting, then heals at full stacks.",
-  "Grasp":         "Grasp of the Undying — a keystone that adds bonus damage and healing on a hit every few seconds.",
+  "Grasp":         "Grasp of the Undying: a keystone that adds bonus damage and healing on a hit every few seconds.",
   "roam":          "Leaving your lane to make a play somewhere else on the map.",
   "lane priority": "The freedom to leave lane, earned when your wave is pushing or you've won the matchup.",
   "waveclear":     "Killing a whole minion wave fast, usually with abilities.",
@@ -125,7 +125,7 @@ const LL_GLOSSARY = {
 /* <Gloss term="CS">CS</Gloss>
    <Gloss term="vision score" def="custom override if you must" />
    First-mention helper. Looks up term in LL_GLOSSARY; def prop wins if given.
-   Renders an <abbr> with a native tooltip — no JS hover state needed. */
+   Renders an <abbr> with a native tooltip: no JS hover state needed. */
 function Gloss({ term, def, children }) {
   const title = def || LL_GLOSSARY[term] || LL_GLOSSARY[term && term.toLowerCase()];
   return (
@@ -135,11 +135,11 @@ function Gloss({ term, def, children }) {
   );
 }
 
-/* ── Callout — now the library's LL.Callout (LearningLeagues-Lib, vendored in
+/* ── Callout: now the library's LL.Callout (LearningLeagues-Lib, vendored in
    lib/ll-lib.jsx): <LL.Callout type="key|pro|trap" title="…">body</LL.Callout>.
    type is required (no fallback); the label and glyph come from the type. */
 
-/* ── ErrorCard — Symptom / Cause / Fix template ───────────────────────────
+/* ── ErrorCard: Symptom / Cause / Fix template ───────────────────────────
    <ErrorCard title="" symptom={…} cause={…} fix={…} />
    The §06 "6 mistakes" pattern lifted into a single component so every
    future role guide uses the exact same Symptom/Cause/Fix triad without
@@ -205,7 +205,7 @@ function Nav({ activeKey = "roles" }) {
         <div className="nav-right">
           <LangSwitcher />
           {/* Library Button since 2026-08-30; its current (you-are-here) state
-              since 2026-09-16 — the ask filed at adoption, delivered as the
+              since 2026-09-16: the ask filed at adoption, delivered as the
               library's current prop (lib pin 45ea047). .nav-cta-wrap is
               product layout: mobile hiding. */}
           <span className="nav-cta-wrap">
@@ -342,18 +342,6 @@ function Breadcrumb({ current }) {
   );
 }
 
-function SectionHead({ num, title, lede }) {
-  return (
-    <div className="section-head">
-      <div className="section-num">{num}</div>
-      <div>
-        <h2 className="section-title">{title}</h2>
-        <p className="section-lede">{lede}</p>
-      </div>
-    </div>
-  );
-}
-
 function Hero({ eyebrow, title, intro, meta = [], sigil }) {
   return (
     <section className="hero">
@@ -363,9 +351,7 @@ function Hero({ eyebrow, title, intro, meta = [], sigil }) {
             <div className="label-slot hero-eyebrow"><LL.Eyebrow>{eyebrow}</LL.Eyebrow></div>
             <h1 className="serif">{title}<em>.</em></h1>
             <p className="hero-intro">{intro}</p>
-            <div className="hero-meta">
-              {meta.map((m, i) => <span key={i}>{m}</span>)}
-            </div>
+            <LL.MetaStrip items={meta} />
           </div>
           <div className="hero-sigil-slot">
             <LL.Sigil>{sigil}</LL.Sigil>
@@ -554,4 +540,4 @@ function TocSidebar({ items = [] }) {
   );
 }
 
-Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, LangSwitcher, TocSidebar, Gloss, ErrorCard, ErrorBoundary, LL_TIERS, LL_GLOSSARY, DDRAGON_VER, LL_PATCH });
+Object.assign(window, { LogoMark, Nav, Breadcrumb, Hero, Footer, LangSwitcher, TocSidebar, Gloss, ErrorCard, ErrorBoundary, LL_TIERS, LL_GLOSSARY, DDRAGON_VER, LL_PATCH });

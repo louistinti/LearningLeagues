@@ -1,4 +1,4 @@
-// role-top.jsx — content for the Top role guide. window.ROLE_DATA.
+// role-top.jsx: content for the Top role guide. window.ROLE_DATA.
 // Content researched 2026-06-23 against current patch 26.12 + Riot patch notes.
 // Builds transcribed from u.gg (Emerald+) text; videos picked by the user.
 
@@ -10,9 +10,9 @@ const ROLE_DATA = {
     title: "Top",
     intro: "Top is the team's island. You play a long 1v1 lane far from the rest of the map, where controlling the wave and trading well decide the lane more than kills do. You win by managing the wave, spending your Teleport on the right play, and turning a side-lane lead into pressure on the whole map. Pick Top if you like self-reliant, duel-focused play.",
     meta: [
-      <><strong>Difficulty</strong><span className="stars">★★</span><span style={{opacity:.3}}>★</span></>,
-      <><strong>Read time</strong> ~15 min</>,
-      <><strong>Patch</strong> {LL_PATCH}</>,
+      { label: "Difficulty", value: "Medium" },
+      { label: "Read time", value: "~15 min" },
+      { label: "Patch", value: LL_PATCH },
     ],
     sigil: (
       <span className="hero-sigil-icon" style={{ WebkitMaskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)", maskImage: "url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-parties/global/default/icon-position-top.png)" }} />
@@ -57,9 +57,9 @@ const ROLE_DATA = {
     title: "The Rift from the top island",
     lede: "Where you stand, where ganks come from, and where the early objective lives. A top-lane read of the upper half of the map.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES · SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [
       { n: 1, x: 24.0, y: 27.0, short: "Lane brush",      long: "The bush in the lane. Don't sit in it unwarded. Trades and gank setups start here. Control it when you're pushing." },
       { n: 2, x: 44.0, y: 13.0, short: "Enemy tri-brush", long: "Where you dive from when you're ahead, and where the enemy jungler hides for a counter-gank. Ward it before you commit." },

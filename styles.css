@@ -1,4 +1,4 @@
-/* ── Learning Leagues — Support role page ─────────────────────────────────
+/* ── Learning Leagues: Support role page ─────────────────────────────────
    Design system: "Hextech éditorial". Single dark palette on :root.
    Density tokens (--s) swapped via [data-density].
    Accent hue swapped via [data-accent].
@@ -44,7 +44,7 @@ a { color: inherit; text-decoration: none; }
   --grid-line:   rgba(127,168,220,.22);
   --gold-soft:   rgba(212,180,104,.12);
   --shadow-lg:   0 30px 60px -30px rgba(0,0,0,.7);
-  /* Semantic — win/loss, do/don't, deltas */
+  /* Semantic: win/loss, do/don't, deltas */
   --success:      #9bb777;
   --danger:       #c97a6e;
   --warn:         var(--accent-ambre);
@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
   --danger-soft:  rgba(201,122,110,.14);
 }
 
-/* Tier palette — universal LoL constructs */
+/* Tier palette: universal LoL constructs */
 :root {
   --tier-iron:        #5b5959;
   --tier-bronze:      #a26939;
@@ -66,7 +66,7 @@ a { color: inherit; text-decoration: none; }
   --tier-challenger:  #d4b468;
 }
 
-/* Accent selector — pick which of the 3 accent tokens is "live" */
+/* Accent selector: pick which of the 3 accent tokens is "live" */
 :root[data-accent="or"]    { --accent: var(--accent-or);   }
 :root[data-accent="ambre"] { --accent: var(--accent-ambre);}
 :root[data-accent="bleu"]  { --accent: var(--accent-bleu); }
@@ -74,7 +74,7 @@ a { color: inherit; text-decoration: none; }
 :root[data-accent="violet"]{ --accent: var(--accent-violet);}
 :root[data-accent="jade"]  { --accent: var(--accent-jade); }
 
-/* Role accent — each role guide gets a signature accent without touching the
+/* Role accent: each role guide gets a signature accent without touching the
    palette. Support keeps amber (identical to the default). Place AFTER the
    [data-accent] rules so a future role's accent wins the cascade. */
 :root[data-role="support"] { --accent: var(--accent-ambre); }
@@ -83,7 +83,7 @@ a { color: inherit; text-decoration: none; }
 :root[data-role="mid"]     { --accent: var(--accent-violet);}
 :root[data-role="jungle"]  { --accent: var(--accent-jade); }
 
-/* Spacing scale — strict 8px ladder (Design System §04). 4px is the absolute
+/* Spacing scale: strict 8px ladder (Design System §04). 4px is the absolute
    minimum (hairline only); 12px is the only allowed half-step. */
 :root {
   --s-05: 4px;
@@ -98,7 +98,7 @@ a { color: inherit; text-decoration: none; }
   --s-8:  64px;
 }
 
-/* Layout chrome — nav height + z-index scale.
+/* Layout chrome: nav height + z-index scale.
    Use --nav-h on every sticky offset (toc, tabrail, jumper). Use --z-* to
    avoid ad-hoc z-index values; the scale is sparse so insertions are easy. */
 :root {
@@ -111,7 +111,7 @@ a { color: inherit; text-decoration: none; }
   --z-overlay: 100;
 }
 
-/* Density — base spacing unit (--s drives existing calc(var(--s) * N) callsites)
+/* Density: base spacing unit (--s drives existing calc(var(--s) * N) callsites)
    Aere = roomier reading layout (10px base, taller sections, larger body).
    Compact = denser study layout (8px base, tighter sections, smaller body).
    The two MUST differ on --s itself, otherwise the toggle is a no-op. */
@@ -142,7 +142,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
    Eyebrow goes BEFORE the h2/h3 (library rule). */
 .label-slot { display: block; line-height: 0; }
 
-/* ── Gloss — inline term annotations (LoL jargon first-mention) ─────────
+/* ── Gloss: inline term annotations (LoL jargon first-mention) ─────────
    Use <Gloss term="CS"/> in JSX. Renders an <abbr> with a native tooltip.
    Visual: subtle dotted underline that lifts on hover so it doesn't fight
    the body type. Mobile shows the tooltip on tap via title attribute. */
@@ -166,41 +166,14 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .shell { max-width: 1200px; margin: 0 auto; padding: 0 calc(var(--s) * 3); }
 @media (max-width: 768px) { .shell { padding: 0 calc(var(--s) * 2); } }
 
-.section { padding: var(--section-y) 0; border-top: 1px solid var(--rule); position: relative; }
+.section { padding-block: var(--section-y); border-top: 1px solid var(--rule); position: relative; }
 .section--flush { border-top: 0; padding-top: calc(var(--section-y) * 0.6); }
 
-.section-head {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: calc(var(--s) * 4);
-  margin-bottom: calc(var(--s) * 7);
-  align-items: start;
-}
-@media (max-width: 768px) {
-  .section-head { grid-template-columns: 1fr; gap: calc(var(--s) * 2); }
-}
-.section-num {
-  font-family: 'EB Garamond', serif;
-  font-size: 56px; font-style: italic; font-weight: 400;
-  color: var(--accent);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  position: relative;
-  padding-top: calc(var(--s) * 0.5);
-}
-.section-num::after {
-  content: ""; position: absolute; left: 0; bottom: -14px;
-  width: 60px; height: 1px; background: var(--accent); opacity: .5;
-}
-.section-title { font-size: 36px; line-height: 1.1; margin-bottom: calc(var(--s) * 1.5); max-width: none; white-space: nowrap; }
-.section-lede { color: var(--fg-dim); max-width: none; font-size: 16px; line-height: 1.6; }
-@media (max-width: 900px) {
-  .section-title { white-space: normal; }
-}
-@media (max-width: 768px) {
-  .section-title { font-size: 28px; }
-  .section-num { font-size: 44px; }
-}
+/* Slot around LL.SectionHead: layout only (distance to the section body). */
+.section-head-slot { margin-bottom: calc(var(--s) * 7); }
+
+/* ErrorBoundary fallback message (components.jsx). */
+.section-error { color: var(--danger); font-size: 16px; line-height: 1.6; }
 
 /* ── Nav ────────────────────────────────────────────────────────────────── */
 .nav {
@@ -244,13 +217,13 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   cursor: pointer; transition: background .15s;
 }
 .nav-cta:hover { background: var(--gold-soft); }
-/* The header quiz CTA is the library Button since 2026-08-30 — .nav-cta-wrap
+/* The header quiz CTA is the library Button since 2026-08-30. .nav-cta-wrap
    is its product layout hook (alignment here, hiding on mobile). The filled
    you-are-here state returned 2026-09-16 as the library's current prop. */
 .nav-cta-wrap { display: inline-flex; }
 .nav-right { display: flex; align-items: center; gap: 12px; }
 
-/* Roles dropdown — replaces the static "Roles" nav link */
+/* Roles dropdown: replaces the static "Roles" nav link */
 .nav-roles { position: relative; display: inline-flex; }
 .nav-roles-btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -420,19 +393,8 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   font-size: 16px; line-height: 1.65;
   margin-bottom: calc(var(--s) * 4);
 }
-.hero-meta {
-  display: flex; flex-wrap: wrap; gap: calc(var(--s) * 3);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11.5px;
-  color: var(--fg-mute);
-  letter-spacing: 0.04em;
-  padding-top: calc(var(--s) * 3);
-  border-top: 1px dashed var(--rule);
-}
-.hero-meta strong { color: var(--fg-dim); font-weight: 500; margin-right: 8px; text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em; }
-.hero-meta .stars { color: var(--accent); letter-spacing: 2px; }
 
-/* hero visual: the Sigil slot — layout only; the frame, rings and art slot
+/* hero visual: the Sigil slot. Layout only; the frame, rings and art slot
    are LL.Sigil (lib). The slot sizes and places the square. */
 .hero-sigil-slot { width: min(320px, 100%); justify-self: end; }
 /* Role position icon (same art as the home page role cards), centred in the
@@ -604,7 +566,7 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 .map-corners span:nth-child(3) { bottom: 6px; left: 6px; border-bottom: 1px solid; border-left: 1px solid; }
 .map-corners span:nth-child(4) { bottom: 6px; right: 6px; border-bottom: 1px solid; border-right: 1px solid; }
 
-/* Riot fan-content credit — required while the official map asset is in use */
+/* Riot fan-content credit: required while the official map asset is in use */
 .map-credit {
   position: absolute;
   bottom: 16px; left: 18px;
@@ -864,14 +826,14 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
 @media (max-width: 900px) {
   .callout-grid { grid-template-columns: 1fr; }
 }
-/* .callout / .callout-tag / .callout-title / .callout-body: gone — the library's
+/* .callout / .callout-tag / .callout-title / .callout-body: gone. The library's
    LL.Callout carries its own chrome (lib/ll-lib.css). Only .callout-grid stays. */
 
 /* ── Errors (Section 06) ──────────────────────────────────────────────────
    Subgrid: each card spans 4 parent rows (title + Symptom/Cause/Fix). Rows
    auto-size to the tallest content across cards in the same stripe (3 cards
    per stripe at >=900px, 2 at 640-900px). Result: titles align, Symptom
-   blocks align, Cause blocks align, Fix blocks align — same approach as the
+   blocks align, Cause blocks align, Fix blocks align. Same approach as the
    phase cards in Section 01.
 */
 .errors-grid {
@@ -1139,18 +1101,8 @@ h1, h2, h3 { font-family: 'EB Garamond', 'Iowan Old Style', Georgia, serif; font
   margin-top: calc(var(--s) * 1);
   margin-bottom: calc(var(--s) * 2);
 }
-.progress-bar {
-  height: 4px;
-  background: var(--border-soft);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: calc(var(--s) * 2);
-}
-.progress-bar-fill {
-  position: absolute; left: 0; top: 0; bottom: 0;
-  background: var(--accent);
-  transition: width .3s cubic-bezier(.3,.7,.4,1);
-}
+/* Slot around LL.ProgressBar: layout only (the bar fills its width). */
+.progress-bar-slot { margin-bottom: calc(var(--s) * 2); }
 .progress-readout {
   font-size: 13px;
   color: var(--fg-dim);
@@ -1468,10 +1420,10 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   .toc { display: none; }
 }
 
-/* ── Landing — buttons: provided by LearningLeagues-Lib since 2026-08-30
+/* ── Landing buttons: provided by LearningLeagues-Lib since 2026-08-30
    (lib/ll-lib.css + lib/ll-lib.jsx, vendored at a pin). ──────────────────── */
 
-/* ── Landing — hero ─────────────────────────────────────────────────────── */
+/* ── Landing: hero ─────────────────────────────────────────────────────── */
 .landing-hero { padding: calc(var(--s) * 14) 0 calc(var(--s) * 14); border-bottom: 1px solid var(--rule); }
 .landing-hero-grid {
   display: grid;
@@ -1501,21 +1453,10 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   display: flex; flex-wrap: wrap; gap: calc(var(--s) * 2);
   margin-bottom: calc(var(--s) * 6);
 }
-.landing-meta {
-  display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--s) * 2);
-  padding-top: calc(var(--s) * 3);
-  border-top: 1px dashed var(--rule);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--fg-mute);
-}
-.landing-meta strong { color: var(--accent); font-weight: 500; margin-right: 6px; text-transform: uppercase; letter-spacing: 0.1em; }
-.landing-meta .dot-sep { opacity: .4; }
 .landing-sigil { width: min(360px, 100%); justify-self: end; }
 @media (max-width: 900px) { .landing-sigil { justify-self: start; max-width: 240px; } }
 
-/* ── Landing — generic showcase ─────────────────────────────────────────── */
+/* ── Landing: generic showcase ─────────────────────────────────────────── */
 .showcase { padding: calc(var(--s) * 14) 0; border-top: 1px solid var(--rule); position: relative; }
 .showcase-grid {
   display: grid;
@@ -1538,13 +1479,6 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   .showcase--reverse .showcase-grid > .showcase-text,
   .showcase--reverse .showcase-grid > .showcase-visual { order: 0; }
 }
-.showcase-num {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--fg-mute);
-  text-transform: uppercase;
-  margin-bottom: calc(var(--s) * 2);
-}
 .showcase-eyebrow { margin-bottom: calc(var(--s) * 2); }
 .showcase-title {
   font-size: clamp(36px, 4.5vw, 56px);
@@ -1563,7 +1497,7 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
 }
 .showcase-cta { align-self: flex-start; }
 
-/* ── Landing — Fundamentals visual (curriculum vignette) ────────────────── */
+/* ── Landing: Fundamentals visual (curriculum vignette) ────────────────── */
 .fund-vignette {
   position: relative;
   background: var(--surface);
@@ -1611,7 +1545,7 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   align-self: flex-end;
 }
 
-/* ── Landing — Roles section (signature) ────────────────────────────────── */
+/* ── Landing: Roles section (signature) ────────────────────────────────── */
 .roles-section { padding: calc(var(--s) * 14) 0; border-top: 1px solid var(--rule); }
 .roles-grid {
   list-style: none; margin: 0; padding: 0;
@@ -1678,7 +1612,7 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   transition: opacity .25s ease-out, transform .25s ease-out, color .25s ease-out;
 }
 
-/* hover + focus parity (accessibility) — same effect as map pins */
+/* hover + focus parity (accessibility): same effect as map pins */
 .role-card:hover,
 .role-card:focus-visible {
   border-color: var(--accent);
@@ -1703,7 +1637,7 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   opacity: 1; transform: translateX(0); color: var(--accent);
 }
 
-/* ── Landing — Training visual ──────────────────────────────────────────── */
+/* ── Landing: Training visual ──────────────────────────────────────────── */
 .train-vignette {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1759,7 +1693,7 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
 }
 .train-foot-cta { color: var(--accent); }
 
-/* ── Landing — Resources visual ─────────────────────────────────────────── */
+/* ── Landing: Resources visual ─────────────────────────────────────────── */
 .res-vignette {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1807,7 +1741,7 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
 
 /* ── Glossary page ──────────────────────────────────────────────────────── */
 
-/* Letter jumper — sticky horizontal index, A B C... */
+/* Letter jumper: sticky horizontal index, A B C... */
 .glossary-jumper {
   display: flex;
   flex-wrap: wrap;
@@ -1843,7 +1777,7 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   outline: none;
 }
 
-/* Letter groups — A / B / ... section banners */
+/* Letter groups: A / B / ... section banners */
 .glossary-group {
   scroll-margin-top: 112px; /* offset for sticky nav + jumper */
   margin-bottom: calc(var(--s) * 6);

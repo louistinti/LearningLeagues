@@ -1,4 +1,4 @@
-// design-system.jsx — Learning Leagues Design System reference
+// design-system.jsx: Learning Leagues Design System reference
 
 const TABS = [
   { id: "foundations", num: "01", label: "Foundations" },
@@ -77,16 +77,19 @@ function DSHero() {
               Design System.
             </h1>
             <p className="ds-hero-lede">
-              The visual language behind Learning Leagues — a Hextech-inspired editorial system
+              The visual language behind Learning Leagues: a Hextech-inspired editorial system
               built for League players studying their craft. Dark by default, amber by accent,
               compact by density. Every token, component and pattern documented here.
             </p>
-            <div className="ds-hero-meta">
-              <span><strong>Density</strong> Compact</span>
-              <span><strong>Accent</strong> Ambre</span>
-              <span><strong>Mode</strong> Dark only</span>
-              <span><strong>Patch</strong> 26.X</span>
-            </div>
+            <LL.MetaStrip
+              tone="accent"
+              items={[
+                { label: "Density", value: "Compact" },
+                { label: "Accent", value: "Ambre" },
+                { label: "Mode", value: "Dark only" },
+                { label: "Patch", value: "26.X" },
+              ]}
+            />
           </div>
           <DSHeroSigil />
         </div>
@@ -147,13 +150,9 @@ function DSTabRail({ tab, setTab }) {
 function DSSection({ num, title, lede, children }) {
   return (
     <section className="ds-section">
-      <header className="ds-section-head">
-        <div className="ds-section-num">{num}</div>
-        <div>
-          <h2 className="ds-section-title">{title}</h2>
-          {lede && <p className="ds-section-lede">{lede}</p>}
-        </div>
-      </header>
+      <div className="ds-section-head-slot">
+        <LL.SectionHead num={num} title={title} lede={lede} />
+      </div>
       {children}
     </section>
   );

@@ -1,4 +1,4 @@
-// app.jsx — generic role-guide composition. Reads window.ROLE_DATA, renders
+// app.jsx: generic role-guide composition. Reads window.ROLE_DATA, renders
 // only the sections whose data key is present, derives section numbers/ids
 // and the TOC from the rendered set.
 
@@ -18,7 +18,7 @@ const SECTION_ORDER = [
 ];
 
 // A section renders only if its data key is present and non-empty. To DROP a
-// section for a role, OMIT the key entirely — do not set it to {} or null, or
+// section for a role, OMIT the key entirely. Do not set it to {} or null, or
 // the component renders with undefined title/lede/payload.
 function hasData(v) {
   if (!v) return false;
