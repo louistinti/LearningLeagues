@@ -1,6 +1,6 @@
-// fundamentals-data.jsx — source of truth for the 25 fundamentals.
+// fundamentals-data.jsx: source of truth for the 25 fundamentals.
 // Tiers: "primary" (the 6 that carry your rank) | "secondary".
-// `toolkit: true` marks the orphan nodes nobody depends on — the transferable
+// `toolkit: true` marks the orphan nodes nobody depends on: the transferable
 // kit that sits around the graph without inbound edges.
 // `connects` (primaries only) is DIRECTED: A → B reads "A feeds B / B leans on A".
 
@@ -91,7 +91,7 @@ const FUND_NODES = [
     lede: "You can't respect what you don't know. Learn the threats before they punish you.",
   },
 
-  // ── toolkit (orphans — no inbound edges) ─────────────────────────────────
+  // ── toolkit (orphans: no inbound edges) ─────────────────────────────────
   {
     id: "itemization", name: "Itemization", tier: "secondary", toolkit: true,
     lede: "Builds aren't fixed. Read the game and buy what it asks for.",

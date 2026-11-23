@@ -1,4 +1,4 @@
-// ds-foundations.jsx — Foundations tab: color, type, spacing, motion
+// ds-foundations.jsx: Foundations tab: color, type, spacing, motion
 
 const COLOR_GROUPS = [
   {
@@ -38,7 +38,7 @@ const COLOR_GROUPS = [
   },
 ];
 
-// TIER_COLORS is sourced from LL_TIERS (components.jsx) — single source of truth.
+// TIER_COLORS is sourced from LL_TIERS (components.jsx): single source of truth.
 // Swatches read the live CSS token so palette overrides (if ever added) work
 // without touching this file.
 

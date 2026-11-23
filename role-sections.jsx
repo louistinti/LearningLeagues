@@ -1,4 +1,4 @@
-// role-sections.jsx — generic, prop-driven section components for every role guide.
+// role-sections.jsx: generic, prop-driven section components for every role guide.
 
 function ChampionPortrait({ name, label }) {
   const [failed, setFailed] = React.useState(false);

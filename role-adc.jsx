@@ -1,4 +1,4 @@
-// role-adc.jsx — content for the ADC role guide. window.ROLE_DATA.
+// role-adc.jsx: content for the ADC role guide. window.ROLE_DATA.
 // Content researched 2026-06-22 against current patch 26.12 + Riot patch notes.
 // Builds and video picks are flagged for expert validation before merge.
 

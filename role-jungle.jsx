@@ -1,4 +1,4 @@
-// role-jungle.jsx — content for the Jungle role guide. window.ROLE_DATA.
+// role-jungle.jsx: content for the Jungle role guide. window.ROLE_DATA.
 // Content researched 2026-06-23 against current patch 26.12 + Riot patch notes.
 // Builds transcribed from u.gg (pending user screenshot confirmation); videos picked by the user.
 

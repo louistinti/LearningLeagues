@@ -1,4 +1,4 @@
-// quiz-app.jsx — Role quiz flow: intro → 8 questions (one per screen) → ranked result.
+// quiz-app.jsx: Role quiz flow: intro → 8 questions (one per screen) → ranked result.
 // Ledger question style; shared Nav/Footer from components.jsx.
 
 const QZ_LS_KEY = "ll-quiz-v1";

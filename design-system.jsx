@@ -1,4 +1,4 @@
-// design-system.jsx — Learning Leagues Design System reference
+// design-system.jsx: Learning Leagues Design System reference
 
 const TABS = [
   { id: "foundations", num: "01", label: "Foundations" },

@@ -1,4 +1,4 @@
-// fundamentals-cards.jsx — intro, section 01 primary cards, in-card radial overlay.
+// fundamentals-cards.jsx: intro, section 01 primary cards, in-card radial overlay.
 // Depends on fundamentals-data.jsx (FUND_NODES, FUND_BY_ID) and components.jsx.
 
 // ── Intro ───────────────────────────────────────────────────────────────────
@@ -60,7 +60,7 @@ function FundIntro() {
   );
 }
 
-// ── Section 01 — the 6 primary cards ────────────────────────────────────────
+// ── Section 01: the 6 primary cards ────────────────────────────────────────
 function PrimaryCards() {
   const primaries = FUND_NODES.filter((n) => n.tier === "primary");
   const [openId, setOpenId] = React.useState(null);

@@ -1,4 +1,4 @@
-// glossary.jsx — Glossary page composition.
+// glossary.jsx: Glossary page composition.
 // Renders every entry of LL_GLOSSARY (defined in components.jsx) as an
 // alphabetised definition list. The page is intentionally lean: hero,
 // list, footer. No tabs, no archetypes, just the terms.

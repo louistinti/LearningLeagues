@@ -1,4 +1,4 @@
-// role-top.jsx — content for the Top role guide. window.ROLE_DATA.
+// role-top.jsx: content for the Top role guide. window.ROLE_DATA.
 // Content researched 2026-06-23 against current patch 26.12 + Riot patch notes.
 // Builds transcribed from u.gg (Emerald+) text; videos picked by the user.
 

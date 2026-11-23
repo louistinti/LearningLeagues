@@ -1,4 +1,4 @@
-// components.jsx — shared primitives for the role guide pages.
+// components.jsx: shared primitives for the role guide pages.
 
 /* ── Shared design-token data (single source of truth) ─────────────────────
    LL_TIERS is consumed by ds-foundations.jsx (palette swatches) and
@@ -63,7 +63,7 @@ class ErrorBoundary extends React.Component {
    Single source of truth for short, inline LoL term definitions. Use the
    <Gloss term="..."/> component on the FIRST mention of a term in a guide
    to wrap it in a dotted underline + native tooltip. If a term is missing
-   here, add it once — never inline glosses ad-hoc in section files.
+   here, add it once. Never inline glosses ad-hoc in section files.
    ──────────────────────────────────────────────────────────────────────── */
 const LL_GLOSSARY = {
   "CS":            "Creep Score: minions you last-hit for gold.",
@@ -125,7 +125,7 @@ const LL_GLOSSARY = {
 /* <Gloss term="CS">CS</Gloss>
    <Gloss term="vision score" def="custom override if you must" />
    First-mention helper. Looks up term in LL_GLOSSARY; def prop wins if given.
-   Renders an <abbr> with a native tooltip — no JS hover state needed. */
+   Renders an <abbr> with a native tooltip: no JS hover state needed. */
 function Gloss({ term, def, children }) {
   const title = def || LL_GLOSSARY[term] || LL_GLOSSARY[term && term.toLowerCase()];
   return (
@@ -135,11 +135,11 @@ function Gloss({ term, def, children }) {
   );
 }
 
-/* ── Callout — now the library's LL.Callout (LearningLeagues-Lib, vendored in
+/* ── Callout: now the library's LL.Callout (LearningLeagues-Lib, vendored in
    lib/ll-lib.jsx): <LL.Callout type="key|pro|trap" title="…">body</LL.Callout>.
    type is required (no fallback); the label and glyph come from the type. */
 
-/* ── ErrorCard — Symptom / Cause / Fix template ───────────────────────────
+/* ── ErrorCard: Symptom / Cause / Fix template ───────────────────────────
    <ErrorCard title="" symptom={…} cause={…} fix={…} />
    The §06 "6 mistakes" pattern lifted into a single component so every
    future role guide uses the exact same Symptom/Cause/Fix triad without
@@ -205,7 +205,7 @@ function Nav({ activeKey = "roles" }) {
         <div className="nav-right">
           <LangSwitcher />
           {/* Library Button since 2026-08-30; its current (you-are-here) state
-              since 2026-09-16 — the ask filed at adoption, delivered as the
+              since 2026-09-16: the ask filed at adoption, delivered as the
               library's current prop (lib pin 45ea047). .nav-cta-wrap is
               product layout: mobile hiding. */}
           <span className="nav-cta-wrap">

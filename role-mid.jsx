@@ -1,4 +1,4 @@
-// role-mid.jsx — content for the Mid role guide. window.ROLE_DATA.
+// role-mid.jsx: content for the Mid role guide. window.ROLE_DATA.
 // Content researched 2026-06-23 against current patch 26.12 + Riot patch notes.
 // Builds transcribed from u.gg (pending user confirmation at master tier); videos picked by the user.
 

@@ -1,4 +1,4 @@
-// quiz-data.jsx — Role quiz content: roles, questions, weights.
+// quiz-data.jsx: Role quiz content: roles, questions, weights.
 // Weights map answers to roles. Result = ranked score across the 5 roles.
 
 const QUIZ_ROLES = {

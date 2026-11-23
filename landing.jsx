@@ -1,4 +1,4 @@
-// landing.jsx — Learning Leagues landing page sections.
+// landing.jsx: Learning Leagues landing page sections.
 // Reuses the existing Hextech design system (tokens from styles.css, components from components.jsx).
 
 // ── Hero ────────────────────────────────────────────────────────────────
@@ -86,7 +86,7 @@ function Showcase({ id, eyebrow, title, lede, ctaLabel, ctaHref, variant, childr
             <div className="label-slot showcase-eyebrow"><LL.Eyebrow tone="accent">{eyebrow}</LL.Eyebrow></div>
             <h2 className="showcase-title serif">{title}</h2>
             <p className="showcase-lede">{lede}</p>
-            {/* .showcase-cta is product layout (align-self) — it lives on a
+            {/* .showcase-cta is product layout (align-self): it lives on a
                 wrapper, never on the library component's own element. */}
             <div className="showcase-cta">
               <LL.Button href={ctaHref}>

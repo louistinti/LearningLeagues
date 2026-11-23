@@ -75,7 +75,7 @@ Delete the entire final section, from the comment header:
 /* ── Style switcher (exploration control) ───────────────────────────────── */
 ```
 
-through the end of the file (the last rule is `@media (max-width: 640px) { .qz-switcher { display: none; } }`). These `.qz-switcher*` rules style the exploration control, which production removes. Make **no other edits** — keep the rest of the file (including `min-height: calc(100vh - 64px)` and the leading `a { color: inherit; }`) exactly as-is.
+through the end of the file (the last rule is `@media (max-width: 640px) { .qz-switcher { display: none; } }`). These `.qz-switcher*` rules style the exploration control, which production removes. Make **no other edits**: keep the rest of the file (including `min-height: calc(100vh - 64px)` and the leading `a { color: inherit; }`) exactly as-is.
 
 - [ ] **Step 3: Confirm no switcher rules remain**
 
@@ -303,7 +303,7 @@ Use the preview tooling (`preview_start`, config name `learning-leagues` if pres
 
 - [ ] **Step 2: Check for load errors**
 
-`preview_console_logs` (level error) and `preview_logs` — expect no React/Babel errors and no 404s for `quiz-data.jsx`, `quiz-app.jsx`, `quiz.css`, `components.jsx`.
+`preview_console_logs` (level error) and `preview_logs`: expect no React/Babel errors and no 404s for `quiz-data.jsx`, `quiz-app.jsx`, `quiz.css`, `components.jsx`.
 
 - [ ] **Step 3: Drive the flow**
 
@@ -317,7 +317,7 @@ Use `preview_snapshot` to confirm structure/text and `preview_screenshot` for th
 
 - [ ] **Step 4: Check persistence + reduced motion**
 
-Reload mid-quiz (e.g. on Q04) via `preview_eval` `window.location.reload()` — the quiz resumes at Q04 (localStorage `ll-quiz-v1`). No fixed switcher control appears anywhere on screen.
+Reload mid-quiz (e.g. on Q04) via `preview_eval` `window.location.reload()`: the quiz resumes at Q04 (localStorage `ll-quiz-v1`). No fixed switcher control appears anywhere on screen.
 
 - [ ] **Step 5: Fix any issues, then re-verify**
 
@@ -417,7 +417,7 @@ git commit -m "feat(landing): wire Role quiz entry points to Quiz.html"
 In the "What's here" list, add an entry for the quiz alongside the other pages, e.g.:
 
 ```markdown
-- `Quiz.html` — role-orientation quiz (intro → 8 questions → all 5 roles ranked), backed by `quiz-data.jsx` + `quiz-app.jsx` + `quiz.css`
+- `Quiz.html`: role-orientation quiz (intro → 8 questions → all 5 roles ranked), backed by `quiz-data.jsx` + `quiz-app.jsx` + `quiz.css`
 ```
 
 - [ ] **Step 2: Final end-to-end pass**
@@ -436,5 +436,5 @@ git commit -m "docs: document Quiz.html in README"
 ## Self-Review notes
 
 - **Spec coverage:** drop `data-palette` (Task 4) ✓; shared Nav/Footer (Task 3) ✓; real role hrefs (Task 1) ✓; remove switcher (Tasks 2 + 3) ✓; wire nav + landing CTAs (Tasks 6 + 7) ✓; keep `quiz.css` faithful / no house-style tweaks (Task 2) ✓; keep inline `QuizBreadcrumb` (Task 3) ✓; README (Task 8) ✓.
-- **Naming consistency:** `activeKey="quiz"` is set in `QuizApp` (Task 3) and read in `Nav` (Task 6) — matched. Script filenames (`quiz-data.jsx`, `quiz-app.jsx`, `quiz.css`) match across Tasks 1–4.
+- **Naming consistency:** `activeKey="quiz"` is set in `QuizApp` (Task 3) and read in `Nav` (Task 6): matched. Script filenames (`quiz-data.jsx`, `quiz-app.jsx`, `quiz.css`) match across Tasks 1–4.
 - **Out of scope confirmed untouched:** `/training` section and Champions/Macro placeholders.

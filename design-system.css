@@ -1,4 +1,4 @@
-/* design-system.css — DS-only styles. Builds on top of styles.css. */
+/* design-system.css: DS-only styles. Builds on top of styles.css. */
 
 /* ── Layout ─────────────────────────────────────────────────────────────── */
 .ds-main { padding-block: calc(var(--s) * 6) calc(var(--s) * 10); }
@@ -61,7 +61,7 @@
   font-size: 16.5px; line-height: 1.65; color: var(--fg-dim);
   max-width: 60ch; margin: 0 0 calc(var(--s) * 4);
 }
-/* Sigil slot — layout only; the frame is LL.Sigil (lib). */
+/* Sigil slot: layout only; the frame is LL.Sigil (lib). */
 .ds-hero-sigil-slot { width: 100%; max-width: 320px; justify-self: end; }
 
 .ds-brand-tag { margin-left: 8px; }
@@ -285,7 +285,7 @@
 .ds-icon-cell svg { width: 28px; height: 28px; }
 .ds-icon-cell span { font-size: 10px; letter-spacing: 0.12em; color: var(--fg-mute); text-transform: uppercase; }
 
-/* ── Components: forced button-state specimens retired 2026-08-30 — they
+/* ── Components: forced button-state specimens retired 2026-08-30. They
    live on the LearningLeagues-Lib docs site, the Button's single source. ── */
 
 /* ── Components grid ──────────────────────────────────────────────────── */

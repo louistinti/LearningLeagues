@@ -1,4 +1,4 @@
-// ds-patterns.jsx — Patterns tab: lesson cards, leaderboard, league tier display
+// ds-patterns.jsx: Patterns tab: lesson cards, leaderboard, league tier display
 
 function Patterns() {
   return (
@@ -53,7 +53,7 @@ function LessonCardPattern() {
   );
 }
 
-// Tier demo data — division/LP are display-only sample data, tier identity
+// Tier demo data: division/LP are display-only sample data, tier identity
 // and color come from LL_TIERS (components.jsx, single source of truth).
 const TIER_DEMO = [
   { name: "Iron",     division: "II",  lp: "32 LP" },

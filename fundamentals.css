@@ -20,7 +20,7 @@
   margin-bottom: calc(var(--s) * 4);
 }
 
-/* Intro sigil slot — layout only; the frame, rings and art slot are
+/* Intro sigil slot: layout only; the frame, rings and art slot are
    LL.Sigil (lib). The radial accent glow and the corner brackets left with
    the adoption (Sigil RFC section 7 Q2). */
 .ft-intro-sigil-slot { width: 100%; max-width: 340px; margin-inline: auto; }
@@ -36,7 +36,7 @@
 .ft-sec-title em { font-style: italic; color: var(--accent); }
 .ft-sec-lede { color: var(--fg-dim); font-size: 16px; line-height: 1.62; max-width: 60ch; margin-top: calc(var(--s) * 2); }
 
-/* ── 01 — Primary cards grid ──────────────────────────────────────────────── */
+/* ── 01: Primary cards grid ──────────────────────────────────────────────── */
 .ft-cards { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--s) * 2.5); }
 @media (max-width: 720px) { .ft-cards { grid-template-columns: 1fr; } }
 
@@ -116,7 +116,7 @@
   color: var(--fg-dim); cursor: pointer; transition: color .15s, border-color .15s; }
 .ft-close:hover { color: var(--accent); border-color: var(--accent); }
 
-/* ── 02 — Master tree ─────────────────────────────────────────────────────── */
+/* ── 02: Master tree ─────────────────────────────────────────────────────── */
 .ft-master-wrap { position: relative; margin-top: calc(var(--s) * 5); }
 .ft-stage {
   position: relative; width: 100%; height: 640px;
@@ -169,7 +169,7 @@
 .ft-node--toolkit:hover .shape { stroke: var(--accent-bleu); stroke-dasharray: none; }
 .ft-node--toolkit:hover .lbl { fill: var(--fg-dim); }
 
-/* stage chrome — legend */
+/* stage chrome: legend */
 .ft-legend { position: absolute; left: calc(var(--s) * 2); bottom: calc(var(--s) * 2); z-index: 6; display: flex; flex-direction: column; gap: 6px; padding: calc(var(--s) * 1.75) calc(var(--s) * 2); background: color-mix(in oklab, var(--bg) 66%, transparent); border: 1px solid var(--border); backdrop-filter: blur(6px); }
 .ft-legend-row { display: flex; align-items: center; gap: 9px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em; color: var(--fg-dim); }
 .ft-legend-key { width: 16px; height: 12px; display: grid; place-items: center; flex-shrink: 0; }

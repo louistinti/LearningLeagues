@@ -1,4 +1,4 @@
-// role-support.jsx — content for the Support role guide. window.ROLE_DATA.
+// role-support.jsx: content for the Support role guide. window.ROLE_DATA.
 
 const ROLE_DATA = {
   meta: {

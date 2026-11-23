@@ -1,13 +1,13 @@
-// fundamentals-graph.jsx — Section 02, the master tree.
+// fundamentals-graph.jsx: Section 02, the master tree.
 // A STATIC map of all 25 fundamentals: the 6 primaries anchor the middle,
 // connected secondaries cluster around them, orphan "toolkit" nodes sit on an
 // outer ring. Tap a node to open its drawer. No physics loop, drag, pan or zoom
-// at runtime — the layout is computed once (a synchronous force settle) and
+// at runtime: the layout is computed once (a synchronous force settle) and
 // frozen, so the component is just static SVG + React-driven highlight.
 
 const VB_W = 1160, VB_H = 780, CX = 580, CY = 384;
-const RP = 205;   // inner ring — primaries
-const RT = 348;   // outer ring — toolkit
+const RP = 205;   // inner ring: primaries
+const RT = 348;   // outer ring: toolkit
 const NODE_R = { primary: 28, secondary: 15, toolkit: 11 };
 
 const PRIMARY_IDS = FUND_NODES.filter((n) => n.tier === "primary").map((n) => n.id);

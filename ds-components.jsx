@@ -1,4 +1,4 @@
-// ds-components.jsx — Components tab: buttons, inputs, cards, nav, charts
+// ds-components.jsx: Components tab: buttons, inputs, cards, nav, charts
 
 function Components() {
   return (

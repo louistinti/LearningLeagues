@@ -1,4 +1,4 @@
-# Role-Guide Engine — Phase 1 (pilote Support) Implementation Plan
+# Role-Guide Engine: Phase 1 (pilote Support) Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -16,13 +16,13 @@
 
 ## File structure (after Phase 1)
 
-- `role-sections.jsx` — **create.** Generic section components (`SectionPhases`, `SectionMap`, `SectionSkills`, `SectionTriangle`, `SectionCallouts`, `SectionErrors`, `SectionChampions`, `SectionBuild`, `SectionMatchups`, `SectionChecklist`, `SectionPractice`) + `ChampionPortrait`. All take props.
-- `role-support.jsx` — **create.** `window.ROLE_DATA` for Support (all content moved verbatim from the old section files + Hero/Breadcrumb/TOC meta).
-- `app.jsx` — **rewrite.** Generic composition reading `ROLE_DATA`.
-- `components.jsx` — **modify.** `Hero`, `Breadcrumb`, `TocSidebar` become prop-driven; `DDRAGON_VER` constant added; `Object.assign` export updated.
-- `styles.css` — **modify.** Add `[data-role]` accent axis.
-- `Support.html` — **modify.** `data-role="support"` on `<html>`; swap the three `sections-*.jsx` script tags for `role-sections.jsx` + `role-support.jsx`.
-- `sections-01-03.jsx`, `sections-04-06.jsx`, `sections-07-11.jsx` — **delete** (content absorbed).
+- `role-sections.jsx`: **create.** Generic section components (`SectionPhases`, `SectionMap`, `SectionSkills`, `SectionTriangle`, `SectionCallouts`, `SectionErrors`, `SectionChampions`, `SectionBuild`, `SectionMatchups`, `SectionChecklist`, `SectionPractice`) + `ChampionPortrait`. All take props.
+- `role-support.jsx`: **create.** `window.ROLE_DATA` for Support (all content moved verbatim from the old section files + Hero/Breadcrumb/TOC meta).
+- `app.jsx`: **rewrite.** Generic composition reading `ROLE_DATA`.
+- `components.jsx`: **modify.** `Hero`, `Breadcrumb`, `TocSidebar` become prop-driven; `DDRAGON_VER` constant added; `Object.assign` export updated.
+- `styles.css`: **modify.** Add `[data-role]` accent axis.
+- `Support.html`: **modify.** `data-role="support"` on `<html>`; swap the three `sections-*.jsx` script tags for `role-sections.jsx` + `role-support.jsx`.
+- `sections-01-03.jsx`, `sections-04-06.jsx`, `sections-07-11.jsx`: **delete** (content absorbed).
 
 ---
 
@@ -39,7 +39,7 @@ window.location.href = '/Support.html'; 'navigating'
 
 - [ ] **Step 2: Capture the structural baseline**
 
-Run `preview_eval` with this expression and save the returned JSON verbatim into the plan's scratch notes — it is the equality target for Task 9:
+Run `preview_eval` with this expression and save the returned JSON verbatim into the plan's scratch notes: it is the equality target for Task 9:
 ```js
 JSON.stringify({
   sectionIds: [...document.querySelectorAll('section.section.shell')].map(s => s.id),
@@ -165,7 +165,7 @@ Object.assign(window, { LogoMark, Nav, Breadcrumb, SectionHead, Hero, Footer, La
 git add components.jsx
 git commit -m "refactor(engine): make Hero/Breadcrumb/TocSidebar prop-driven, add DDRAGON_VER"
 ```
-(The page is intentionally broken between commits until app.jsx is rewired — that is expected; the equality check happens at Task 9.)
+(The page is intentionally broken between commits until app.jsx is rewired: that is expected; the equality check happens at Task 9.)
 
 ---
 
@@ -176,10 +176,10 @@ git commit -m "refactor(engine): make Hero/Breadcrumb/TocSidebar prop-driven, ad
 
 Each component takes `num` and `id` props (derived by `app.jsx`) plus its data. The `SectionTriangle` takes `nodes` (3 entries) and `legend` (array of `{strong, rest}`), and keeps the exact arrow geometry from the old `sections-04-06.jsx`. `SectionCallouts` is the renamed generic of the old `SectionPrio2`. `SectionChecklist` takes a `storageKey` so each role persists separately.
 
-- [ ] **Step 1: Create `role-sections.jsx` — header + `ChampionPortrait` + the simple list sections**
+- [ ] **Step 1: Create `role-sections.jsx`: header + `ChampionPortrait` + the simple list sections**
 
 ```js
-// role-sections.jsx — generic, prop-driven section components for every role guide.
+// role-sections.jsx: generic, prop-driven section components for every role guide.
 
 function ChampionPortrait({ name, label }) {
   const [failed, setFailed] = React.useState(false);
@@ -277,7 +277,7 @@ function SectionMap({ num, id, title, lede, pins, mapSrc, mapAlt, mapCredit, leg
             >
               <span className="legend-num">0{p.n}</span>
               <span className="legend-text">
-                <strong>{p.short}</strong>{p.long ? ` — ${p.long}` : null}
+                <strong>{p.short}</strong>{p.long ? `: ${p.long}` : null}
               </span>
             </div>
           ))}
@@ -288,11 +288,11 @@ function SectionMap({ num, id, title, lede, pins, mapSrc, mapAlt, mapCredit, leg
 }
 ```
 
-- [ ] **Step 3: Add `SectionTriangle` — copy the full arrow geometry verbatim, parameterize nodes/legend**
+- [ ] **Step 3: Add `SectionTriangle`: copy the full arrow geometry verbatim, parameterize nodes/legend**
 
 Copy the entire body of the old `SectionTriangle` from `sections-04-06.jsx` (refs, `useLayoutEffect`, the `compute()` arrow math, the SVG and `renderArrow` block) UNCHANGED, with only these differences:
 - Signature: `function SectionTriangle({ num, id, title, lede, nodes, legend })`.
-- Delete the hardcoded `const nodes = {…}` — it now comes from props. The prop `nodes` must have the same shape: `{ poke:{corner,label,champs,x,y}, engage:{…}, enchanter:{…} }`. The refs (`pokeRef`/`engageRef`/`encRef`) and the keys `poke`/`engage`/`enchanter` stay as the canonical archetype keys; assign refs inside the component by key:
+- Delete the hardcoded `const nodes = {…}`: it now comes from props. The prop `nodes` must have the same shape: `{ poke:{corner,label,champs,x,y}, engage:{…}, enchanter:{…} }`. The refs (`pokeRef`/`engageRef`/`encRef`) and the keys `poke`/`engage`/`enchanter` stay as the canonical archetype keys; assign refs inside the component by key:
 ```js
   const pokeRef = React.useRef(null);
   const engageRef = React.useRef(null);
@@ -538,12 +538,12 @@ git commit -m "feat(engine): generic prop-driven section components"
 **Files:**
 - Create: `role-support.jsx`
 
-Move all Support content from the old files into one object. **Move text/JSX verbatim** — do not rewrite copy (voice is already validated). Source of each field is named below.
+Move all Support content from the old files into one object. **Move text/JSX verbatim**: do not rewrite copy (voice is already validated). Source of each field is named below.
 
 - [ ] **Step 1: Scaffold the file and `meta` block**
 
 ```js
-// role-support.jsx — content for the Support role guide. window.ROLE_DATA.
+// role-support.jsx: content for the Support role guide. window.ROLE_DATA.
 
 const ROLE_DATA = {
   meta: {
@@ -586,9 +586,9 @@ For the `sigil`, paste the inner `<polygon>/<line>/<path>/<circle>` children of 
     title: "The Rift from your point of view",
     lede: "Your zones, vision angles and typical threats. A Support-specific map read.",
     mapSrc: "assets/sr-map-clean.png",
-    mapAlt: "Summoner's Rift — official map",
-    mapCredit: "RIOT GAMES — SUMMONER'S RIFT",
-    legendTitle: "Legend — 6 key points",
+    mapAlt: "Summoner's Rift: official map",
+    mapCredit: "RIOT GAMES: SUMMONER'S RIFT",
+    legendTitle: "Legend: 6 key points",
     pins: [ /* the 8 pin objects, verbatim */ ],
   },
 ```
@@ -703,7 +703,7 @@ git commit -m "feat(engine): Support content as window.ROLE_DATA"
 - [ ] **Step 1: Replace the entire contents of `app.jsx`**
 
 ```js
-// app.jsx — generic role-guide composition. Reads window.ROLE_DATA, renders
+// app.jsx: generic role-guide composition. Reads window.ROLE_DATA, renders
 // only the sections whose data key is present, derives section numbers/ids
 // and the TOC from the rendered set.
 
@@ -839,11 +839,11 @@ git commit -m "feat(engine): point Support.html at the data-driven engine"
 - [ ] **Step 1: Add the role-accent mapping** directly after the three `[data-accent]` rules:
 
 ```css
-/* Role accent — each role guide gets a signature accent without touching the
+/* Role accent: each role guide gets a signature accent without touching the
    palette. Support keeps amber (identical to the default). */
 :root[data-role="support"] { --accent: var(--accent-ambre); }
 ```
-Note: because `data-accent="ambre"` already resolves `--accent` to amber on Support, this rule is a no-op for appearance now; it establishes the axis for the future roles (each adds its own `[data-role="x"]` line). Keep the `[data-accent]` rules in place — `[data-role]` overrides only when both are set and the cascade order favors the later rule, so place `[data-role]` AFTER `[data-accent]`.
+Note: because `data-accent="ambre"` already resolves `--accent` to amber on Support, this rule is a no-op for appearance now; it establishes the axis for the future roles (each adds its own `[data-role="x"]` line). Keep the `[data-accent]` rules in place: `[data-role]` overrides only when both are set and the cascade order favors the later rule, so place `[data-role]` AFTER `[data-accent]`.
 
 - [ ] **Step 2: Commit**
 
