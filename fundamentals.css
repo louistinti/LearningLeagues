@@ -72,7 +72,7 @@
 .ft-overlay { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: calc(var(--s) * 3);
   background: color-mix(in oklab, var(--bg) 78%, transparent); backdrop-filter: blur(10px) saturate(115%); -webkit-backdrop-filter: blur(10px) saturate(115%); }
 .ft-overlay-panel {
-  position: relative; width: min(940px, 96vw); height: min(560px, 88vh); max-height: 92vh; overflow: hidden;
+  position: relative; width: min(940px, 96vw, calc(100vw - var(--s) * 6)); height: min(560px, 88vh); max-height: 92vh; overflow: hidden;
   display: grid; grid-template-columns: 1.15fr 1fr;
   background: var(--surface); border: 1px solid var(--border);
   box-shadow: 0 40px 120px -30px rgba(0,0,0,.7);

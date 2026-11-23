@@ -1314,6 +1314,12 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   height: 1px;
   background: var(--accent);
 }
+/* Phones: three tabs side by side outgrow the column, so they stack. */
+@media (max-width: 768px) {
+  .archetype-switch { flex-direction: column; }
+  .archetype-tab { border-right: 0; border-bottom: 1px solid var(--border); }
+  .archetype-tab:last-child { border-bottom: 0; }
+}
 
 /* ── Sidebar TOC ─────────────────────────────────────────────────────────
    Fixed left rail listing all 11 sections. Hidden when there isn't enough
@@ -1568,6 +1574,8 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   transition: border-color .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
   overflow: visible;
 }
+/* Two columns on a phone leave each card less than its 88px icon + side padding. */
+@media (max-width: 640px) { .role-card { padding-left: calc(var(--s) * 2); padding-right: calc(var(--s) * 2); } }
 .role-card-corners span {
   position: absolute; width: 12px; height: 12px;
   opacity: 0;
@@ -1692,6 +1700,17 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   color: var(--fg-mute);
 }
 .train-foot-cta { color: var(--accent); }
+/* Phones: the fixed tag/duration tracks size to their content and the card
+   padding follows the shell gutter, so the drill rows fit a 320px screen. */
+@media (max-width: 768px) {
+  .train-vignette { padding: calc(var(--s) * 2); }
+  .train-row { grid-template-columns: 36px 1fr auto auto; }
+  .train-row.is-active {
+    margin: 0 calc(var(--s) * -2);
+    padding-left: calc(var(--s) * 2);
+    padding-right: calc(var(--s) * 2);
+  }
+}
 
 /* ── Landing: Resources visual ─────────────────────────────────────────── */
 .res-vignette {
@@ -1733,6 +1752,10 @@ a.video-card:focus-visible .video-thumb::before { background: rgba(8,12,20,.28);
   font-size: 11px; letter-spacing: 0.12em;
   color: var(--fg-mute);
   font-style: italic;
+}
+@media (max-width: 768px) {
+  .res-vignette { padding-left: calc(var(--s) * 2); padding-right: calc(var(--s) * 2); }
+  .res-row { column-gap: calc(var(--s) * 1); }
 }
 
 /* ── Fundamentals page ─────────────────────────────────────────────────────
